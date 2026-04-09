@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+.description {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h5);
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.cta {
+  display: flex;
+  gap: 24px;
+}
+
+/* Alignment variants */
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.center .content {
+  align-items: center;
+}
+
+.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.left .content {
+  align-items: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--text-h3);
+  }
+
+  /* Description keeps 28px (--text-h5) on mobile — matches Figma */
+
+  .cta {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  /* Mobile centering — applied when mobileCentered prop is true */
+  .mobileCentered {
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobileCentered .content {
+    align-items: center;
+  }
+
+  .mobileCentered .cta {
+    align-items: center;
+  }
+}

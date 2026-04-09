@@ -1,0 +1,37 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-button);
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+/* Variants - using CSS variables from design system */
+.primary {
+  background-color: var(--tag-primary);
+  color: var(--tag-primary-foreground);
+}
+
+.secondary {
+  background-color: var(--tag-secondary);
+  color: var(--tag-secondary-foreground);
+}
+
+.tertiary {
+  background-color: var(--tag-tertiary);
+  color: var(--tag-tertiary-foreground);
+}
+
+.purple {
+  background-color: #4d2ce1;
+  color: #f2f2f2;
+}
+
+.red {
+  background-color: #460000;
+  color: #f2f2f2;
+}

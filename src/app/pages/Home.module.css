@@ -1,0 +1,185 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.processSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.processTitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.processDescription {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h6);
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.processButtons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+  flex: 1;
+  padding-top: 73px; /* Height of the fixed navigation */
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+}
+
+.sectionHeading {
+  padding: 0 64px 80px 64px;
+}
+
+.processSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.processTitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.processDescription {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h6);
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.processButtons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Resume */
+.resumeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.resumeTitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.resumeDescription {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h5);
+  font-weight: var(--font-weight-medium);
+  line-height: normal;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.resumeButtons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Project grid */
+.projectGrid {
+  display: flex;
+  gap: 196px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 64px;
+  flex-wrap: wrap;
+}
+
+/* ─── Tablet ─────────────────────────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sectionHeading {
+    padding: 0 32px 48px 32px;
+  }
+
+  .projectGrid {
+    gap: 64px;
+    padding: 0 32px;
+  }
+}
+
+/* ─── Mobile ─────────────────────────────── */
+@media (max-width: 768px) {
+  .main {
+    gap: 48px;
+    padding-top: 73px;
+  }
+
+  .section {
+    gap: 32px;
+  }
+
+  .sectionHeading {
+    padding: 0 24px 24px 24px;
+  }
+
+  /* Resume: center everything on mobile */
+  .resumeSection {
+    align-items: center;
+    text-align: center;
+  }
+
+  .resumeTitle {
+    font-size: var(--text-h3);
+    text-align: center;
+  }
+
+  .resumeDescription {
+    font-size: var(--text-base);
+    text-align: center;
+  }
+
+  .resumeButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .projectGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 0 24px;
+  }
+}

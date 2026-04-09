@@ -1,0 +1,106 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.section {
+  padding: 80px 64px;
+  box-sizing: border-box;
+}
+
+.projectGrid {
+  max-width: 1312px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 48px;
+}
+
+.contactHeader {
+  padding: 80px 64px 40px;
+  max-width: 1312px;
+  margin: 0 auto;
+}
+
+.contactTitle {
+  background: var(--card);
+  height: 64px;
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.contactSubtitle {
+  background: var(--card);
+  height: 20px;
+  width: 500px;
+  border-radius: 8px;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.contactForm {
+  padding: 0 64px 80px;
+  max-width: 1312px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formField {
+  background: var(--card);
+  height: 56px;
+  border-radius: var(--radius);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.formButton {
+  background: var(--card);
+  height: 56px;
+  width: 150px;
+  border-radius: var(--radius-button);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 24px;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contactHeader {
+    padding: 40px 24px 24px;
+  }
+
+  .contactForm {
+    padding: 0 24px 40px;
+  }
+
+  .contactTitle {
+    width: 200px;
+    height: 48px;
+  }
+
+  .contactSubtitle {
+    width: 100%;
+    max-width: 350px;
+  }
+}

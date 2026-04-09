@@ -1,0 +1,84 @@
+.diagram {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.labelLarge {
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+}
+
+.labelMedium {
+  font-family: var(--font-family-heading);
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+}
+
+.labelSmall {
+  font-family: var(--font-family-body);
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+}
+
+.buttonText {
+  font-family: var(--font-family-body);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.03em;
+}
+
+.label {
+  transition: opacity 0.2s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .diagram {
+    max-width: 100%;
+    padding: 0 var(--spacing-md);
+  }
+
+  .labelLarge {
+    font-size: 18px;
+  }
+
+  .labelMedium {
+    font-size: 14px;
+  }
+
+  .labelSmall {
+    font-size: 10px;
+  }
+
+  .buttonText {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .labelLarge {
+    font-size: 16px;
+  }
+
+  .labelMedium {
+    font-size: 12px;
+  }
+
+  .labelSmall {
+    font-size: 8px;
+  }
+
+  .buttonText {
+    font-size: 8px;
+  }
+}
