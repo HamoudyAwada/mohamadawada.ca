@@ -405,7 +405,7 @@
 
   .valuesSubtitle {
     font-size: var(--text-h6);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-medium);
   }
 
   .valuesButton {
