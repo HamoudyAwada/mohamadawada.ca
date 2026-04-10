@@ -21,13 +21,6 @@ function ProjectsIcon() {
   );
 }
 
-function CaseStudiesIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 16.5 19.5" fill="none">
-      <path d={svgPaths.p3c0f2c80} fill="currentColor" />
-    </svg>
-  );
-}
 
 function ProcessIcon() {
   return (
@@ -95,11 +88,7 @@ export default function Footer() {
                   <ProjectsIcon />
                   <span>Projects</span>
                 </Link>
-                <Link to="/my-work" className={styles.footerLink}>
-                  <CaseStudiesIcon />
-                  <span>Case Studies</span>
-                </Link>
-                <Link to="/process" className={styles.footerLink}>
+<Link to="/process" className={styles.footerLink}>
                   <ProcessIcon />
                   <span>My Process</span>
                 </Link>
@@ -135,6 +124,10 @@ export default function Footer() {
               </nav>
             </div>
           </div>
+        </div>
+        <div className={styles.copyright}>
+          <p>© 2026 Mohamad Awada. All rights reserved.</p>
+          <p>Designed and built by Mohamad Awada (Moe)</p>
         </div>
       </div>
     </footer>

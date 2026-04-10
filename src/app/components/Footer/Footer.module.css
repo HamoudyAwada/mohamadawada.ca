@@ -93,7 +93,7 @@
   font-family: var(--font-family-body);
   font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
-  color: var(--footer-link);
+  color: white;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
@@ -119,6 +119,21 @@
 
 .footerLink:active {
   color: var(--footer-link-active);
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 48px;
+}
+
+.copyright p {
+  font-family: var(--font-family-body);
+  font-size: 10px;
+  font-weight: var(--font-weight-normal);
+  color: var(--primary);
+  margin: 0;
 }
 
 /* Responsive */
