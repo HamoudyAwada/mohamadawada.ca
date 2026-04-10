@@ -45,7 +45,7 @@ const projects: Project[] = [
     id: 3,
     title: "YYventC",
     description:
-      "Understand how I helped shape ENMAX's design system and set the foundation for powerful AI assisted workflows.",
+      "A community-driven events platform built to connect people in Calgary with local experiences.",
     image: imgEnmax,
     imageAlt: "YYventC",
     imageType: "cropped",

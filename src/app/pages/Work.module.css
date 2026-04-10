@@ -136,7 +136,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h6); /* 32px */
   font-weight: var(--font-weight-medium);
-  color: #1e1e1e;
+  color: var(--foreground);
   margin: 0;
   line-height: normal;
 }
@@ -169,7 +169,6 @@
   }
 
   .imageSquare {
-    width: 360px;
     height: 360px;
     border-radius: 48px;
   }
