@@ -6,42 +6,11 @@ import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import imgHeadshot from "../../assets/83f4de12679ccac2d92d82eb66f087549d1db709.png";
-import imgEnmax from "../../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.png";
-import imgTrumi from "../../assets/ab72dd35391820c5919d41bb47e2f9abe185f5e4.png";
 import svgPaths from "../../imports/Frame179/svg-0m3zegtu1n";
+import projects from "../../data/projects";
 import styles from "./Home.module.css";
 
-export default function Home() {
-  const projectCards = [
-    {
-      id: 1,
-      image: imgEnmax,
-      title: "ENMAX DESIGN SYSTEM",
-      description:
-        "How I helped shape ENMAX's design system and set the foundation for powerful AI assisted workflows.",
-      tags: [
-        { label: "Figma MCP", variant: "primary" as const },
-        { label: "Design System", variant: "secondary" as const },
-        { label: "AI", variant: "purple" as const },
-      ],
-      badge: "ENMAX - Project",
-      href: "/my-work",
-    },
-    {
-      id: 2,
-      image: imgTrumi,
-      title: "TRUMI",
-      description:
-        "A gamified app to help you actually achieve your goals and understand your values.",
-      tags: [
-        { label: "Capstone", variant: "primary" as const },
-        { label: "App", variant: "secondary" as const },
-        { label: "AI UX - Claude", variant: "purple" as const },
-      ],
-      badge: "SAIT - Capstone",
-      href: "/my-work",
-    },
-  ];
+const featuredProjects = projects.filter((p) => p.featured);
 
   return (
     <div className={styles.page}>
@@ -74,8 +43,16 @@ export default function Home() {
           </div>
 
           <div className={styles.projectGrid}>
-            {projectCards.map((project) => (
-              <ProjectCard key={project.id} {...project} />
+            {featuredProjects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                image={project.coverImage}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                badge={project.badge}
+                href={`/my-work/${project.slug}`}
+              />
             ))}
           </div>
         </section>
