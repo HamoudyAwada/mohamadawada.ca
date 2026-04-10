@@ -6,7 +6,6 @@ import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import imgHeadshot from "../../assets/83f4de12679ccac2d92d82eb66f087549d1db709.png";
-import svgPaths from "../../imports/Frame179/svg-0m3zegtu1n";
 import projects from "../../data/projects";
 import styles from "./Home.module.css";
 
@@ -93,24 +92,8 @@ export default function Home() {
                   size="large"
                   href="/resume.pdf"
                   target="_blank"
-                  icon={
-                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-                      <path
-                        d={svgPaths.p329a7280}
-                        fill="currentColor"
-                      />
-                    </svg>
-                  }
-                  iconPosition="right"
                 >
-                  Download Resume
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="large"
-                  href="/contact"
-                >
-                  Contact Me
+                  View My Resume
                 </Button>
               </div>
             </div>

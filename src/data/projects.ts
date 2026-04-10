@@ -34,8 +34,9 @@ const projects: Project[] = [
     imageFirst: true,
     badge: "ENMAX - Project",
     tags: [
-      { label: "Figma MCP", variant: "primary" },
-      { label: "Design System", variant: "secondary" },
+      { label: "Design System", variant: "primary" },
+      { label: "GitHub Copilot", variant: "secondary" },
+      { label: "Claude", variant: "purple" },
       { label: "AI", variant: "purple" },
     ],
     featured: true,
@@ -53,8 +54,9 @@ const projects: Project[] = [
     badge: "SAIT - Capstone",
     tags: [
       { label: "Capstone", variant: "primary" },
-      { label: "App", variant: "secondary" },
-      { label: "AI UX - Claude", variant: "purple" },
+      { label: "Application Design", variant: "secondary" },
+      { label: "Agile", variant: "purple" },
+      { label: "AI UX", variant: "purple" },
     ],
     featured: true,
     status: "coming-soon",
