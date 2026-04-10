@@ -15,8 +15,8 @@
     "cta": { "label": "Understand My Process", "href": "/process" }
   },
   "resumeSection": {
-    "title": "Resume",
-    "description": "If you're looking for my professional qualifications and resume, you're in the right place. Download my resume directly as a PDF.",
+    "title": "My Resume",
+    "description": "If you're looking for my professional qualifications and resume, you're in the right place. View and download my resume below.",
     "cta": { "label": "View My Resume", "href": "/resume.pdf" }
   }
 }

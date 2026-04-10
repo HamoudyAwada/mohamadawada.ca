@@ -4,13 +4,13 @@
   "responseNote": "I'm pretty good with response time. I do my best to get back to you within 1-2 business days. Thanks in advance for your patience!",
   "form": {
     "fields": {
-      "firstName":  { "label": "First Name",           "placeholder": "John" },
-      "lastName":   { "label": "Last Name",            "placeholder": "Doe" },
-      "email":      { "label": "Email Address",        "placeholder": "name@email.com" },
-      "topic":      { "label": "Whats This About?",    "placeholder": "Pick a topic" },
-      "phone":      { "label": "Phone Number",         "placeholder": "+1 (123) 456-7890" },
-      "message":    { "label": "Message",              "placeholder": "Write your message here..." },
-      "company":    { "label": "Company/Organization", "placeholder": "ACME Inc." }
+      "firstName":  { "label": "First Name",           "placeholder": "eg.John" },
+      "lastName":   { "label": "Last Name",            "placeholder": "eg.Doe" },
+      "email":      { "label": "Email Address",        "placeholder": "eg.name@email.com" },
+      "topic":      { "label": "Whats This About?",    "placeholder": "eg.Pick a topic" },
+      "phone":      { "label": "Phone Number",         "placeholder": "eg.+1 (123) 456-7890" },
+      "message":    { "label": "Message",              "placeholder": "eg.Write your message here..." },
+      "company":    { "label": "Company/Organization", "placeholder": "eg.ACME Inc." }
     },
     "topicOptions": [
       { "value": "full-time",    "label": "Full-time Role" },
