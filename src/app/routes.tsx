@@ -1,7 +1,14 @@
-import { createBrowserRouter } from "react-router";
-import { Suspense, lazy } from "react";
+import { createBrowserRouter, Navigate } from "react-router";
+import { Suspense, lazy, useEffect } from "react";
 import PageSkeleton from "./components/PageSkeleton";
 import RootLayout from "./components/RootLayout";
+
+function ResumeRedirect() {
+  useEffect(() => {
+    window.open("/resume.pdf", "_blank", "noopener,noreferrer");
+  }, []);
+  return <Navigate to="/" replace />;
+}
 
 const Home = lazy(() => import("./pages/Home"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon"));
@@ -48,11 +55,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/resume",
-        element: (
-          <Suspense fallback={<PageSkeleton variant="generic" />}>
-            <ComingSoon pageName="Resume" />
-          </Suspense>
-        ),
+        element: <ResumeRedirect />,
       },
       {
         path: "/contact",

@@ -92,6 +92,7 @@ export default function Home() {
                   variant="primary"
                   size="large"
                   href="/resume.pdf"
+                  target="_blank"
                   icon={
                     <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
                       <path

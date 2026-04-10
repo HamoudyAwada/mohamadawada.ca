@@ -33,10 +33,10 @@ export default function Navigation() {
   };
 
   const navLinks = [
-    { label: "My Work", path: "/my-work" },
-    { label: "Process", path: "/process" },
-    { label: "About Me", path: "/about" },
-    { label: "Resume", path: "/resume" },
+    { label: "My Work", path: "/my-work", external: false },
+    { label: "Process", path: "/process", external: false },
+    { label: "About Me", path: "/about", external: false },
+    { label: "Resume", path: "/resume.pdf", external: true },
   ];
 
   return (
@@ -50,17 +50,29 @@ export default function Navigation() {
                 <Logo />
               </Link>
               <div className={styles.desktopNav}>
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`${styles.navLink} ${
-                      location.pathname === link.path ? styles.active : ""
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                {navLinks.map((link) =>
+                  link.external ? (
+                    <a
+                      key={link.path}
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.navLink}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={`${styles.navLink} ${
+                        location.pathname === link.path ? styles.active : ""
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                )}
               </div>
             </div>
 
@@ -112,18 +124,31 @@ export default function Navigation() {
         <div className={styles.overlayContent}>
           <div className={styles.mobileContentWrapper}>
             <div className={styles.mobileNav}>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`${styles.mobileNavLink} ${
-                    location.pathname === link.path ? styles.active : ""
-                  }`}
-                  onClick={() => handleNavClick(link.path)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.mobileNavLink}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`${styles.mobileNavLink} ${
+                      location.pathname === link.path ? styles.active : ""
+                    }`}
+                    onClick={() => handleNavClick(link.path)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
             </div>
 
             <div className={styles.mobileDivider}>

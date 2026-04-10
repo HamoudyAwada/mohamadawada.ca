@@ -9,6 +9,7 @@ interface ButtonProps {
   icon?: ReactNode;
   iconPosition?: "left" | "right";
   href?: string;
+  target?: "_blank" | "_self";
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
@@ -22,6 +23,7 @@ export default function Button({
   icon,
   iconPosition = "right",
   href,
+  target,
   onClick,
   type = "button",
   disabled = false,
@@ -46,8 +48,9 @@ export default function Button({
   );
 
   if (href && !disabled) {
+    const rel = target === "_blank" ? "noopener noreferrer" : undefined;
     return (
-      <Link to={href} className={className}>
+      <Link to={href} className={className} target={target} rel={rel}>
         {content}
       </Link>
     );
