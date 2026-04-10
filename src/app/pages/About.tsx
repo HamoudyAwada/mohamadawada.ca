@@ -28,7 +28,7 @@ export default function About() {
           <section className={styles.heroSection}>
             <div className={styles.heroContent}>
               <h1 className={styles.heroTitle}>Who Is Moe?</h1>
-              <p className={styles.heroSubtitle}><span className={styles.heroSubtitleDesktop}>This is the space to get an initial look into who I am and if I'd be a good fit for you or your team!</span><span className={styles.heroSubtitleMobile}>This is the space to get an initial look into who I am and if I'd be a good fit for you or your team, or otherwise understand who I am beyond the screen!</span></p>
+              <p className={styles.heroSubtitle}>This is the space to get an initial look into who I am and if I'd be a good fit for you or your team!</p>
               <Button
                 variant="primary"
                 size="large"
@@ -79,12 +79,7 @@ export default function About() {
             <div className={styles.valuesHeader}>
               <h2 className={styles.valuesTitle}>Some of My Design Values</h2>
               <p className={styles.valuesSubtitle}>
-                <span className={styles.valuesSubtitleDesktop}>
-                  If you'd like to know more about the ways I work and how I fit with different project methodologies, check out my process.
-                </span>
-                <span className={styles.valuesSubtitleMobile}>
-                  If you'd like to see the full (and ever expanding) list, check out my process more in depth!
-                </span>
+                If you'd like to know more about the way I work and how I fit with different project methodologies, check out my process.
               </p>
               <div className={styles.valuesButton}>
                 <Button variant="primary" size="large" href="/process">

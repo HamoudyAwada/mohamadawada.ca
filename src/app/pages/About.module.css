@@ -64,9 +64,6 @@
   line-height: normal;
 }
 
-.heroSubtitleMobile {
-  display: none;
-}
 
 /* Designer Section */
 .designerSection {
@@ -206,9 +203,6 @@
   line-height: normal;
 }
 
-.valuesSubtitleMobile {
-  display: none;
-}
 
 .valuesButton {
   margin-top: 8px;
@@ -342,14 +336,6 @@
     font-size: var(--text-h5);
   }
 
-  .heroSubtitleDesktop {
-    display: none;
-  }
-
-  .heroSubtitleMobile {
-    display: block;
-  }
-
   .designerSection {
     grid-template-columns: 1fr;
     padding: 0 24px;
@@ -420,14 +406,6 @@
   .valuesSubtitle {
     font-size: var(--text-base);
     font-weight: var(--font-weight-bold);
-  }
-
-  .valuesSubtitleDesktop {
-    display: none;
-  }
-
-  .valuesSubtitleMobile {
-    display: block;
   }
 
   .valuesButton {
