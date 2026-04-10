@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import Divider from "../components/Divider";
 import Tag from "../components/Tag";
 import styles from "./About.module.css";
-import { ArrowRight, CheckCircle2, Package, TrendingUp } from "lucide-react";
+import { ArrowDown, CheckCircle2, Package, TrendingUp } from "lucide-react";
 
 // Import images from Figma
 import imgOutsideDesignPhoto from "../../imports/DesktopAbout/92942cb3c2096543651f0997eaffe7b01f2f6ca6.png";
@@ -33,7 +33,7 @@ export default function About() {
                 variant="primary"
                 size="large"
                 onClick={handleSkipToValues}
-                icon={<ArrowRight size={16} />}
+                icon={<ArrowDown size={16} />}
               >
                 Skip To My Design Values
               </Button>

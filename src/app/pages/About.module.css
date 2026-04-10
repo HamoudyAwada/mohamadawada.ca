@@ -217,7 +217,7 @@
 .valuesGrid {
   display: flex;
   flex-direction: row;
-  gap: 48px;
+  gap: 65px;
   width: 100%;
   justify-content: center;
   align-items: flex-start;
@@ -229,13 +229,14 @@
   flex-direction: column;
   gap: 0;
   background-color: var(--input-background);
-  padding: 13px;
-  width: 276px;
-  height: 339px;
+  padding: 16px;
+  width: 345px;
+  min-height: 424px;
   flex-shrink: 0;
   border-radius: var(--radius);
   box-shadow: 0px 8px 15px 0px rgba(14, 14, 14, 0.3);
   justify-content: space-between;
+  text-align: left;
 }
 
 .valueHeader {
@@ -256,21 +257,18 @@
 }
 
 .valueIcon svg {
-  width: 19px;
-  height: 19px;
+  width: 24px;
+  height: 24px;
 }
 
 .valueName {
   font-family: var(--font-family-heading);
-  font-size: calc(var(--text-h6) * 0.8);
+  font-size: var(--text-h5);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
   margin: 0;
   line-height: 1.2;
   flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .valueDivider {
@@ -287,11 +285,13 @@
 
 .valueDescription {
   font-family: var(--font-family-body);
-  font-size: calc(var(--text-base) * 0.8);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-normal);
   color: var(--foreground);
   line-height: normal;
   margin: 0;
+  flex: 1;
+  text-align: left;
 }
 
 .valueTags {
@@ -439,6 +439,11 @@
     flex-direction: column;
     gap: 32px;
     align-items: center;
+  }
+
+  .valueCard {
+    width: 100%;
+    max-width: 345px;
   }
 
   .valueTags {
