@@ -56,6 +56,9 @@
 
 .navLink.active {
   color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-underline-offset: 4px;
 }
 
 .desktopButton {
