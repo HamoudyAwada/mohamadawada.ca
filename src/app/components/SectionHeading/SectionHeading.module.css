@@ -64,7 +64,9 @@
     font-size: var(--text-h3);
   }
 
-  /* Description keeps 28px (--text-h5) on mobile — matches Figma */
+  .description {
+    font-size: var(--text-base);
+  }
 
   .cta {
     flex-direction: column;
