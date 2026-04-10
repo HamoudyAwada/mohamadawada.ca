@@ -93,7 +93,7 @@
   --font-family-body: 'Quicksand', sans-serif;
   /* Tag color variants from Figma design library */
   --tag-primary: rgba(40, 160, 112, 1.00);
-  --tag-primary-foreground: rgba(14, 14, 14, 1.00);
+  --tag-primary-foreground: rgba(242, 242, 242, 1.00);
   --tag-secondary: rgba(17, 69, 120, 1.00);
   --tag-secondary-foreground: rgba(242, 242, 242, 1.00);
   --tag-tertiary: rgba(140, 226, 116, 1.00);
