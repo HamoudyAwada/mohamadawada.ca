@@ -211,6 +211,7 @@
 .valuesGrid {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 65px;
   width: 100%;
   justify-content: center;
@@ -466,5 +467,9 @@
 
   .valuesSection {
     padding: 0 32px;
+  }
+
+  .valuesGrid {
+    gap: 32px;
   }
 }
