@@ -12,6 +12,7 @@ import styles from "./Home.module.css";
 
 const featuredProjects = projects.filter((p) => p.featured);
 
+export default function Home() {
   return (
     <div className={styles.page}>
       <Navigation />
