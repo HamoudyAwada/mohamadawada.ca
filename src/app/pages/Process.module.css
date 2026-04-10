@@ -52,7 +52,7 @@
 
 .twoColumnLayout {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 400px;
   gap: 64px;
   align-items: start;
 }
@@ -126,8 +126,8 @@
 }
 
 .diagramContainer {
-  width: 360px;
-  height: 360px;
+  width: 400px;
+  height: 400px;
   position: relative;
   margin-top: 10px;
 }
@@ -152,7 +152,14 @@
   .diagramContainer {
     width: 100%;
     max-width: 480px;
+    height: auto;
     margin: 0 auto;
+  }
+
+  .diagram {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .leftColumn {
@@ -210,15 +217,14 @@
   }
 
   .diagramContainer {
-    width: 345px;
-    height: 345px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 345px;
+    height: auto;
   }
 
   .diagram {
-    width: 85vw;
+    width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
   }
 }
