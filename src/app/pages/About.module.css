@@ -404,7 +404,7 @@
   }
 
   .valuesSubtitle {
-    font-size: var(--text-base);
+    font-size: var(--text-h6);
     font-weight: var(--font-weight-bold);
   }
 
