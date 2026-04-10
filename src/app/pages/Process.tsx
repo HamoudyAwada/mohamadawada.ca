@@ -4,21 +4,22 @@ import Footer from "../components/Footer";
 import Divider from "../components/Divider";
 import Button from "../components/Button";
 import FadeInImage from "../components/FadeInImage";
+import processContent from "../../content/process.json";
 import styles from "./Process.module.css";
 
 export default function Process() {
+  const { hero, content } = processContent;
+
   return (
     <div className={styles.page}>
       <Navigation />
-      
+
       <main className={styles.main}>
         {/* Hero Section */}
         <section className={styles.heroSection}>
           <div className={styles.heroContent}>
-            <h1 className={styles.title}>My Process</h1>
-            <p className={styles.subtitle}>
-              In an age where the how and the why matter more than ever, here is what my process looks like.
-            </p>
+            <h1 className={styles.title}>{hero.title}</h1>
+            <p className={styles.subtitle}>{hero.subtitle}</p>
           </div>
         </section>
 
@@ -30,30 +31,18 @@ export default function Process() {
             {/* Left Column - Text Content */}
             <div className={styles.leftColumn}>
               <div className={styles.textContent}>
-                <h2 className={styles.sectionTitle}>How I Approach My Work</h2>
-                <p className={styles.sectionSubtitle}>
-                  Forming hypotheses, building what's needed to test them, and letting real user feedback drive every decision.
-                </p>
+                <h2 className={styles.sectionTitle}>{content.title}</h2>
+                <p className={styles.sectionSubtitle}>{content.subtitle}</p>
 
                 <div className={styles.bodyText}>
-                  <p>
-                    Lean UX is my preferred approach to product design. I'm drawn to its emphasis on rapid experimentation, continuous user feedback, and tight collaboration between designers, developers, and stakeholders. Building, measuring, and learning in short cycles helps me stay focused on real user needs rather than getting stuck in heavy documentation or upfront assumptions.
-                  </p>
-
-                  <p>
-                    That said, I'm comfortable adapting to whatever methodology a team relies on. I've worked within Agile and Scrum environments, and I understand how Waterfall can still make sense for projects with fixed scopes or strict compliance requirements. What matters most to me is contributing effectively to the team's workflow, not defending a single way of working.
-                  </p>
-
-                  <p>
-                    At the end of the day, methodologies are tools, not rules. I care more about shipping thoughtful, user-centred work than following any one process by the book. Whether a team moves fast and iterates or plans carefully from the start, I'm ready to meet them where they are and bring the same level of craft and curiosity to the work.
-                  </p>
-
-                  
+                  {content.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
                 </div>
 
                 <div className={styles.ctaSection}>
-                  <Button variant="primary" size="large" href="/contact">
-                    Let's Work Together
+                  <Button variant="primary" size="large" href={content.cta.href}>
+                    {content.cta.label}
                   </Button>
                 </div>
               </div>
@@ -62,7 +51,6 @@ export default function Process() {
             {/* Right Column - Diagram */}
             <div className={styles.rightColumn}>
               <div className={styles.diagramContainer}>
-                {/* Process Diagram Image */}
                 <FadeInImage
                   src={processDiagram}
                   alt="Lean UX Process Diagram showing the cycle of Think, Make, and Check with Lean UX at the center"

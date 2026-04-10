@@ -3,6 +3,7 @@ import Logo from "../Logo";
 import Button from "../Button";
 import Divider from "../Divider";
 import svgPaths from "../../../imports/DesktopHome-1/svg-34ib9iantb";
+import footerContent from "../../../content/footer.json";
 import styles from "./Footer.module.css";
 
 function IconRight() {
@@ -20,7 +21,6 @@ function ProjectsIcon() {
     </svg>
   );
 }
-
 
 function ProcessIcon() {
   return (
@@ -54,7 +54,17 @@ function LinkedInIcon() {
   );
 }
 
+const iconMap: Record<string, JSX.Element> = {
+  projects: <ProjectsIcon />,
+  process: <ProcessIcon />,
+  about: <AboutIcon />,
+  resume: <ResumeIcon />,
+  linkedin: <LinkedInIcon />,
+};
+
 export default function Footer() {
+  const { cta, columns, copyright } = footerContent;
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -66,14 +76,14 @@ export default function Footer() {
             </div>
 
             <div className={styles.ctaSection}>
-              <p className={styles.ctaText}>Let's build something together.</p>
+              <p className={styles.ctaText}>{cta.text}</p>
               <Button
                 variant="primary"
-                href="/contact"
+                href={cta.href}
                 icon={<IconRight />}
                 fullWidth
               >
-                Get in touch
+                {cta.button}
               </Button>
             </div>
           </div>
@@ -82,52 +92,62 @@ export default function Footer() {
           <div className={styles.linksSection}>
             {/* Work column */}
             <div className={styles.linkColumn}>
-              <h4 className={styles.columnTitle}>Work</h4>
+              <h4 className={styles.columnTitle}>{columns.work.title}</h4>
               <nav className={styles.linkList}>
-                <Link to="/my-work" className={styles.footerLink}>
-                  <ProjectsIcon />
-                  <span>Projects</span>
-                </Link>
-<Link to="/process" className={styles.footerLink}>
-                  <ProcessIcon />
-                  <span>My Process</span>
-                </Link>
+                {columns.work.links.map((link) =>
+                  link.external ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.footerLink}
+                    >
+                      {iconMap[link.icon]}
+                      <span>{link.label}</span>
+                    </a>
+                  ) : (
+                    <Link key={link.href} to={link.href} className={styles.footerLink}>
+                      {iconMap[link.icon]}
+                      <span>{link.label}</span>
+                    </Link>
+                  )
+                )}
               </nav>
             </div>
 
-            {/* Me column — About Me, Resume, LinkedIn (Connect section removed) */}
+            {/* Me column */}
             <div className={styles.linkColumn}>
-              <h4 className={styles.columnTitle}>Me</h4>
+              <h4 className={styles.columnTitle}>{columns.me.title}</h4>
               <nav className={styles.linkList}>
-                <Link to="/about" className={styles.footerLink}>
-                  <AboutIcon />
-                  <span>About Me</span>
-                </Link>
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.footerLink}
-                >
-                  <ResumeIcon />
-                  <span>Resume</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/mohamad-awada-ux-ui-designer/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.footerLink}
-                >
-                  <LinkedInIcon />
-                  <span>LinkedIn</span>
-                </a>
+                {columns.me.links.map((link) =>
+                  link.external ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.footerLink}
+                    >
+                      {iconMap[link.icon]}
+                      <span>{link.label}</span>
+                    </a>
+                  ) : (
+                    <Link key={link.href} to={link.href} className={styles.footerLink}>
+                      {iconMap[link.icon]}
+                      <span>{link.label}</span>
+                    </Link>
+                  )
+                )}
               </nav>
             </div>
           </div>
         </div>
+
         <div className={styles.copyright}>
-          <p>© 2026 Mohamad Awada. All rights reserved.</p>
-          <p>Designed and built by Mohamad Awada (Moe)</p>
+          {copyright.map((line, i) => (
+            <p key={i}>{line}</p>
+          ))}
         </div>
       </div>
     </footer>

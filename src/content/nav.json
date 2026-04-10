@@ -1,0 +1,27 @@
+{
+  "desktopLinks": [
+    { "label": "My Work", "path": "/my-work" },
+    { "label": "Process", "path": "/process" },
+    { "label": "About Me", "path": "/about" },
+    { "label": "Resume", "path": "/resume.pdf", "external": true }
+  ],
+  "contactButton": "Contact Me",
+  "mobileLinks": [
+    { "label": "My Work", "path": "/my-work" },
+    { "label": "Process", "path": "/process" },
+    { "label": "About Me", "path": "/about" }
+  ],
+  "mobileSocialLinks": [
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/mohamad-awada-ux-ui-designer/",
+      "icon": "linkedin"
+    },
+    {
+      "label": "Resume",
+      "href": "/resume.pdf",
+      "icon": "resume",
+      "external": true
+    }
+  ]
+}

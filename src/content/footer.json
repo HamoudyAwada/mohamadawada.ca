@@ -1,0 +1,28 @@
+{
+  "cta": {
+    "text": "Let's build something together.",
+    "button": "Get in touch",
+    "href": "/contact"
+  },
+  "columns": {
+    "work": {
+      "title": "Work",
+      "links": [
+        { "label": "Projects", "href": "/my-work", "icon": "projects", "external": false },
+        { "label": "My Process", "href": "/process", "icon": "process", "external": false }
+      ]
+    },
+    "me": {
+      "title": "Me",
+      "links": [
+        { "label": "About Me", "href": "/about", "icon": "about", "external": false },
+        { "label": "Resume", "href": "/resume.pdf", "icon": "resume", "external": true },
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/mohamad-awada-ux-ui-designer/", "icon": "linkedin", "external": true }
+      ]
+    }
+  },
+  "copyright": [
+    "© 2026 Mohamad Awada. All rights reserved.",
+    "Designed and built by Mohamad Awada (Moe)"
+  ]
+}

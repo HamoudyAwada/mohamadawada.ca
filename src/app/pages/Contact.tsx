@@ -7,9 +7,12 @@ import TextArea from "../components/TextArea/TextArea";
 import Button from "../components/Button/Button";
 import BackgroundPattern from "../components/BackgroundPattern/BackgroundPattern";
 import { projectId, publicAnonKey } from "/utils/supabase/info";
+import contactContent from "../../content/contact.json";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
+  const { heading, description, responseNote, form } = contactContent;
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -19,7 +22,7 @@ export default function Contact() {
     message: "",
     company: "",
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -51,8 +54,7 @@ export default function Contact() {
 
       console.log("Form submitted successfully:", data);
       setSubmitStatus("success");
-      
-      // Reset form after successful submission
+
       setFormData({
         firstName: "",
         lastName: "",
@@ -70,16 +72,6 @@ export default function Contact() {
     }
   };
 
-  const topicOptions = [
-    { value: "full-time", label: "Full-time Role" },
-    { value: "part-time", label: "Part-Time Role" },
-    { value: "freelance", label: "Freelance Project" },
-    { value: "contract", label: "Contract-Work" },
-    { value: "consultation", label: "Consultation" },
-    { value: "other", label: "Other" },
-  ];
-
-  // Check if all required fields are filled
   const isFormValid =
     formData.firstName.trim() !== "" &&
     formData.lastName.trim() !== "" &&
@@ -90,25 +82,19 @@ export default function Contact() {
   return (
     <div className={styles.page}>
       <Navigation />
-      
+
       <main className={styles.main}>
         <div className={styles.container}>
           {/* Left Column - Info Section */}
           <div className={styles.infoSection}>
             <div className={styles.infoContent}>
               <div className={styles.headingSection}>
-                <h1 className={styles.heading}>
-                  Let's Build Something That Matters
-                </h1>
-                <p className={styles.description}>
-                  Whether it's a full-time role, a freelance project, or even if you'd like to chat, get in touch by filling out the form.
-                </p>
+                <h1 className={styles.heading}>{heading}</h1>
+                <p className={styles.description}>{description}</p>
               </div>
 
               <div className={styles.responseNote}>
-                <p className={styles.responseText}>
-                  I'm pretty good with response time. I do my best to get back to you within 1-2 business days. Thanks in advance for your patience!
-                </p>
+                <p className={styles.responseText}>{responseNote}</p>
               </div>
             </div>
           </div>
@@ -121,9 +107,9 @@ export default function Contact() {
               <div className={styles.formRow}>
                 <div className={styles.formField}>
                   <Input
-                    label="First Name"
+                    label={form.fields.firstName.label}
                     required
-                    placeholder="John"
+                    placeholder={form.fields.firstName.placeholder}
                     value={formData.firstName}
                     onChange={(e) =>
                       setFormData({ ...formData, firstName: e.target.value })
@@ -132,9 +118,9 @@ export default function Contact() {
                 </div>
                 <div className={styles.formField}>
                   <Input
-                    label="Last Name"
+                    label={form.fields.lastName.label}
                     required
-                    placeholder="Doe"
+                    placeholder={form.fields.lastName.placeholder}
                     value={formData.lastName}
                     onChange={(e) =>
                       setFormData({ ...formData, lastName: e.target.value })
@@ -146,8 +132,8 @@ export default function Contact() {
               {/* Email Address */}
               <div className={styles.formFieldFull}>
                 <Input
-                  label="Email Address"
-                  placeholder="name@email.com"
+                  label={form.fields.email.label}
+                  placeholder={form.fields.email.placeholder}
                   type="email"
                   required
                   value={formData.email}
@@ -161,9 +147,9 @@ export default function Contact() {
               <div className={styles.formRow}>
                 <div className={styles.formField}>
                   <Select
-                    label="Whats This About?"
-                    options={topicOptions}
-                    placeholder="Pick a topic"
+                    label={form.fields.topic.label}
+                    options={form.topicOptions}
+                    placeholder={form.fields.topic.placeholder}
                     required
                     value={formData.topic}
                     onChange={(e) =>
@@ -173,13 +159,12 @@ export default function Contact() {
                 </div>
                 <div className={styles.formField}>
                   <Input
-                    label="Phone Number"
+                    label={form.fields.phone.label}
                     optional
-                    placeholder="+1 (123) 456-7890"
+                    placeholder={form.fields.phone.placeholder}
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => {
-                      // Allow only numbers and phone formatting characters (+, -, (, ), spaces)
                       const filtered = e.target.value.replace(/[^0-9+\-() ]/g, '');
                       setFormData({ ...formData, phone: filtered });
                     }}
@@ -190,9 +175,9 @@ export default function Contact() {
               {/* Message */}
               <div className={styles.formFieldFull}>
                 <TextArea
-                  label="Message"
+                  label={form.fields.message.label}
                   required
-                  placeholder="Placeholder Text"
+                  placeholder={form.fields.message.placeholder}
                   rows={6}
                   showCharacterCount
                   maxCharacters={1000}
@@ -206,9 +191,9 @@ export default function Contact() {
               {/* Company/Organization */}
               <div className={styles.formFieldFull}>
                 <Input
-                  label="Company/Organization"
+                  label={form.fields.company.label}
                   optional
-                  placeholder="Placeholder Text"
+                  placeholder={form.fields.company.placeholder}
                   value={formData.company}
                   onChange={(e) =>
                     setFormData({ ...formData, company: e.target.value })
@@ -224,19 +209,15 @@ export default function Contact() {
                   size="large"
                   disabled={!isFormValid || isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Submit Form"}
+                  {isSubmitting ? form.submittingButton : form.submitButton}
                 </Button>
-                
+
                 {submitStatus === "success" && (
-                  <p className={styles.successMessage}>
-                    Thank you! Your message has been sent successfully.
-                  </p>
+                  <p className={styles.successMessage}>{form.successMessage}</p>
                 )}
-                
+
                 {submitStatus === "error" && (
-                  <p className={styles.errorMessage}>
-                    Sorry, there was an error sending your message. Please try again.
-                  </p>
+                  <p className={styles.errorMessage}>{form.errorMessage}</p>
                 )}
               </div>
             </form>

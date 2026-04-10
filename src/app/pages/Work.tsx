@@ -4,9 +4,12 @@ import Footer from "../components/Footer";
 import Divider from "../components/Divider";
 import Button from "../components/Button";
 import projects from "../../data/projects";
+import workContent from "../../content/work.json";
 import styles from "./Work.module.css";
 
 export default function Work() {
+  const { hero } = workContent;
+
   return (
     <div className={styles.page}>
       <Navigation />
@@ -16,14 +19,11 @@ export default function Work() {
         <section className={styles.heroSection}>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
-              <h1 className={styles.heroTitle}>Explore My Work</h1>
-              <p className={styles.heroDescription}>
-                From enterprise level, AI-integrated design systems, to
-                end-to-end app design, discover some of my projects.
-              </p>
+              <h1 className={styles.heroTitle}>{hero.title}</h1>
+              <p className={styles.heroDescription}>{hero.description}</p>
             </div>
-            <Button variant="primary" size="large" href="/contact">
-              Let's Work Together
+            <Button variant="primary" size="large" href={hero.cta.href}>
+              {hero.cta.label}
             </Button>
           </div>
         </section>
@@ -63,7 +63,7 @@ export default function Work() {
                     size="large"
                     href={`/my-work/${project.slug}`}
                   >
-                    See More
+                    {workContent.projectCard.seeMoreLabel}
                   </Button>
                 </div>
               </div>

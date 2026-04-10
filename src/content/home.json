@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Hey There, It's Moe!",
+    "description": "I design experiences that actually matter to people, and I try to bring that same honesty and warmth to everything I do.",
+    "cta": { "label": "Let's Work Together", "href": "/contact" }
+  },
+  "workSection": {
+    "title": "My Work",
+    "description": "Here are a few of my featured projects. See the full list by clicking below!",
+    "cta": { "label": "See My Work", "href": "/my-work" }
+  },
+  "processSection": {
+    "title": "My Process",
+    "description": "As the drive behind every project, if you're more interested in the how and the why, I give a pretty comprehensive rundown of what that means for me.",
+    "cta": { "label": "Understand My Process", "href": "/process" }
+  },
+  "resumeSection": {
+    "title": "Resume",
+    "description": "If you're looking for my professional qualifications and resume, you're in the right place. Download my resume directly as a PDF.",
+    "cta": { "label": "View My Resume", "href": "/resume.pdf" }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "title": "Explore My Work",
+    "description": "From enterprise level, AI-integrated design systems, to end-to-end app design, discover some of my projects.",
+    "cta": { "label": "Let's Work Together", "href": "/contact" }
+  },
+  "projectCard": {
+    "seeMoreLabel": "See More"
+  }
+}
