@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /Users/hamoudy/Documents/GitHub/mohamadawada.ca/src/app/pages/*.module.css)",
+      "Bash(wc -l /Users/hamoudy/Documents/GitHub/mohamadawada.ca/src/app/components/**/*.module.css)"
+    ]
+  }
+}

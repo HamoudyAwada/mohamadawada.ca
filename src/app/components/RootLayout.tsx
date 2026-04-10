@@ -1,10 +1,9 @@
-import { Outlet } from 'react-router';
-import ScrollToTop from './ScrollToTop';
+import { Outlet, ScrollRestoration } from 'react-router';
 
 export default function RootLayout() {
   return (
     <>
-      <ScrollToTop />
+      <ScrollRestoration />
       <Outlet />
     </>
   );
