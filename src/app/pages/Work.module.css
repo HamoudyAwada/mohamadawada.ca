@@ -1,0 +1,260 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-top: 73px; /* height of the fixed navigation */
+}
+
+/* ─── Hero Section ─────────────────────────────── */
+
+.heroSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroContent {
+  max-width: 1304px;
+  width: 100%;
+  padding: 64px 64px 0 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  box-sizing: border-box;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heroTitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h1);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--foreground);
+  margin: 0;
+  line-height: normal;
+}
+
+.heroDescription {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h6); /* 32px — matches Figma H5 fallback of 32px */
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground);
+  margin: 0;
+  line-height: normal;
+}
+
+/* ─── Project Sections ─────────────────────────────── */
+
+.projectSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.projectRow {
+  max-width: 1304px;
+  width: 100%;
+  padding: 0 64px;
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.projectRowReverse {
+  flex-direction: row-reverse;
+}
+
+/* Image wrappers */
+.projectImageWrapper {
+  flex-shrink: 0;
+  width: 528px;
+  overflow: hidden;
+}
+
+.imageCropped {
+  height: 200px;
+}
+
+.imageCropped .projectImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageSquare {
+  width: 528px;
+  height: 528px;
+  border-radius: 64px;
+  box-shadow: 0px 8px 15px 0px rgba(14, 14, 14, 0.3);
+}
+
+.imageSquare .projectImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 64px;
+}
+
+/* Project text + CTA */
+.projectContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.projectText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projectTitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h1);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--foreground);
+  margin: 0;
+  line-height: normal;
+}
+
+.projectDescription {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h6); /* 32px */
+  font-weight: var(--font-weight-medium);
+  color: #1e1e1e;
+  margin: 0;
+  line-height: normal;
+}
+
+/* ─── Tablet ─────────────────────────────── */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .heroContent {
+    padding: 48px 32px 0 32px;
+  }
+
+  .heroTitle {
+    font-size: 60px;
+  }
+
+  .heroDescription {
+    font-size: var(--text-h5); /* 28px */
+  }
+
+  .projectRow {
+    padding: 0 32px;
+    gap: 32px;
+  }
+
+  .projectImageWrapper {
+    width: 360px;
+  }
+
+  .imageCropped {
+    height: 160px;
+  }
+
+  .imageSquare {
+    width: 360px;
+    height: 360px;
+    border-radius: 48px;
+  }
+
+  .imageSquare .projectImg {
+    border-radius: 48px;
+  }
+
+  .projectTitle {
+    font-size: 60px;
+  }
+
+  .projectDescription {
+    font-size: var(--text-h5); /* 28px */
+  }
+}
+
+/* ─── Mobile ─────────────────────────────── */
+@media (max-width: 768px) {
+  .main {
+    gap: 32px;
+  }
+
+  /* Hero */
+  .heroContent {
+    padding: 32px 24px 0 24px;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .heroText {
+    align-items: center;
+  }
+
+  .heroTitle {
+    font-size: 64px;
+    text-align: center;
+  }
+
+  .heroDescription {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  /* Projects */
+  .projectRow,
+  .projectRowReverse {
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .projectImageWrapper {
+    width: 100%;
+    max-width: 345px;
+  }
+
+  .imageCropped {
+    width: 345px;
+    height: 131px;
+  }
+
+  .imageSquare {
+    width: 345px;
+    height: 345px;
+    border-radius: 64px;
+  }
+
+  .imageSquare .projectImg {
+    border-radius: 64px;
+  }
+
+  .projectContent {
+    align-items: center;
+    width: 100%;
+  }
+
+  .projectTitle {
+    font-size: 64px;
+    text-align: center;
+  }
+
+  .projectDescription {
+    font-size: 32px;
+    text-align: center;
+  }
+}

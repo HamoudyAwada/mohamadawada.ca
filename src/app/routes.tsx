@@ -9,6 +9,7 @@ const ComponentShowcase = lazy(() => import("./pages/ComponentShowcase"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Process = lazy(() => import("./pages/Process"));
 const About = lazy(() => import("./pages/About"));
+const Work = lazy(() => import("./pages/Work"));
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
         path: "/my-work",
         element: (
           <Suspense fallback={<PageSkeleton variant="generic" />}>
-            <ComingSoon pageName="My Work" />
+            <Work />
           </Suspense>
         ),
       },
