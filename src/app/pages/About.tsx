@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Divider from "../components/Divider";
 import Tag from "../components/Tag";
+import FadeInImage from "../components/FadeInImage";
 import styles from "./About.module.css";
 import { ArrowDown, CheckCircle2, Package, TrendingUp } from "lucide-react";
 
@@ -47,7 +48,7 @@ export default function About() {
             <div className={styles.designerContent}>
               <h2 className={styles.sectionTitle}>Who I Am As A Designer</h2>
               <div className={styles.designerImage}>
-                <img src={imgDesignerPhoto} alt="Mohamad Awada as a designer" />
+                <FadeInImage src={imgDesignerPhoto} alt="Mohamad Awada as a designer" />
               </div>
               <div className={styles.designerText}>
                 <p>Something we're losing, and losing fast, is personality. In a time when so much has become automated and things become more efficient in so short a time that processes literally change between the time you clock in and clock out, how do we actually define what makes a good designer?</p>
@@ -60,7 +61,7 @@ export default function About() {
           {/* Who I Am Outside Of Design Section */}
           <section className={styles.outsideDesignSection}>
             <div className={styles.outsideDesignImage}>
-              <img src={imgOutsideDesignPhoto} alt="Mohamad Awada outside of design" className={styles.outsideDesignPhoto} />
+              <FadeInImage src={imgOutsideDesignPhoto} alt="Mohamad Awada outside of design" className={styles.outsideDesignPhoto} />
             </div>
             <div className={styles.outsideDesignContent}>
               <h2 className={styles.sectionTitle}>Who I Am Outside Of Design</h2>

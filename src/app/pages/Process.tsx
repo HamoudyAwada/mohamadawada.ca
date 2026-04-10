@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
 import Button from "../components/Button";
+import FadeInImage from "../components/FadeInImage";
 import styles from "./Process.module.css";
 
 export default function Process() {
@@ -62,9 +63,9 @@ export default function Process() {
             <div className={styles.rightColumn}>
               <div className={styles.diagramContainer}>
                 {/* Process Diagram Image */}
-                <img 
-                  src={processDiagram} 
-                  alt="Lean UX Process Diagram showing the cycle of Think, Make, and Check with Lean UX at the center" 
+                <FadeInImage
+                  src={processDiagram}
+                  alt="Lean UX Process Diagram showing the cycle of Think, Make, and Check with Lean UX at the center"
                   className={styles.diagram}
                 />
               </div>

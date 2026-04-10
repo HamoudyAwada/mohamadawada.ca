@@ -1,4 +1,5 @@
 import Button from "../Button";
+import FadeInImage from "../FadeInImage";
 import styles from "./HeroSection.module.css";
 
 interface HeroSectionProps {
@@ -21,7 +22,7 @@ export default function HeroSection({
       <div className={styles.container}>
         <div className={styles.imageWrapper}>
           <div className={styles.imageContainer}>
-            <img src={image} alt="Mohamad Awada" className={styles.image} />
+            <FadeInImage src={image} alt="Mohamad Awada" className={styles.image} />
           </div>
         </div>
 

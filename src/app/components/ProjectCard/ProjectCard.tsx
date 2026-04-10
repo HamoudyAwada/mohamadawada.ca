@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import Tag from "../Tag";
 import Divider from "../Divider";
+import FadeInImage from "../FadeInImage";
 import svgPaths from "../../../imports/ProjectGrid/svg-ro8ag74anu";
 import styles from "./ProjectCard.module.css";
 
@@ -33,7 +34,7 @@ export default function ProjectCard({
     <Link to={href} className={styles.card}>
       {/* Image section — white bg, rounded top corners */}
       <div className={styles.imageContainer}>
-        <img src={image} alt={title} className={styles.image} />
+        <FadeInImage src={image} alt={title} className={styles.image} />
       </div>
 
       {/* Content section — light bg, rounded bottom corners */}
