@@ -49,6 +49,7 @@ export default function Work() {
                     src={project.coverImage}
                     alt={project.coverImageAlt}
                     className={styles.projectImg}
+                    loading="lazy"
                   />
                 </div>
                 <div className={styles.projectContent}>
@@ -63,7 +64,7 @@ export default function Work() {
                     size="large"
                     href={`/my-work/${project.slug}`}
                   >
-                    {workContent.projectCard.seeMoreLabel}
+                    Explore {project.title}
                   </Button>
                 </div>
               </div>

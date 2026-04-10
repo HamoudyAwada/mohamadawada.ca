@@ -1,4 +1,4 @@
-import processDiagram from '../../assets/0191a5b5151fbbffdac8e9a28bb15384029781f4.png'
+import processDiagram from '../../assets/0191a5b5151fbbffdac8e9a28bb15384029781f4.webp'
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";

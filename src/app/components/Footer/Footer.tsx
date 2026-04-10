@@ -2,14 +2,14 @@ import { Link } from "react-router";
 import Logo from "../Logo";
 import Button from "../Button";
 import Divider from "../Divider";
-import svgPaths from "../../../imports/DesktopHome-1/svg-34ib9iantb";
+import { arrowRight, iconProjects, iconProcess, iconAbout, iconResume, iconLinkedIn } from "../../data/svgPaths";
 import footerContent from "../../../content/footer.json";
 import styles from "./Footer.module.css";
 
 function IconRight() {
   return (
     <svg width="16" height="16" viewBox="0 0 18.0006 15.0008" fill="none">
-      <path d={svgPaths.p269480} fill="currentColor" />
+      <path d={arrowRight} fill="currentColor" />
     </svg>
   );
 }
@@ -17,7 +17,7 @@ function IconRight() {
 function ProjectsIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 19.5 18" fill="none">
-      <path d={svgPaths.p37b30580} fill="currentColor" />
+      <path d={iconProjects} fill="currentColor" />
     </svg>
   );
 }
@@ -25,7 +25,7 @@ function ProjectsIcon() {
 function ProcessIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 18 17.6377" fill="none">
-      <path d={svgPaths.p3f524200} fill="currentColor" />
+      <path d={iconProcess} fill="currentColor" />
     </svg>
   );
 }
@@ -33,7 +33,7 @@ function ProcessIcon() {
 function AboutIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 19.5188 18.7697" fill="none">
-      <path d={svgPaths.p15420900} fill="currentColor" />
+      <path d={iconAbout} fill="currentColor" />
     </svg>
   );
 }
@@ -41,7 +41,7 @@ function AboutIcon() {
 function ResumeIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 16.5 19.5" fill="none">
-      <path d={svgPaths.p1b4b5d80} fill="currentColor" />
+      <path d={iconResume} fill="currentColor" />
     </svg>
   );
 }
@@ -49,7 +49,7 @@ function ResumeIcon() {
 function LinkedInIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 19.5 19.5" fill="none">
-      <path d={svgPaths.p15506800} fill="currentColor" />
+      <path d={iconLinkedIn} fill="currentColor" />
     </svg>
   );
 }

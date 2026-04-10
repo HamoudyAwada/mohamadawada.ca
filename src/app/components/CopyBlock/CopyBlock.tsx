@@ -1,6 +1,6 @@
 import Button from "../Button";
 import styles from "./CopyBlock.module.css";
-import figmaImage from "../../assets/0e034e7e1db3ad4332be338ebec0f487a15c69f5.png";
+import figmaImage from "../../assets/0e034e7e1db3ad4332be338ebec0f487a15c69f5.webp";
 
 interface CopyBlockProps {
   image: string;

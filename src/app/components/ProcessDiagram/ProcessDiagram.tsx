@@ -1,4 +1,3 @@
-import svgPaths from "../../../imports/DesktopProcess/svg-czmacmz5vf";
 import styles from "./ProcessDiagram.module.css";
 
 export default function ProcessDiagram() {

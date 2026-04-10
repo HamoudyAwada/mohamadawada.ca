@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import imgHeadshot from "../../assets/83f4de12679ccac2d92d82eb66f087549d1db709.png";
+import imgHeadshot from "../../assets/83f4de12679ccac2d92d82eb66f087549d1db709.webp";
 import projects from "../../data/projects";
 import homeContent from "../../content/home.json";
 import styles from "./Home.module.css";

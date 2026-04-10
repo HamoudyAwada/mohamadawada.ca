@@ -9,9 +9,9 @@ import { ArrowDown, CheckCircle2, Package, TrendingUp } from "lucide-react";
 import aboutContent from "../../content/about.json";
 
 // Import images from Figma
-import imgOutsideDesignPhoto from "../../imports/DesktopAbout/92942cb3c2096543651f0997eaffe7b01f2f6ca6.png";
-import imgMobileHero from "../../imports/MobileAbout/82eb2203f4a6d5637e33003ec7a1ec84d136538d.png";
-import imgDesignerPhoto from "../../assets/a08415ea1b476b514183ff36dccdcb4995628663.png";
+import imgOutsideDesignPhoto from "../../assets/92942cb3c2096543651f0997eaffe7b01f2f6ca6.png";
+import imgMobileHero from "../../assets/82eb2203f4a6d5637e33003ec7a1ec84d136538d.png";
+import imgDesignerPhoto from "../../assets/a08415ea1b476b514183ff36dccdcb4995628663.webp";
 
 const valueIconMap: Record<string, JSX.Element> = {
   "check-circle": <CheckCircle2 size={24} color="var(--primary-foreground)" />,

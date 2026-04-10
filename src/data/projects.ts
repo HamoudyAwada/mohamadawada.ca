@@ -1,5 +1,5 @@
-import imgEnmax from "../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.png";
-import imgTrumi from "../assets/ab72dd35391820c5919d41bb47e2f9abe185f5e4.png";
+import imgEnmax from "../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
+import imgTrumi from "../assets/ab72dd35391820c5919d41bb47e2f9abe185f5e4.webp";
 import projectsContent from "../content/projects.json";
 
 type TagVariant = "primary" | "secondary" | "tertiary" | "purple" | "red";

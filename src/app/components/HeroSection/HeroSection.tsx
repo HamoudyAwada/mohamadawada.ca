@@ -22,7 +22,7 @@ export default function HeroSection({
       <div className={styles.container}>
         <div className={styles.imageWrapper}>
           <div className={styles.imageContainer}>
-            <FadeInImage src={image} alt="Mohamad Awada" className={styles.image} />
+            <FadeInImage src={image} alt="Mohamad Awada" className={styles.image} loading="eager" />
           </div>
         </div>
 

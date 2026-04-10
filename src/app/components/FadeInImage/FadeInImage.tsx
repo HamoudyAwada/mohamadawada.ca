@@ -5,9 +5,10 @@ interface FadeInImageProps {
   src: string;
   alt: string;
   className?: string;
+  loading?: "lazy" | "eager";
 }
 
-export default function FadeInImage({ src, alt, className }: FadeInImageProps) {
+export default function FadeInImage({ src, alt, className, loading = "lazy" }: FadeInImageProps) {
   const { ref, inView } = useInView();
 
   return (
@@ -15,6 +16,7 @@ export default function FadeInImage({ src, alt, className }: FadeInImageProps) {
       ref={ref as React.RefObject<HTMLImageElement>}
       src={src}
       alt={alt}
+      loading={loading}
       className={`${styles.image} ${inView ? styles.visible : ""} ${className ?? ""}`}
     />
   );

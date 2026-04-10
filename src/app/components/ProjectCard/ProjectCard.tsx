@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import Tag from "../Tag";
 import Divider from "../Divider";
 import FadeInImage from "../FadeInImage";
-import svgPaths from "../../../imports/ProjectGrid/svg-ro8ag74anu";
+import { arrowRight } from "../../data/svgPaths";
 import styles from "./ProjectCard.module.css";
 
 interface ProjectCardProps {
@@ -17,7 +17,7 @@ interface ProjectCardProps {
 function IconRight() {
   return (
     <svg width="16" height="16" viewBox="0 0 18.0006 15.0008" fill="none">
-      <path d={svgPaths.p269480} fill="currentColor" />
+      <path d={arrowRight} fill="currentColor" />
     </svg>
   );
 }
