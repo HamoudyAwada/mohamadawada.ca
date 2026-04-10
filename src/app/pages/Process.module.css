@@ -37,7 +37,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h6);
   font-weight: var(--font-weight-medium);
-  color: #000000;
+  color: var(--foreground);
   margin: 0;
   line-height: normal;
 }
@@ -114,32 +114,7 @@
 }
 
 .ctaSection {
-  display: flex;
-  gap: 24px;
   margin-top: 32px;
-}
-
-.ctaButton {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  font-family: var(--font-family-body);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-bold);
-  padding: 16px 24px;
-  border-radius: var(--radius-button);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  transition: opacity 0.2s ease;
-  white-space: nowrap;
-  line-height: normal;
-  box-shadow: 0px 6px 3px 0px rgba(0, 0, 0, 0.3);
-}
-
-.ctaButton:hover {
-  opacity: 0.9;
 }
 
 /* Right Column - Diagram */

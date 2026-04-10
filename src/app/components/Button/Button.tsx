@@ -47,15 +47,7 @@ export default function Button({
 
   if (href && !disabled) {
     return (
-      <Link 
-        to={href} 
-        className={className} 
-        style={{ 
-          width: fullWidth ? '100%' : 'fit-content', 
-          justifyContent: fullWidth ? 'center' : 'flex-start',
-          marginBottom: '10px'
-        }}
-      >
+      <Link to={href} className={className}>
         {content}
       </Link>
     );

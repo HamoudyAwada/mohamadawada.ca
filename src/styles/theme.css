@@ -98,6 +98,22 @@
   --tag-secondary-foreground: rgba(242, 242, 242, 1.00);
   --tag-tertiary: rgba(140, 226, 116, 1.00);
   --tag-tertiary-foreground: rgba(25, 83, 9, 1.00);
+  --tag-purple: rgba(77, 44, 225, 1.00);
+  --tag-purple-foreground: rgba(242, 242, 242, 1.00);
+  --tag-red: rgba(70, 0, 0, 1.00);
+  --tag-red-foreground: rgba(242, 242, 242, 1.00);
+  /* Dark surface (footer, contact panel) */
+  --surface-dark: rgba(5, 20, 14, 1.00);
+  --on-surface-dark-muted: rgba(91, 211, 163, 1.00);
+  /* Footer link states */
+  --footer-link: rgba(132, 222, 186, 1.00);
+  --footer-link-hover: rgba(168, 245, 208, 1.00);
+  --footer-link-active: rgba(78, 184, 138, 1.00);
+  /* Button interaction states */
+  --primary-hover: rgba(38, 125, 94, 1.00);
+  --primary-active: rgba(30, 104, 80, 1.00);
+  --secondary-hover: rgba(14, 58, 99, 1.00);
+  --secondary-active: rgba(9, 40, 64, 1.00);
 }
 
 .dark {

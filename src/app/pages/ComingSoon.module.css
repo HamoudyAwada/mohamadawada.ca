@@ -49,6 +49,6 @@
 }
 
 .link:hover {
-  color: #267d5e;
+  color: var(--primary-hover);
   text-decoration: underline;
 }

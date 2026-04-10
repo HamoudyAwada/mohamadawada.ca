@@ -43,13 +43,13 @@
 }
 
 .primary:hover {
-  background-color: #267d5e;
+  background-color: var(--primary-hover);
   box-shadow: 0px 6px 3px 0px rgba(0, 0, 0, 0.3);
   transform: translateY(-1px);
 }
 
 .primary:active {
-  background-color: #1e6850;
+  background-color: var(--primary-active);
   transform: translateY(0);
 }
 
@@ -59,13 +59,13 @@
 }
 
 .secondary:hover {
-  background-color: #0e3a63;
-  box-shadow: 0 4px 12px rgba(11, 46, 80, 0.3);
+  background-color: var(--secondary-hover);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--secondary) 30%, transparent);
   transform: translateY(-1px);
 }
 
 .secondary:active {
-  background-color: #092840;
+  background-color: var(--secondary-active);
   transform: translateY(0);
 }
 
@@ -76,11 +76,11 @@
 }
 
 .ghost:hover {
-  background-color: rgba(11, 46, 80, 0.05);
+  background-color: color-mix(in srgb, var(--secondary) 5%, transparent);
 }
 
 .ghost:active {
-  background-color: rgba(11, 46, 80, 0.1);
+  background-color: color-mix(in srgb, var(--secondary) 10%, transparent);
 }
 
 /* States */
@@ -92,6 +92,7 @@
 
 .fullWidth {
   width: 100%;
+  justify-content: center;
 }
 
 /* Icon */

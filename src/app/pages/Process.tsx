@@ -1,8 +1,8 @@
 import processDiagram from '../../assets/0191a5b5151fbbffdac8e9a28bb15384029781f4.png'
-import { Link } from "react-router";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
+import Button from "../components/Button";
 import styles from "./Process.module.css";
 
 export default function Process() {
@@ -51,9 +51,9 @@ export default function Process() {
                 </div>
 
                 <div className={styles.ctaSection}>
-                  <Link to="/contact" className={styles.ctaButton}>
+                  <Button variant="primary" size="large" href="/contact">
                     Let's Work Together
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>

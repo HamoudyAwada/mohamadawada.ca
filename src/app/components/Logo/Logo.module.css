@@ -38,5 +38,5 @@
   font-family: var(--font-family-body);
   font-size: var(--text-base);
   font-weight: var(--font-weight-normal);
-  color: #5bd3a3;
+  color: var(--on-surface-dark-muted);
 }

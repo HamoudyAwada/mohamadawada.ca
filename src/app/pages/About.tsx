@@ -1,9 +1,9 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
+import Divider from "../components/Divider";
 import Tag from "../components/Tag";
 import styles from "./About.module.css";
-import { Link } from "react-router";
 import { ArrowRight, CheckCircle2, Package, TrendingUp } from "lucide-react";
 
 // Import images from Figma
@@ -27,24 +27,20 @@ export default function About() {
           {/* Hero Section */}
           <section className={styles.heroSection}>
             <div className={styles.heroContent}>
-              <h1 className={styles.heroTitle}>
-                <span className={styles.heroTitleDesktop}>Who Is Moe?</span>
-                <span className={styles.heroTitleMobile}>Who Is Moe?</span>
-              </h1>
+              <h1 className={styles.heroTitle}>Who Is Moe?</h1>
               <p className={styles.heroSubtitle}><span className={styles.heroSubtitleDesktop}>This is the space to get an initial look into who I am and if I'd be a good fit for you or your team!</span><span className={styles.heroSubtitleMobile}>This is the space to get an initial look into who I am and if I'd be a good fit for you or your team, or otherwise understand who I am beyond the screen!</span></p>
-              <button onClick={handleSkipToValues} className={styles.heroButton}>
-                <span>Skip To My Design Values</span>
-                <ArrowRight size={16} />
-              </button>
+              <Button
+                variant="primary"
+                size="large"
+                onClick={handleSkipToValues}
+                icon={<ArrowRight size={16} />}
+              >
+                Skip To My Design Values
+              </Button>
             </div>
           </section>
 
-          {/* Divider */}
-          <div className={styles.divider}>
-            <svg width="100%" height="2" fill="none" preserveAspectRatio="none" viewBox="0 0 1314 2">
-              <path d="M1 1H1313" stroke="var(--border)" strokeLinecap="round" strokeWidth="2" />
-            </svg>
-          </div>
+          <Divider />
 
           {/* Who I Am As A Designer Section */}
           <section className={styles.designerSection}>
@@ -76,12 +72,7 @@ export default function About() {
             </div>
           </section>
 
-          {/* Divider */}
-          <div className={styles.divider}>
-            <svg width="100%" height="2" fill="none" preserveAspectRatio="none" viewBox="0 0 1314 2">
-              <path d="M1 1H1313" stroke="var(--border)" strokeLinecap="round" strokeWidth="2" />
-            </svg>
-          </div>
+          <Divider />
 
           {/* Design Values Section */}
           <section id="design-values" className={styles.valuesSection}>
@@ -108,7 +99,7 @@ export default function About() {
               <div className={styles.valueCard}>
                 <div className={styles.valueHeader}>
                   <div className={styles.valueIcon}>
-                    <CheckCircle2 size={24} color="white" />
+                    <CheckCircle2 size={24} color="var(--primary-foreground)" />
                   </div>
                   <h3 className={styles.valueName}>Systems Thinking</h3>
                 </div>
@@ -129,16 +120,16 @@ export default function About() {
               <div className={styles.valueCard}>
                 <div className={styles.valueHeader}>
                   <div className={styles.valueIcon}>
-                    <Package size={24} color="white" />
+                    <Package size={24} color="var(--primary-foreground)" />
                   </div>
                   <h3 className={styles.valueName}>Product Design</h3>
                 </div>
-                <div className={styles.valueDivider} style={{ marginTop: '-12px' }}>
+                <div className={styles.valueDivider}>
                   <svg width="100%" height="2" fill="none" preserveAspectRatio="none" viewBox="0 0 315 2">
                     <path d="M1 1H314" stroke="var(--accent)" strokeLinecap="round" strokeWidth="2" />
                   </svg>
                 </div>
-                <p className={styles.valueDescription} style={{ marginTop: '4px' }}>
+                <p className={styles.valueDescription}>
                   End-to-end product design from concept to handoff. I build interaction patterns, component libraries, and high-fidelity prototypes that developers can actually build from. My work survives contact with reality.
                 </p>
                 <div className={styles.valueTags}>
@@ -153,7 +144,7 @@ export default function About() {
               <div className={styles.valueCard}>
                 <div className={styles.valueHeader}>
                   <div className={styles.valueIcon}>
-                    <TrendingUp size={24} color="white" />
+                    <TrendingUp size={24} color="var(--primary-foreground)" />
                   </div>
                   <h3 className={styles.valueName}>UX Research</h3>
                 </div>

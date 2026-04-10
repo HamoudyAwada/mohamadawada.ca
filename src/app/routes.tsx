@@ -5,7 +5,6 @@ import RootLayout from "./components/RootLayout";
 
 const Home = lazy(() => import("./pages/Home"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon"));
-const ComponentShowcase = lazy(() => import("./pages/ComponentShowcase"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Process = lazy(() => import("./pages/Process"));
 const About = lazy(() => import("./pages/About"));
@@ -20,14 +19,6 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageSkeleton variant="home" />}>
             <Home />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/components",
-        element: (
-          <Suspense fallback={<PageSkeleton variant="generic" />}>
-            <ComponentShowcase />
           </Suspense>
         ),
       },

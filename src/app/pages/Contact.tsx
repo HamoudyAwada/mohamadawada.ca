@@ -218,12 +218,11 @@ export default function Contact() {
 
               {/* Submit Button */}
               <div className={styles.submitWrapper}>
-                <Button 
-                  type="submit" 
-                  variant="primary" 
-                  size="large" 
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="large"
                   disabled={!isFormValid || isSubmitting}
-                  style={{ paddingTop: '8px', paddingBottom: '8px' }}
                 >
                   {isSubmitting ? "Sending..." : "Submit Form"}
                 </Button>
