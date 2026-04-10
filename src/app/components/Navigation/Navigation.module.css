@@ -81,7 +81,7 @@
   transition: all 0.3s ease;
 }
 
-/* Mobile overlay */
+/* ── Mobile overlay ─────────────────────────────────────── */
 .mobileOverlay {
   position: fixed;
   inset: 0;
@@ -97,12 +97,12 @@
   transform: translateX(0);
 }
 
+/* Header row — logo + close icon, no bottom border */
 .overlayHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
-  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
 }
 
 .closeButton {
@@ -116,68 +116,60 @@
   justify-content: center;
 }
 
-.overlayContent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 24px 24px 32px;
-}
-
-.mobileContentWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
+/* Nav links */
 .mobileNav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  padding: 0;
+  margin-top: 8px;
 }
 
 .mobileNavLink {
-  padding: 8px 16px;
+  padding: 16px 16px;
   font-family: var(--font-family-heading);
-  font-size: 32px;
+  font-size: var(--text-h5);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
   text-decoration: none;
-  transition: color 0.2s ease;
-  position: relative;
+  white-space: nowrap;
   display: flex;
   align-items: center;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
 .mobileNavLink:hover {
   color: var(--primary);
 }
 
-.mobileNavLink.active {
+.mobileNavLinkActive {
   color: var(--foreground);
 }
 
-.mobileNavLink.active::before {
+.mobileNavLinkActive::before {
   content: '';
   position: absolute;
   left: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: calc(100% + 4px);
-  background-color: var(--accent);
-  border-radius: 2px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--primary);
+  border-radius: 1px;
 }
 
+/* Horizontal divider */
 .mobileDivider {
-  padding: 8px 0;
-  width: 100%;
+  width: calc(100% - 32px);
+  height: 1px;
+  background-color: var(--border);
+  margin: 8px 16px;
 }
 
+/* Social / external links */
 .mobileSocialLinks {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
 }
 
 .mobileSocialLink {
@@ -186,7 +178,7 @@
   gap: 16px;
   padding: 8px 16px;
   font-family: var(--font-family-body);
-  font-size: 20px;
+  font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
   color: var(--foreground);
   text-decoration: underline;
@@ -197,13 +189,19 @@
 
 .mobileSocialLink:hover {
   color: var(--primary);
+  text-decoration-color: var(--primary);
 }
 
 .mobileSocialLink svg {
   flex-shrink: 0;
 }
 
-/* Responsive */
+/* Contact Me button */
+.mobileButton {
+  padding: 16px 16px 32px;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 768px) {
   .navContainer {
     padding: 16px 24px;
