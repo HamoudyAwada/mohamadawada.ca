@@ -67,6 +67,7 @@ export default function About() {
 
           {/* Who I Am Outside Of Design Section */}
           <section className={styles.outsideDesignSection}>
+            <h2 className={styles.outsideDesignTitle}>{outsideDesignSection.title}</h2>
             <div className={styles.outsideDesignImage}>
               <FadeInImage
                 src={imgOutsideDesignPhoto}
@@ -74,13 +75,10 @@ export default function About() {
                 className={styles.outsideDesignPhoto}
               />
             </div>
-            <div className={styles.outsideDesignContent}>
-              <h2 className={styles.sectionTitle}>{outsideDesignSection.title}</h2>
-              <div className={styles.outsideDesignText}>
-                {outsideDesignSection.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
+            <div className={styles.outsideDesignText}>
+              {outsideDesignSection.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
           </section>
 

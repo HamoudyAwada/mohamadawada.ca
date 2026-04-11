@@ -129,14 +129,28 @@
   padding: 0 64px;
   display: grid;
   grid-template-columns: 449px 1fr;
-  gap: 64px;
+  column-gap: 64px;
+  row-gap: 24px;
   align-items: start;
+}
+
+.outsideDesignTitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+  margin: 0;
+  line-height: normal;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .outsideDesignImage {
   width: 449px;
   height: 541px;
   flex-shrink: 0;
+  grid-column: 1;
+  grid-row: 1 / 3;
 }
 
 .outsideDesignImage img {
@@ -146,16 +160,12 @@
   display: block;
 }
 
-.outsideDesignContent {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
 .outsideDesignText {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .outsideDesignText p {
@@ -336,26 +346,20 @@
   }
 
   .designerSection {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    display: block;
     padding: 0 24px;
-    row-gap: 48px;
-    column-gap: 0;
   }
 
   .sectionTitle {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
     text-align: center;
+    margin-bottom: 48px;
   }
 
   .designerImage {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
     width: 85vw;
     max-width: 85vw;
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto 48px;
   }
 
   .designerImage img {
@@ -365,21 +369,24 @@
   }
 
   .designerText {
-    grid-column: 1 !important;
-    grid-row: 3 !important;
+    /* natural block flow */
   }
 
   .outsideDesignSection {
-    grid-template-columns: 1fr;
+    display: block;
     padding: 0 24px;
-    gap: 48px;
+  }
+
+  .outsideDesignTitle {
+    text-align: center;
+    margin-bottom: 48px;
   }
 
   .outsideDesignImage {
     width: 85vw;
     max-width: 85vw;
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto 48px;
   }
 
   .outsideDesignImage img,
@@ -441,41 +448,35 @@
   }
 
   .designerSection {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    display: block;
     padding: 0 32px;
-    row-gap: 48px;
-    column-gap: 0;
   }
 
   .sectionTitle {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
+    margin-bottom: 48px;
   }
 
   .designerImage {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
     width: 100%;
     max-width: 463px;
-    margin: 0 auto;
-  }
-
-  .designerText {
-    grid-column: 1 !important;
-    grid-row: 3 !important;
+    height: auto;
+    margin: 0 auto 48px;
   }
 
   .outsideDesignSection {
-    grid-template-columns: 1fr;
+    display: block;
     padding: 0 32px;
-    gap: 48px;
+  }
+
+  .outsideDesignTitle {
+    margin-bottom: 48px;
   }
 
   .outsideDesignImage {
     width: 100%;
     max-width: 449px;
-    margin: 0 auto;
+    height: auto;
+    margin: 0 auto 48px;
   }
 
   .valuesSection {
