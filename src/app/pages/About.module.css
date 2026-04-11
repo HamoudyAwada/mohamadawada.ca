@@ -454,6 +454,7 @@
 
   .sectionTitle {
     margin-bottom: 48px;
+    text-align: center;
   }
 
   .designerImage {
@@ -470,6 +471,7 @@
 
   .outsideDesignTitle {
     margin-bottom: 48px;
+    text-align: center;
   }
 
   .outsideDesignImage {
