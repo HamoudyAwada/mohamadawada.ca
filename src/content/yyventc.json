@@ -18,7 +18,7 @@
   "overview": {
     "title": "Overview",
     "paragraphs": [
-      "YYventC is a community-first, mobile event discovery platform designed exclusively for Calgary. The name is a play on "YYC" (Calgary's airport code) and "events," because this app was built for Calgarians, by Calgarians.",
+      "YYventC is a community-first, mobile event discovery platform designed exclusively for Calgary. The name is a play on \"YYC\" (Calgary's airport code) and \"events,\" because this app was built for Calgarians, by Calgarians.",
       "My role on the team spanned the full design lifecycle — from initial problem framing and research synthesis all the way through information architecture, interaction design, and prototype refinement for our final MVP presentation."
     ]
   },
@@ -49,7 +49,7 @@
     "findings": [
       "The respondent base skewed young — 68.8% were between 18 and 23, and 56.3% identified as students. This aligned well with our target audience.",
       "On discovery, 90.6% said they find events through social media, and 84.4% through friends and family. Only 15.6% were searching directly on event apps. Ticketmaster was the most used platform at 75%, followed by Eventbrite at 56.3% and Showpass at 50% — yet these platforms are built for ticketed, large-scale events, not the local and community-run experiences our users were actually looking for.",
-      "62.5% of respondents said they had missed an event they wanted to attend. When asked why, the answers were consistent: they found out too late, couldn't find enough information, or the app they was using didn't surface things relevant to them.",
+      "62.5% of respondents said they had missed an event they wanted to attend. When asked why, the answers were consistent: they found out too late, couldn't find enough information, or the app they were using didn't surface things relevant to them.",
       "When it came to supporting local creators, 81.3% said it was either very important or somewhat important to them, and 81.2% said they were very likely or somewhat likely to use YYventC to discover smaller, local, community-run events specifically."
     ],
     "personas": {
@@ -88,13 +88,13 @@
         { "name": "Categories", "description": "Organized browsing by event type, kept simple and uncluttered" },
         { "name": "Community", "description": "Local creators, small business events, neighbourhood spotlights" }
       ],
-      "imageCaption": "The Discover feed surfaces personalized, location-aware events with simple category filters and a "Popular Near You" section, keeping the experience focused and easy to scan."
+      "imageCaption": "The Discover feed surfaces personalized, location-aware events with simple category filters and a \"Popular Near You\" section, keeping the experience focused and easy to scan."
     },
     "signedIn": {
       "heading": "Signed-In vs. Signed-Out Flows",
       "paragraphs": [
         "I designed the separation between the signed-in and signed-out user experiences. This matters more than it might seem at first. A signed-out user landing on YYventC should still be able to browse and feel the value of the app — but a signed-in user gets something much richer: a personalized feed, friends' activity, saved events, and push notifications.",
-        "Getting this right meant thinking carefully about what information to surface at each state, what gates to put in place without making them feel like walls, and how to make the sign-up moment feel genuinely worth it. The welcome screen — "We're glad you're here. Enjoy the moment with us." — was intentionally warm for exactly that reason.",
+        "Getting this right meant thinking carefully about what information to surface at each state, what gates to put in place without making them feel like walls, and how to make the sign-up moment feel genuinely worth it. The welcome screen — \"We're glad you're here. Enjoy the moment with us.\" — was intentionally warm for exactly that reason.",
         "The social layer of the app was one of the features I helped refine most carefully. The Friends section at the top of the Yvents feed shows your network's faces and activity at a glance, while the feed itself surfaces posts from real attendees — making the experience feel like a community rather than a catalogue."
       ],
       "imageCaption": "The Friends and Yvents feed shows where people in your network are going and what they're saying about it — turning event discovery into a social experience rather than a solo search."
@@ -112,11 +112,11 @@
     "items": [
       {
         "heading": "Keeping It Simple on Purpose",
-        "body": "One of the strongest pieces of feedback we received early on was that scope of events can feel overwhelming. Users didn't want another app that threw everything at them — and our survey reinforced this, with respondents explicitly calling out "repetitive event suggestions" and apps that feel "cluttered" as top frustrations. Every design decision we made pushed back against that. The navigation is three items. The filter system is built around affordability, location, date, and interests — practical variables, not endless toggles."
+        "body": "One of the strongest pieces of feedback we received early on was that scope of events can feel overwhelming. Users didn't want another app that threw everything at them — and our survey reinforced this, with respondents explicitly calling out \"repetitive event suggestions\" and apps that feel \"cluttered\" as top frustrations. Every design decision we made pushed back against that. The navigation is three items. The filter system is built around affordability, location, date, and interests — practical variables, not endless toggles."
       },
       {
         "heading": "Verification and Trust",
-        "body": "Our survey responses showed real skepticism about the reliability of event information. One respondent wrote: "I just rely on creators. I am not sure if it is sponsored so I am hoping to see something that is not biased." We addressed this by designing verified organizer badges and venue confirmation indicators — lightweight credibility signals that don't clutter the experience but meaningfully raise trust."
+        "body": "Our survey responses showed real skepticism about the reliability of event information. One respondent wrote: \"I just rely on creators. I am not sure if it is sponsored so I am hoping to see something that is not biased.\" We addressed this by designing verified organizer badges and venue confirmation indicators — lightweight credibility signals that don't clutter the experience but meaningfully raise trust."
       },
       {
         "heading": "Community as a Feature, Not an Afterthought",
@@ -136,7 +136,7 @@
       "A signed-in and signed-out flow separation with a warm onboarding experience",
       "Smooth push transitions and consistent interaction patterns throughout"
     ],
-    "outcome": "Usability testing confirmed the design was clean and easy to navigate, and the community hub was singled out as distinctively different from competitors. Feedback also pointed toward adding more social nudges — things like "Your friends are going to [event]. Join them?" — which validated the direction we were already heading."
+    "outcome": "Usability testing confirmed the design was clean and easy to navigate, and the community hub was singled out as distinctively different from competitors. Feedback also pointed toward adding more social nudges — things like \"Your friends are going to this event. Join them?\" — which validated the direction we were already heading."
   },
   "reflection": {
     "title": "Reflection",
