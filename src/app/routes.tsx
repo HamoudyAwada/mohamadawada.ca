@@ -16,6 +16,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Process = lazy(() => import("./pages/Process"));
 const About = lazy(() => import("./pages/About"));
 const Work = lazy(() => import("./pages/Work"));
+const YYventC = lazy(() => import("./pages/YYventC"));
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageSkeleton variant="generic" />}>
             <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/my-work/yyventc",
+        element: (
+          <Suspense fallback={<PageSkeleton variant="generic" />}>
+            <YYventC />
           </Suspense>
         ),
       },

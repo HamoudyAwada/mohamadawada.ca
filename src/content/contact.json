@@ -7,9 +7,9 @@
       "firstName":  { "label": "First Name",           "placeholder": "eg.John" },
       "lastName":   { "label": "Last Name",            "placeholder": "eg.Doe" },
       "email":      { "label": "Email Address",        "placeholder": "eg.name@email.com" },
-      "topic":      { "label": "Whats This About?",    "placeholder": "eg.Pick a topic" },
-      "phone":      { "label": "Phone Number",         "placeholder": "eg.+1 (123) 456-7890" },
-      "message":    { "label": "Message",              "placeholder": "eg.Write your message here..." },
+      "topic":      { "label": "Whats This About?",    "placeholder": "Pick a topic" },
+      "phone":      { "label": "Phone Number",         "placeholder": "+1 (123) 456-7890" },
+      "message":    { "label": "Message",              "placeholder": "Write your message here..." },
       "company":    { "label": "Company/Organization", "placeholder": "eg.ACME Inc." }
     },
     "topicOptions": [
@@ -22,7 +22,7 @@
     ],
     "submitButton":     "Submit Form",
     "submittingButton": "Sending...",
-    "successMessage":   "Thank you! Your message has been sent successfully.",
+    "successMessage":   "Thank you! Your message has been sent successfully. I'll get back to you as soon as I can!",
     "errorMessage":     "Sorry, there was an error sending your message. Please try again."
   }
 }

@@ -38,19 +38,19 @@
     },
     {
       "slug": "yyventc",
-      "imageKey": "enmax",
+      "imageKey": "yyventc",
       "title": "YYventC",
       "description": "A community-driven events platform built to connect people in Calgary with local experiences.",
-      "coverImageAlt": "YYventC",
-      "imageType": "cropped",
-      "imageFirst": true,
-      "badge": "Personal Project",
+      "coverImageAlt": "YYventC Discover Page",
+      "imageType": "square",
+      "imageFirst": false,
+      "badge": "Gatherly · Design Studio 1",
       "tags": [
         { "label": "Product Design", "variant": "primary" },
         { "label": "UX Research",    "variant": "secondary" }
       ],
       "featured": false,
-      "status": "coming-soon"
+      "status": "published"
     }
   ]
 }
