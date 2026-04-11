@@ -145,10 +145,6 @@
     gap: 48px;
   }
 
-  .rightColumn {
-    order: -1;
-  }
-
   .diagramContainer {
     width: 100%;
     max-width: 480px;
@@ -202,6 +198,7 @@
 
   .sectionTitle {
     font-size: 40px;
+    text-align: center;
   }
 
   .sectionSubtitle {

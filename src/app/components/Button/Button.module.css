@@ -111,6 +111,19 @@
   height: 100%;
 }
 
+/* Large buttons get a bigger icon on desktop */
+.large .icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .large .icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 .text {
   flex-shrink: 0;
 }
