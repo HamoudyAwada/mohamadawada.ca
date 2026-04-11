@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--surface-dark);
   width: 100%;
-  padding: 96px 64px;
+  padding: 64px 64px;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -300,7 +300,7 @@
 
 @media (min-width: 1201px) {
   .footer {
-    padding: 96px 64px;
+    padding: 64px 64px;
   }
 
   .content {
