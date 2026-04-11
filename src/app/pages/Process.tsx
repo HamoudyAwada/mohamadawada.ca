@@ -34,6 +34,15 @@ export default function Process() {
                 <h2 className={styles.sectionTitle}>{content.title}</h2>
                 <p className={styles.sectionSubtitle}>{content.subtitle}</p>
 
+                {/* Mobile-only diagram — appears between subtitle and body copy */}
+                <div className={styles.mobileDiagram}>
+                  <FadeInImage
+                    src={processDiagram}
+                    alt="Lean UX Process Diagram showing the cycle of Think, Make, and Check with Lean UX at the center"
+                    className={styles.diagram}
+                  />
+                </div>
+
                 <div className={styles.bodyText}>
                   {content.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
@@ -48,7 +57,7 @@ export default function Process() {
               </div>
             </div>
 
-            {/* Right Column - Diagram */}
+            {/* Right Column - Diagram (desktop only) */}
             <div className={styles.rightColumn}>
               <div className={styles.diagramContainer}>
                 <FadeInImage
