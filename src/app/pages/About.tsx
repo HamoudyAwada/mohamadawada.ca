@@ -54,16 +54,14 @@ export default function About() {
 
           {/* Who I Am As A Designer Section */}
           <section className={styles.designerSection}>
-            <div className={styles.designerContent}>
-              <h2 className={styles.sectionTitle}>{designerSection.title}</h2>
-              <div className={styles.designerImage}>
-                <FadeInImage src={imgDesignerPhoto} alt="Mohamad Awada as a designer" />
-              </div>
-              <div className={styles.designerText}>
-                {designerSection.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
+            <h2 className={styles.sectionTitle}>{designerSection.title}</h2>
+            <div className={styles.designerImage}>
+              <FadeInImage src={imgDesignerPhoto} alt="Mohamad Awada as a designer" />
+            </div>
+            <div className={styles.designerText}>
+              {designerSection.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
           </section>
 

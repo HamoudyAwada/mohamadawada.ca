@@ -78,9 +78,6 @@
   align-items: start;
 }
 
-.designerContent {
-  display: contents;
-}
 
 .sectionTitle {
   font-family: var(--font-family-heading);
