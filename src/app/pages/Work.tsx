@@ -22,9 +22,6 @@ export default function Work() {
               <h1 className={styles.heroTitle}>{hero.title}</h1>
               <p className={styles.heroDescription}>{hero.description}</p>
             </div>
-            <Button variant="primary" size="large" href={hero.cta.href}>
-              {hero.cta.label}
-            </Button>
           </div>
         </section>
 
