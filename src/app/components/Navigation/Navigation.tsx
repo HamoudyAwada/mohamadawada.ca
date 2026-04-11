@@ -175,7 +175,7 @@ export default function Navigation() {
 
         {/* Contact button */}
         <div className={styles.mobileButton}>
-          <Button variant="primary" size="medium" href="/contact" fullWidth>
+          <Button variant="primary" size="medium" href="/contact">
             {navContent.contactButton}
           </Button>
         </div>
