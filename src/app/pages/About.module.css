@@ -336,18 +336,16 @@
   }
 
   .designerSection {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0 24px;
     gap: 48px;
-    grid-template-areas:
-      "title"
-      "image"
-      "text";
   }
 
   .sectionTitle {
     text-align: center;
-    grid-area: title;
+    width: 100%;
   }
 
   .designerImage {
@@ -355,7 +353,6 @@
     max-width: 85vw;
     height: auto;
     margin: 0 auto;
-    grid-area: image;
   }
 
   .designerImage img {
@@ -365,7 +362,7 @@
   }
 
   .designerText {
-    grid-area: text;
+    width: 100%;
   }
 
   .outsideDesignSection {
@@ -440,28 +437,21 @@
   }
 
   .designerSection {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0 32px;
     gap: 48px;
-    grid-template-areas:
-      "title"
-      "image"
-      "text";
-  }
-
-  .sectionTitle {
-    grid-area: title;
   }
 
   .designerImage {
     width: 100%;
     max-width: 463px;
     margin: 0 auto;
-    grid-area: image;
   }
 
   .designerText {
-    grid-area: text;
+    width: 100%;
   }
 
   .outsideDesignSection {
