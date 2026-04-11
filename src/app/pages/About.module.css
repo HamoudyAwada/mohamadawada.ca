@@ -343,25 +343,28 @@
     gap: 48px;
   }
 
-  .sectionTitle {
+  .designerSection .sectionTitle {
+    order: 1;
     text-align: center;
     width: 100%;
   }
 
-  .designerImage {
+  .designerSection .designerImage {
+    order: 2;
     width: 85vw;
     max-width: 85vw;
     height: auto;
     margin: 0 auto;
   }
 
-  .designerImage img {
+  .designerSection .designerImage img {
     width: 100%;
     height: auto;
     object-fit: contain;
   }
 
-  .designerText {
+  .designerSection .designerText {
+    order: 3;
     width: 100%;
   }
 
@@ -444,13 +447,19 @@
     gap: 48px;
   }
 
-  .designerImage {
+  .designerSection .sectionTitle {
+    order: 1;
+  }
+
+  .designerSection .designerImage {
+    order: 2;
     width: 100%;
     max-width: 463px;
     margin: 0 auto;
   }
 
-  .designerText {
+  .designerSection .designerText {
+    order: 3;
     width: 100%;
   }
 
