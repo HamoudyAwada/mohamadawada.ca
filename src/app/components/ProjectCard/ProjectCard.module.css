@@ -115,14 +115,26 @@
   margin-top: auto;
 }
 
+/* Outer row — badge lives here so it is never clipped */
+.tagsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Inner container — clips tags that don't fit, shrinks to leave room for badge */
 .tags {
   display: flex;
   gap: 12px;
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
+  flex: 1;
+  min-width: 0;
 }
 
+/* Always rendered outside the clipping container */
 .overflowBadge {
   font-family: var(--font-family-body);
   font-size: var(--text-label);

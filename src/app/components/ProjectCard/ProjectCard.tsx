@@ -1,3 +1,4 @@
+import { useRef, useState, useLayoutEffect } from "react";
 import { Link } from "react-router";
 import Tag from "../Tag";
 import Divider from "../Divider";
@@ -5,7 +6,10 @@ import FadeInImage from "../FadeInImage";
 import { arrowRight } from "../../data/svgPaths";
 import styles from "./ProjectCard.module.css";
 
-const MAX_VISIBLE_TAGS = 3;
+// Gap between tags (must match CSS gap on .tags)
+const TAG_GAP = 12;
+// Width reserved for "+N" badge + gap when checking if more tags follow
+const BADGE_RESERVE = 32;
 
 interface ProjectCardProps {
   image: string;
@@ -37,6 +41,63 @@ export default function ProjectCard({
   href,
 }: ProjectCardProps) {
   const isSquare = imageType === "square";
+
+  // --- Responsive tag overflow ---
+  // Start by showing all tags so we can measure their widths before first paint.
+  const [visibleCount, setVisibleCount] = useState(tags.length);
+  const tagsRef = useRef<HTMLDivElement>(null);
+  // Store individual tag widths so ResizeObserver can recompute without
+  // needing all tags to be rendered.
+  const tagWidths = useRef<number[]>([]);
+
+  useLayoutEffect(() => {
+    const el = tagsRef.current;
+    if (!el) return;
+
+    const compute = (containerWidth: number, widths: number[]) => {
+      let used = 0;
+      let count = 0;
+      for (let i = 0; i < widths.length; i++) {
+        const gap = i > 0 ? TAG_GAP : 0;
+        // Reserve badge space only when this isn't potentially the last tag
+        const reserve = count < widths.length - 1 ? BADGE_RESERVE : 0;
+        if (used + gap + widths[i] + reserve <= containerWidth) {
+          used += gap + widths[i];
+          count = i + 1;
+        } else {
+          break;
+        }
+      }
+      return Math.max(1, count);
+    };
+
+    const measure = () => {
+      const containerWidth = el.offsetWidth;
+
+      // When all tags are rendered, capture their widths for future resize events.
+      const items = Array.from(el.children) as HTMLElement[];
+      if (items.length === tags.length) {
+        tagWidths.current = items.map((item) => item.offsetWidth);
+      }
+
+      // Use stored widths if available, otherwise fall back to rendered widths.
+      const widths =
+        tagWidths.current.length === tags.length
+          ? tagWidths.current
+          : items.map((item) => item.offsetWidth);
+
+      if (widths.length > 0) {
+        setVisibleCount(compute(containerWidth, widths));
+      }
+    };
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [tags.length]); // re-run if the tag list changes
+
+  const overflowCount = tags.length - visibleCount;
 
   return (
     <Link to={href} className={styles.card}>
@@ -70,18 +131,21 @@ export default function ProjectCard({
           <div className={styles.dividerWrapper}>
             <Divider />
           </div>
-          <div className={styles.tags}>
-            {tags.slice(0, MAX_VISIBLE_TAGS).map((tag, index) => (
-              <Tag key={index} variant={tag.variant}>
-                {tag.label}
-              </Tag>
-            ))}
-            {tags.length > MAX_VISIBLE_TAGS && (
-              <span className={styles.overflowBadge}>
-                +{tags.length - MAX_VISIBLE_TAGS}
-              </span>
+
+          {/* tagsRow: badge lives outside the clipping container so it's always visible */}
+          <div className={styles.tagsRow}>
+            <div ref={tagsRef} className={styles.tags}>
+              {tags.slice(0, visibleCount).map((tag, index) => (
+                <Tag key={index} variant={tag.variant}>
+                  {tag.label}
+                </Tag>
+              ))}
+            </div>
+            {overflowCount > 0 && (
+              <span className={styles.overflowBadge}>+{overflowCount}</span>
             )}
           </div>
+
           <div className={styles.footer}>
             <span className={styles.badge}>{badge}</span>
             <div className={styles.link}>
