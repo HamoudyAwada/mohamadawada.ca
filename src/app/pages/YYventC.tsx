@@ -152,16 +152,16 @@ export default function YYventC() {
               if (sec.image === "events") {
                 return (
                   <div key={sec.heading} className={`${styles.contributionRow} ${styles.contributionRowReverse}`}>
+                    <div className={styles.contributionText}>
+                      <h3 className={styles.subHeading}>{sec.heading}</h3>
+                      <p className={styles.bodyParagraph}>{sec.body}</p>
+                    </div>
                     <div className={styles.phoneImageEvents}>
                       <FadeInImage
                         src={imageMap.events}
                         alt="YYventC Social / Yvents feed — friends activity and attendee posts"
                         className={styles.phoneImg}
                       />
-                    </div>
-                    <div className={styles.contributionText}>
-                      <h3 className={styles.subHeading}>{sec.heading}</h3>
-                      <p className={styles.bodyParagraph}>{sec.body}</p>
                     </div>
                   </div>
                 );
