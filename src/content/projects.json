@@ -46,8 +46,11 @@
       "imageFirst": false,
       "badge": "Gatherly · Design Studio 1",
       "tags": [
-        { "label": "Product Design", "variant": "primary" },
-        { "label": "UX Research",    "variant": "secondary" }
+        { "label": "Product Strategy", "variant": "primary" },
+        { "label": "UX Research",      "variant": "secondary" },
+        { "label": "Product Design",   "variant": "red" },
+        { "label": "Figma",            "variant": "purple" },
+        { "label": "Mobile App",       "variant": "tertiary" }
       ],
       "featured": false,
       "status": "published"

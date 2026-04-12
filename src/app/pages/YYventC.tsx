@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
@@ -8,6 +9,15 @@ import content from "../../content/yyventc.json";
 
 import imgDiscover from "../../assets/yyventc-discover.webp";
 import imgEvents from "../../assets/yyventc-events.webp";
+import imgEnmax from "../../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
+import imgTrumi from "../../assets/ab72dd35391820c5919d41bb47e2f9abe185f5e4.webp";
+
+const imageMap: Record<string, string> = {
+  discover: imgDiscover,
+  events: imgEvents,
+  enmax: imgEnmax,
+  trumi: imgTrumi,
+};
 
 export default function YYventC() {
   return (
@@ -19,9 +29,10 @@ export default function YYventC() {
         {/* ── Hero ─────────────────────────────────────────── */}
         <section className={styles.heroSection}>
           <div className={styles.heroInner}>
-            <span className={styles.badge}>{content.hero.badge}</span>
-            <h1 className={styles.heroTitle}>{content.hero.title}</h1>
-            <p className={styles.heroSubtitle}>{content.hero.subtitle}</p>
+            <div className={styles.heroText}>
+              <h1 className={styles.heroTitle}>{content.hero.title}</h1>
+              <p className={styles.heroSubtitle}>{content.hero.subtitle}</p>
+            </div>
             <div className={styles.heroTags}>
               {content.hero.tags.map((t) => (
                 <Tag key={t.label} variant={t.variant as "primary" | "secondary" | "tertiary" | "purple" | "red"}>
@@ -32,9 +43,9 @@ export default function YYventC() {
           </div>
         </section>
 
-        {/* ── Meta ─────────────────────────────────────────── */}
+        {/* ── Meta bar ─────────────────────────────────────── */}
         <section className={styles.metaSection}>
-          <div className={styles.metaGrid}>
+          <div className={styles.metaBar}>
             {content.meta.map((item) => (
               <div key={item.label} className={styles.metaItem}>
                 <span className={styles.metaLabel}>{item.label}</span>
@@ -44,7 +55,7 @@ export default function YYventC() {
           </div>
         </section>
 
-        <Divider />
+        <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Overview ─────────────────────────────────────── */}
         <section className={styles.section}>
@@ -58,7 +69,7 @@ export default function YYventC() {
           </div>
         </section>
 
-        <Divider />
+        <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── The Problem ──────────────────────────────────── */}
         <section className={styles.section}>
@@ -69,187 +80,113 @@ export default function YYventC() {
                 <p key={i}>{p}</p>
               ))}
             </div>
-            <blockquote className={styles.blockquote}>
-              {content.problem.quote}
-            </blockquote>
           </div>
         </section>
 
-        <Divider />
+        {/* ── Callout block ────────────────────────────────── */}
+        <div className={styles.calloutWrap}>
+          <div className={styles.callout}>
+            <div className={styles.calloutAccent} />
+            <p className={styles.calloutText}>{content.problem.callout}</p>
+          </div>
+        </div>
 
-        {/* ── Research & Discovery ─────────────────────────── */}
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── Research ─────────────────────────────────────── */}
         <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.research.title}</h2>
+            <p className={styles.bodyParagraph}>{content.research.intro}</p>
+          </div>
+        </section>
 
-            {/* Stats row */}
-            <div className={styles.statsGrid}>
-              {content.research.stats.map((s) => (
-                <div key={s.label} className={styles.statCard}>
-                  <span className={styles.statValue}>{s.value}</span>
-                  <span className={styles.statLabel}>{s.label}</span>
-                </div>
-              ))}
+        {/* Stats bar — full-width constrained */}
+        <div className={styles.statsWrap}>
+          {content.research.stats.map((s) => (
+            <div key={s.label} className={styles.statCard}>
+              <span className={styles.statValue}>{s.value}</span>
+              <span className={styles.statLabel}>{s.label}</span>
             </div>
+          ))}
+        </div>
 
-            {/* Landscape */}
-            <div className={styles.subSection}>
-              <h3 className={styles.subHeading}>{content.research.landscape.heading}</h3>
-              <p className={styles.bodyParagraph}>{content.research.landscape.body}</p>
-            </div>
+        {/* Qualitative finding */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <p className={styles.bodyParagraph}>
+              {content.research.qualitative.prefix}
+              <strong className={styles.inlineHighlight}>
+                {content.research.qualitative.highlight}
+              </strong>
+              {content.research.qualitative.suffix}
+            </p>
+          </div>
+        </section>
 
-            {/* Survey */}
-            <div className={styles.subSection}>
-              <h3 className={styles.subHeading}>{content.research.survey.heading}</h3>
-              <p className={styles.bodyParagraph}>{content.research.survey.body}</p>
-            </div>
+        <div className={styles.dividerWrap}><Divider /></div>
 
-            {/* Key findings */}
-            <div className={styles.subSection}>
-              <div className={styles.bodyText}>
-                {content.research.findings.map((f, i) => (
-                  <p key={i}>{f}</p>
-                ))}
-              </div>
-            </div>
+        {/* ── My Contributions ─────────────────────────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{content.contributions.title}</h2>
 
-            {/* Personas */}
-            <div className={styles.subSection}>
-              <h3 className={styles.subHeading}>{content.research.personas.heading}</h3>
-              <p className={styles.bodyParagraph}>{content.research.personas.body}</p>
-              <div className={styles.personaGrid}>
-                {content.research.personas.items.map((persona) => (
-                  <div key={persona.name} className={styles.personaCard}>
-                    <h4 className={styles.personaName}>{persona.name}</h4>
-                    <p className={styles.personaDescription}>{persona.description}</p>
+            {content.contributions.sections.map((sec) => {
+              if (sec.image === "discover") {
+                return (
+                  <div key={sec.heading} className={styles.contributionRow}>
+                    <div className={styles.contributionText}>
+                      <h3 className={styles.subHeading}>{sec.heading}</h3>
+                      <p className={styles.bodyParagraph}>{sec.body}</p>
+                    </div>
+                    <div className={styles.phoneImageDiscover}>
+                      <FadeInImage
+                        src={imageMap.discover}
+                        alt="YYventC Discover feed — personalized location-aware event feed"
+                        className={styles.phoneImg}
+                      />
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <Divider />
-
-        {/* ── My Role in the Process ───────────────────────── */}
-        <section className={styles.section}>
-          <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>{content.process.title}</h2>
-
-            {/* IA & Prioritization */}
-            <div className={styles.subSection}>
-              <h3 className={styles.subHeading}>{content.process.ia.heading}</h3>
-              <div className={styles.bodyText}>
-                {content.process.ia.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-            </div>
-
-            {/* Navigation Structure + Discover image */}
-            <div className={styles.subSection}>
-              <h3 className={styles.subHeading}>{content.process.navigation.heading}</h3>
-              <div className={styles.bodyText}>
-                {content.process.navigation.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-
-              {/* Three pillars */}
-              <div className={styles.pillarsGrid}>
-                {content.process.navigation.pillars.map((pillar) => (
-                  <div key={pillar.name} className={styles.pillarCard}>
-                    <span className={styles.pillarName}>{pillar.name}</span>
-                    <span className={styles.pillarDesc}>{pillar.description}</span>
+                );
+              }
+              if (sec.image === "events") {
+                return (
+                  <div key={sec.heading} className={`${styles.contributionRow} ${styles.contributionRowReverse}`}>
+                    <div className={styles.phoneImageEvents}>
+                      <FadeInImage
+                        src={imageMap.events}
+                        alt="YYventC Social / Yvents feed — friends activity and attendee posts"
+                        className={styles.phoneImg}
+                      />
+                    </div>
+                    <div className={styles.contributionText}>
+                      <h3 className={styles.subHeading}>{sec.heading}</h3>
+                      <p className={styles.bodyParagraph}>{sec.body}</p>
+                    </div>
                   </div>
-                ))}
-              </div>
-
-              {/* Discover page image */}
-              <figure className={styles.imageBlock}>
-                <div className={styles.imageWrapper}>
-                  <FadeInImage
-                    src={imgDiscover}
-                    alt="YYventC Discover Page — personalized event feed with location-aware surfacing"
-                    className={styles.caseImage}
-                  />
+                );
+              }
+              return (
+                <div key={sec.heading} className={styles.contributionBlock}>
+                  <h3 className={styles.subHeading}>{sec.heading}</h3>
+                  <p className={styles.bodyParagraph}>{sec.body}</p>
                 </div>
-                <figcaption className={styles.imageCaption}>
-                  {content.process.navigation.imageCaption}
-                </figcaption>
-              </figure>
-            </div>
-
-            {/* Signed-in vs Signed-out + Events image */}
-            <div className={styles.subSection}>
-              <h3 className={styles.subHeading}>{content.process.signedIn.heading}</h3>
-              <div className={styles.bodyText}>
-                {content.process.signedIn.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-
-              {/* Events / Social page image */}
-              <figure className={styles.imageBlock}>
-                <div className={styles.imageWrapper}>
-                  <FadeInImage
-                    src={imgEvents}
-                    alt="YYventC Events and Social Feed — friends activity and community posts"
-                    className={styles.caseImage}
-                  />
-                </div>
-                <figcaption className={styles.imageCaption}>
-                  {content.process.signedIn.imageCaption}
-                </figcaption>
-              </figure>
-            </div>
-
-            {/* Refinement */}
-            <div className={styles.subSection}>
-              <h3 className={styles.subHeading}>{content.process.refinement.heading}</h3>
-              <div className={styles.bodyText}>
-                {content.process.refinement.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-            </div>
+              );
+            })}
           </div>
         </section>
 
-        <Divider />
+        <div className={styles.dividerWrap}><Divider /></div>
 
-        {/* ── Design Decisions ─────────────────────────────── */}
+        {/* ── Outcome ──────────────────────────────────────── */}
         <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>{content.decisions.title}</h2>
-            <div className={styles.decisionsGrid}>
-              {content.decisions.items.map((d) => (
-                <div key={d.heading} className={styles.decisionCard}>
-                  <h3 className={styles.decisionHeading}>{d.heading}</h3>
-                  <p className={styles.decisionBody}>{d.body}</p>
-                </div>
-              ))}
-            </div>
+            <h2 className={styles.sectionTitle}>{content.outcome.title}</h2>
+            <p className={styles.bodyParagraph}>{content.outcome.body}</p>
           </div>
         </section>
 
-        <Divider />
-
-        {/* ── The Final Product ────────────────────────────── */}
-        <section className={styles.section}>
-          <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>{content.finalProduct.title}</h2>
-            <p className={styles.bodyParagraph}>{content.finalProduct.intro}</p>
-            <ul className={styles.deliverablesList}>
-              {content.finalProduct.deliverables.map((d, i) => (
-                <li key={i}>{d}</li>
-              ))}
-            </ul>
-            <p className={styles.bodyParagraph}>{content.finalProduct.outcome}</p>
-          </div>
-        </section>
-
-        <Divider />
+        <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Reflection ───────────────────────────────────── */}
         <section className={styles.section}>
@@ -260,7 +197,34 @@ export default function YYventC() {
                 <p key={i}>{p}</p>
               ))}
             </div>
-            <p className={styles.attribution}>{content.reflection.attribution}</p>
+          </div>
+        </section>
+
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── Check Out These Projects ─────────────────────── */}
+        <section className={styles.relatedSection}>
+          <h2 className={styles.relatedTitle}>Check Out These Projects</h2>
+          <div className={styles.relatedGrid}>
+            {content.relatedProjects.map((proj) => (
+              <Link
+                key={proj.slug}
+                to={`/my-work/${proj.slug}`}
+                className={styles.relatedCard}
+              >
+                <p className={styles.relatedCardTitle}>{proj.title}</p>
+                <div className={styles.relatedCardBody}>
+                  <div className={styles.relatedCardImage}>
+                    <FadeInImage
+                      src={imageMap[proj.imageKey]}
+                      alt={proj.title}
+                      className={styles.relatedCardImg}
+                    />
+                  </div>
+                  <p className={styles.relatedCardDesc}>{proj.description}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 
