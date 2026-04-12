@@ -130,7 +130,6 @@
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
-  flex: 1;
   min-width: 0;
 }
 
