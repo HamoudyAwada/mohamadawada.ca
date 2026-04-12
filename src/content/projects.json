@@ -16,7 +16,7 @@
         { "label": "Claude AI",        "variant": "purple" },
         { "label": "AI",               "variant": "purple" }
       ],
-      "featured": true,
+      "featured": false,
       "status": "coming-soon"
     },
     {
@@ -42,11 +42,12 @@
       "slug": "yyventc",
       "imageKey": "yyventc",
       "title": "YYventC",
-      "description": "A community-driven events platform built to connect people in Calgary with local experiences.",
+      "description": "A community-first, mobile event discovery platform designed exclusively for Calgary.",
       "coverImageAlt": "YYventC Discover Page",
       "imageType": "square",
+      "coverImageBg": "#7B1D2C",
       "imageFirst": false,
-      "badge": "Gatherly · Design Studio 1",
+      "badge": "SAIT - Design Studio",
       "tags": [
         { "label": "Product Strategy", "variant": "primary" },
         { "label": "UX Research",      "variant": "secondary" },
@@ -54,7 +55,7 @@
         { "label": "Figma",            "variant": "purple" },
         { "label": "Mobile App",       "variant": "tertiary" }
       ],
-      "featured": false,
+      "featured": true,
       "status": "published"
     }
   ]
