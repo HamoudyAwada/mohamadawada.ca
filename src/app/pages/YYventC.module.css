@@ -327,12 +327,11 @@
   border-radius: var(--radius-md, 24px);
   padding: 32px 24px;
   box-shadow: 0px 4px 10px 0px rgba(14, 14, 14, 0.25);
-  width: 621px;
-  min-height: 380px;
+  width: 380px;
   flex-shrink: 0;
   text-decoration: none;
   box-sizing: border-box;
-  justify-content: center;
+  align-items: center;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -352,20 +351,23 @@
   text-decoration: underline;
 }
 
+/* Stacked: image then description */
 .relatedCardBody {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 32px;
   align-items: center;
+  width: 100%;
 }
 
+/* Cropped banner image (e.g. ENMAX) */
 .relatedCardImage {
-  flex-shrink: 0;
-  width: 180px;
-  height: 120px;
+  width: 100%;
+  height: 180px;
   border-radius: var(--radius-sm, 16px);
   overflow: hidden;
   contain: paint;
+  flex-shrink: 0;
 }
 
 .relatedCardImg {
@@ -375,36 +377,27 @@
   display: block;
 }
 
-/* Phone mockup images — no clipping, asset includes frame/blob/shadow */
+/* Phone mockup — no container box, image sits freely on the card */
 .relatedCardImageSquare {
-  flex-shrink: 0;
-  width: 180px;
-  height: 120px;
-  border-radius: var(--radius-sm, 16px);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 8px;
-  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .relatedCardImgSquare {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
+  width: 220px;
   height: auto;
-  object-fit: contain;
   display: block;
 }
 
 .relatedCardDesc {
-  flex: 1;
   font-family: var(--font-family-body);
   font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
   color: var(--foreground);
   margin: 0;
   line-height: 1.5;
+  text-align: center;
 }
 
 /* ── Tablet (769px – 1024px) ─────────────────────── */
@@ -460,7 +453,7 @@
 
   .relatedCard {
     width: 100%;
-    max-width: 600px;
+    max-width: 420px;
   }
 }
 
@@ -561,23 +554,10 @@
   .relatedCard {
     width: 100%;
     max-width: 345px;
-    min-height: auto;
     padding: 24px;
   }
 
-  .relatedCardBody {
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-  }
-
-  .relatedCardImage,
-  .relatedCardImageSquare {
-    width: 200px;
-    height: 120px;
-  }
-
-  .relatedCardDesc {
-    text-align: center;
+  .relatedCardImgSquare {
+    width: 190px;
   }
 }

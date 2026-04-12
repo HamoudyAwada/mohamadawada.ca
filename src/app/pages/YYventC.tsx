@@ -216,7 +216,6 @@ export default function YYventC() {
                 <div className={styles.relatedCardBody}>
                   <div
                     className={proj.imageType === "square" ? styles.relatedCardImageSquare : styles.relatedCardImage}
-                    style={proj.imageType === "square" && proj.imageBg ? { backgroundColor: proj.imageBg } : undefined}
                   >
                     <FadeInImage
                       src={imageMap[proj.imageKey]}
