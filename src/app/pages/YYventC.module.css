@@ -270,20 +270,16 @@
   min-width: 0;
 }
 
+/* Phone mockup images — the frame, tilt, cream blob, and shadow are
+   all baked into the image itself. No clipping or CSS shadow needed. */
 .phoneImageDiscover {
   flex-shrink: 0;
   width: 350px;
-  border-radius: var(--radius-sm, 16px);
-  overflow: hidden;
-  box-shadow: 0px 4px 8px 0px rgba(14, 14, 14, 0.3);
 }
 
 .phoneImageEvents {
   flex-shrink: 0;
   width: 330px;
-  border-radius: var(--radius-sm, 16px);
-  overflow: hidden;
-  box-shadow: 0px 4px 8px 0px rgba(14, 14, 14, 0.3);
 }
 
 .phoneImg {
@@ -429,7 +425,7 @@
   .phoneImageDiscover,
   .phoneImageEvents {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     margin: 0 auto;
   }
 
@@ -524,7 +520,7 @@
   .phoneImageDiscover,
   .phoneImageEvents {
     width: 100%;
-    max-width: 345px;
+    max-width: 300px;
     margin: 0 auto;
   }
 
