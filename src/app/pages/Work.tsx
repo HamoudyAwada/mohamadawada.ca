@@ -26,13 +26,13 @@ export default function Work() {
         </section>
 
         {/* Project Rows */}
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <Fragment key={project.slug}>
             <Divider />
             <section className={styles.projectSection}>
               <div
                 className={`${styles.projectRow} ${
-                  !project.imageFirst ? styles.projectRowReverse : ""
+                  index % 2 === 0 ? styles.projectRowReverse : ""
                 }`}
               >
                 <div
