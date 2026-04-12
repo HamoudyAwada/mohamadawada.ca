@@ -9,6 +9,8 @@ const MAX_VISIBLE_TAGS = 3;
 
 interface ProjectCardProps {
   image: string;
+  imageType?: "cropped" | "square";
+  imageBg?: string | null;
   title: string;
   description: string;
   tags: Array<{ label: string; variant: "primary" | "secondary" | "tertiary" | "purple" | "red" }>;
@@ -26,17 +28,28 @@ function IconRight() {
 
 export default function ProjectCard({
   image,
+  imageType = "cropped",
+  imageBg,
   title,
   description,
   tags,
   badge,
   href,
 }: ProjectCardProps) {
+  const isSquare = imageType === "square";
+
   return (
     <Link to={href} className={styles.card}>
-      {/* Image section — white bg, rounded top corners */}
-      <div className={styles.imageContainer}>
-        <FadeInImage src={image} alt={title} className={styles.image} />
+      {/* Image section */}
+      <div
+        className={isSquare ? styles.imageContainerSquare : styles.imageContainer}
+        style={isSquare && imageBg ? { backgroundColor: imageBg } : undefined}
+      >
+        <FadeInImage
+          src={image}
+          alt={title}
+          className={isSquare ? styles.imageSquare : styles.image}
+        />
       </div>
 
       {/* Content section — light bg, rounded bottom corners */}

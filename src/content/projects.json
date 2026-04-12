@@ -7,6 +7,7 @@
       "description": "How I helped shape ENMAX's design system and set the foundation for powerful AI assisted workflows.",
       "coverImageAlt": "ENMAX Design System",
       "imageType": "cropped",
+      "coverImageBg": null,
       "imageFirst": true,
       "badge": "ENMAX Corporation",
       "tags": [
@@ -25,6 +26,7 @@
       "description": "A gamified app to help you actually achieve your goals and understand your values.",
       "coverImageAlt": "Trumi App",
       "imageType": "square",
+      "coverImageBg": "#b5b5e8",
       "imageFirst": false,
       "badge": "SAIT - Capstone",
       "tags": [

@@ -17,6 +17,7 @@ export interface Project {
   coverImage: string;
   coverImageAlt: string;
   imageType: "cropped" | "square";
+  coverImageBg: string | null;
   imageFirst: boolean;
   badge: string;
   tags: ProjectTag[];
@@ -39,6 +40,7 @@ const projects: Project[] = projectsContent.projects.map((p) => ({
   coverImage: imageMap[p.imageKey] ?? imgEnmax,
   coverImageAlt: p.coverImageAlt,
   imageType: p.imageType as "cropped" | "square",
+  coverImageBg: p.coverImageBg ?? null,
   imageFirst: p.imageFirst,
   badge: p.badge,
   tags: p.tags.map((t) => ({ label: t.label, variant: t.variant as TagVariant })),

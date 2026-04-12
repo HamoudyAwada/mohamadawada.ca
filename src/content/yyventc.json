@@ -98,13 +98,17 @@
       "slug": "enmax-design-system",
       "title": "ENMAX Design System",
       "description": "Understand how I helped shape ENMAX\u2019s design system and set the foundation for powerful AI assisted workflows.",
-      "imageKey": "enmax"
+      "imageKey": "enmax",
+      "imageType": "cropped",
+      "imageBg": null
     },
     {
       "slug": "trumi",
       "title": "Trumi",
       "description": "A personal growth app that helps you understand your values, set goals that align with them, and achieve what matters most.",
-      "imageKey": "trumi"
+      "imageKey": "trumi",
+      "imageType": "square",
+      "imageBg": "#b5b5e8"
     }
   ]
 }

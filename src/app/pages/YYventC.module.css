@@ -375,6 +375,28 @@
   display: block;
 }
 
+/* Phone mockup images — no clipping, asset includes frame/blob/shadow */
+.relatedCardImageSquare {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+  border-radius: var(--radius-sm, 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.relatedCardImgSquare {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .relatedCardDesc {
   flex: 1;
   font-family: var(--font-family-body);
@@ -549,7 +571,8 @@
     align-items: center;
   }
 
-  .relatedCardImage {
+  .relatedCardImage,
+  .relatedCardImageSquare {
     width: 200px;
     height: 120px;
   }

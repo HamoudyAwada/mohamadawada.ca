@@ -15,16 +15,14 @@
   transform: translateY(-4px);
 }
 
-/* ── Image section ────────────────────────────── */
+/* ── Image section — cropped (e.g. ENMAX logo banner) ── */
 .imageContainer {
   width: 100%;
   height: 298px;
   border-radius: 32px 32px 0 0;
   overflow: hidden;
-  /* contain:paint ensures GPU-composited children (FadeInImage uses will-change)
-     are clipped to this boundary, preventing bleed outside the card top edge. */
   contain: paint;
-  background-color: var(--popover); /* white — shows logo on clean bg */
+  background-color: var(--popover);
   flex-shrink: 0;
 }
 
@@ -33,6 +31,31 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+/* ── Image section — square / phone mockup ─────────── */
+/* No overflow clipping — frame, blob, and shadow are baked into the asset.
+   Image sits centered with breathing room inside the coloured background. */
+.imageContainerSquare {
+  width: 100%;
+  height: 298px;
+  border-radius: 32px 32px 0 0;
+  background-color: var(--popover);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.imageSquare {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* ── Content section ──────────────────────────── */

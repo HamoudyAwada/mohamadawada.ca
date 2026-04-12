@@ -50,6 +50,8 @@ export default function Home() {
               <ProjectCard
                 key={project.slug}
                 image={project.coverImage}
+                imageType={project.imageType}
+                imageBg={project.coverImageBg}
                 title={project.title}
                 description={project.description}
                 tags={project.tags}
