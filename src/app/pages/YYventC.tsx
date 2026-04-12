@@ -10,7 +10,7 @@ import content from "../../content/yyventc.json";
 import imgDiscover from "../../assets/yyventc-discover.webp";
 import imgEvents from "../../assets/yyventc-events.webp";
 import imgEnmax from "../../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
-import imgTrumi from "../../assets/ab72dd35391820c5919d41bb47e2f9abe185f5e4.webp";
+import imgTrumi from "../../assets/trumi-hero.webp";
 
 const imageMap: Record<string, string> = {
   discover: imgDiscover,
