@@ -256,8 +256,8 @@
 .anchorGrid {
   display: grid;
   grid-template-columns: repeat(6, 130px);
-  column-gap: 8px;
-  row-gap: 16px;
+  column-gap: 16px;
+  row-gap: 20px;
 }
 
 .anchorCard {
