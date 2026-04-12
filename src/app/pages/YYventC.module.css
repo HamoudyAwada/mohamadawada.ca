@@ -365,6 +365,7 @@
   height: 120px;
   border-radius: var(--radius-sm, 16px);
   overflow: hidden;
+  contain: paint;
 }
 
 .relatedCardImg {

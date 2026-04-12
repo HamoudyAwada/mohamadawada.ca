@@ -5,6 +5,8 @@ import FadeInImage from "../FadeInImage";
 import { arrowRight } from "../../data/svgPaths";
 import styles from "./ProjectCard.module.css";
 
+const MAX_VISIBLE_TAGS = 3;
+
 interface ProjectCardProps {
   image: string;
   title: string;
@@ -56,11 +58,16 @@ export default function ProjectCard({
             <Divider />
           </div>
           <div className={styles.tags}>
-            {tags.map((tag, index) => (
+            {tags.slice(0, MAX_VISIBLE_TAGS).map((tag, index) => (
               <Tag key={index} variant={tag.variant}>
                 {tag.label}
               </Tag>
             ))}
+            {tags.length > MAX_VISIBLE_TAGS && (
+              <span className={styles.overflowBadge}>
+                +{tags.length - MAX_VISIBLE_TAGS}
+              </span>
+            )}
           </div>
           <div className={styles.footer}>
             <span className={styles.badge}>{badge}</span>

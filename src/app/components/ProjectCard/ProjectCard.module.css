@@ -21,6 +21,9 @@
   height: 298px;
   border-radius: 32px 32px 0 0;
   overflow: hidden;
+  /* contain:paint ensures GPU-composited children (FadeInImage uses will-change)
+     are clipped to this boundary, preventing bleed outside the card top edge. */
+  contain: paint;
   background-color: var(--popover); /* white — shows logo on clean bg */
   flex-shrink: 0;
 }
@@ -92,8 +95,18 @@
 .tags {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
+  overflow: hidden;
+}
+
+.overflowBadge {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .footer {
