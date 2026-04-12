@@ -6,6 +6,14 @@ import Tag from "../components/Tag";
 import FadeInImage from "../components/FadeInImage";
 import styles from "./YYventC.module.css";
 import content from "../../content/yyventc.json";
+import {
+  iconEye,
+  iconWarningCircle,
+  iconMagnifyingGlass,
+  iconArrowCircleUp,
+  iconClipboard,
+  iconLightbulb,
+} from "../data/svgPaths";
 
 import imgDiscover from "../../assets/yyventc-discover.webp";
 import imgEvents from "../../assets/yyventc-events.webp";
@@ -55,10 +63,31 @@ export default function YYventC() {
           </div>
         </section>
 
+        {/* ── Anchor Cards ─────────────────────────────────── */}
+        <section className={styles.anchorSection}>
+          <div className={styles.anchorGrid}>
+            {[
+              { label: "Overview", href: "#overview", icon: iconEye },
+              { label: "The Problem", href: "#the-problem", icon: iconWarningCircle },
+              { label: "Research", href: "#research", icon: iconMagnifyingGlass },
+              { label: "Contributions", href: "#contributions", icon: iconArrowCircleUp },
+              { label: "Outcome", href: "#outcome", icon: iconClipboard },
+              { label: "Reflection", href: "#reflection", icon: iconLightbulb },
+            ].map((card) => (
+              <a key={card.label} href={card.href} className={styles.anchorCard}>
+                <span className={styles.anchorLabel}>{card.label}</span>
+                <svg width="64" height="64" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                  <path d={card.icon} fill="currentColor" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </section>
+
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Overview ─────────────────────────────────────── */}
-        <section className={styles.section}>
+        <section id="overview" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.overview.title}</h2>
             <div className={styles.bodyText}>
@@ -72,7 +101,7 @@ export default function YYventC() {
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── The Problem ──────────────────────────────────── */}
-        <section className={styles.section}>
+        <section id="the-problem" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.problem.title}</h2>
             <div className={styles.bodyText}>
@@ -94,7 +123,7 @@ export default function YYventC() {
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Research ─────────────────────────────────────── */}
-        <section className={styles.section}>
+        <section id="research" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.research.title}</h2>
             <p className={styles.bodyParagraph}>{content.research.intro}</p>
@@ -127,7 +156,7 @@ export default function YYventC() {
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── My Contributions ─────────────────────────────── */}
-        <section className={styles.section}>
+        <section id="contributions" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.contributions.title}</h2>
 
@@ -179,7 +208,7 @@ export default function YYventC() {
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Outcome ──────────────────────────────────────── */}
-        <section className={styles.section}>
+        <section id="outcome" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.outcome.title}</h2>
             <p className={styles.bodyParagraph}>{content.outcome.body}</p>
@@ -189,7 +218,7 @@ export default function YYventC() {
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Reflection ───────────────────────────────────── */}
-        <section className={styles.section}>
+        <section id="reflection" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.reflection.title}</h2>
             <div className={styles.bodyText}>

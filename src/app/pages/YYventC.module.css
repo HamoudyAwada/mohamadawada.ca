@@ -242,6 +242,54 @@
   line-height: normal;
 }
 
+/* ── Anchor Cards ────────────────────────────────── */
+.anchorSection {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 64px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.anchorGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 120px);
+  gap: 8px;
+}
+
+.anchorCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background-color: var(--input-background);
+  border-radius: var(--radius-sm, 16px);
+  box-shadow: 0px 8px 15px 0px rgba(14, 14, 14, 0.3);
+  text-decoration: none;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--foreground);
+}
+
+.anchorCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 12px 20px 0px rgba(14, 14, 14, 0.35);
+}
+
+.anchorLabel {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+  text-decoration: underline;
+  text-align: center;
+  line-height: normal;
+}
+
 /* ── Contributions ───────────────────────────────── */
 .contributionBlock {
   display: flex;
@@ -455,6 +503,10 @@
     width: 100%;
     max-width: 420px;
   }
+
+  .anchorGrid {
+    grid-template-columns: repeat(3, 112px);
+  }
 }
 
 /* ── Mobile (max-width: 768px) ───────────────────── */
@@ -538,6 +590,16 @@
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
+  }
+
+  /* Anchor cards */
+  .anchorSection {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .anchorGrid {
+    grid-template-columns: repeat(3, 112px);
   }
 
   /* Related projects */
