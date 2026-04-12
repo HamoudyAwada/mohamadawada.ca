@@ -27,7 +27,7 @@
       "coverImageAlt": "Trumi App",
       "imageType": "square",
       "coverImageBg": "#b5b5e8",
-      "imageFirst": false,
+      "imageFirst": true,
       "badge": "SAIT - Capstone",
       "tags": [
         { "label": "Capstone",              "variant": "primary" },
