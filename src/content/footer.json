@@ -16,7 +16,7 @@
       "title": "Me",
       "links": [
         { "label": "About Me", "href": "/about", "icon": "about", "external": false },
-        { "label": "Resume", "href": "/resume.pdf", "icon": "resume", "external": true },
+        { "label": "Resume", "href": "/mohamad-awada-resume.pdf", "icon": "resume", "external": true },
         { "label": "LinkedIn", "href": "https://www.linkedin.com/in/mohamad-awada-ux-ui-designer/", "icon": "linkedin", "external": true }
       ]
     }

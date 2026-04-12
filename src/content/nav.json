@@ -3,7 +3,7 @@
     { "label": "My Work", "path": "/my-work" },
     { "label": "Process", "path": "/process" },
     { "label": "About Me", "path": "/about" },
-    { "label": "Resume", "path": "/resume.pdf", "external": true }
+    { "label": "Resume", "path": "/mohamad-awada-resume.pdf", "external": true }
   ],
   "contactButton": "Contact Me",
   "mobileLinks": [
@@ -19,7 +19,7 @@
     },
     {
       "label": "Resume",
-      "href": "/resume.pdf",
+      "href": "/mohamad-awada-resume.pdf",
       "icon": "resume",
       "external": true
     }

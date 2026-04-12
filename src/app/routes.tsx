@@ -5,7 +5,7 @@ import RootLayout from "./components/RootLayout";
 
 function ResumeRedirect() {
   useEffect(() => {
-    window.open("/resume.pdf", "_blank", "noopener,noreferrer");
+    window.open("/mohamad-awada-resume.pdf", "_blank", "noopener,noreferrer");
   }, []);
   return <Navigate to="/" replace />;
 }
