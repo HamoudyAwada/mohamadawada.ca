@@ -1,3 +1,8 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+/* Offset anchor scroll targets so they aren't hidden behind the fixed nav */
+[id] {
+  scroll-margin-top: 96px;
+}
