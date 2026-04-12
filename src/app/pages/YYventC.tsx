@@ -76,7 +76,7 @@ export default function YYventC() {
             ].map((card) => (
               <a key={card.label} href={card.href} className={styles.anchorCard}>
                 <span className={styles.anchorLabel}>{card.label}</span>
-                <svg width="64" height="64" viewBox={card.viewBox} fill="none" aria-hidden="true">
+                <svg width="56" height="56" viewBox={card.viewBox} fill="none" aria-hidden="true">
                   <path d={card.icon} fill="var(--primary)" />
                 </svg>
               </a>
