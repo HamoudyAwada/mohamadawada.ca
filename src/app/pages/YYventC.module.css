@@ -227,7 +227,7 @@
 
 .statValue {
   font-family: var(--font-family-heading);
-  font-size: var(--text-h5);
+  font-size: var(--text-h4);
   font-weight: var(--font-weight-medium);
   color: var(--primary);
   line-height: normal;
