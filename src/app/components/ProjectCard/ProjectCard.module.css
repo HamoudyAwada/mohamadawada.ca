@@ -123,11 +123,10 @@
   min-width: 0;
 }
 
-/* Inner container — fills available row space, clips tags that don't fit */
+/* Inner container — clips tags that don't fit */
 .tags {
   display: flex;
   gap: 12px;
-  flex: 1;
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
