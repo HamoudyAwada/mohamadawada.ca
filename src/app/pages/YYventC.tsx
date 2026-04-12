@@ -67,16 +67,24 @@ export default function YYventC() {
         <section className={styles.anchorSection}>
           <div className={styles.anchorGrid}>
             {[
-              { label: "Overview",      href: "#overview",      icon: iconFileMagnifyingGlass, viewBox: "0 0 44 52"  },
-              { label: "The Problem",   href: "#the-problem",   icon: iconWarningCircle,       viewBox: "0 0 256 256"},
-              { label: "Research",      href: "#research",      icon: iconMagnifyingGlass,     viewBox: "0 0 256 256"},
-              { label: "Contributions", href: "#contributions", icon: iconHandArrowUp,         viewBox: "0 0 60 54"  },
-              { label: "Outcome",       href: "#outcome",       icon: iconClipboardCheck,      viewBox: "0 0 64 62"  },
-              { label: "Reflection",    href: "#reflection",    icon: iconLightbulb,           viewBox: "0 0 256 256"},
+              { label: "Overview",      id: "overview",      icon: iconFileMagnifyingGlass, viewBox: "0 0 44 52"  },
+              { label: "The Problem",   id: "the-problem",   icon: iconWarningCircle,       viewBox: "0 0 256 256"},
+              { label: "Research",      id: "research",      icon: iconMagnifyingGlass,     viewBox: "0 0 256 256"},
+              { label: "Contributions", id: "contributions", icon: iconHandArrowUp,         viewBox: "0 0 60 54"  },
+              { label: "Outcome",       id: "outcome",       icon: iconClipboardCheck,      viewBox: "0 0 64 62"  },
+              { label: "Reflection",    id: "reflection",    icon: iconLightbulb,           viewBox: "0 0 256 256"},
             ].map((card) => (
-              <a key={card.label} href={card.href} className={styles.anchorCard}>
+              <a
+                key={card.label}
+                href={`#${card.id}`}
+                className={styles.anchorCard}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(card.id)?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
                 <span className={styles.anchorLabel}>{card.label}</span>
-                <svg width="56" height="56" viewBox={card.viewBox} fill="none" aria-hidden="true">
+                <svg width="56" height="56" viewBox={card.viewBox} fill="none" aria-hidden="true" className={styles.anchorIcon}>
                   <path d={card.icon} fill="var(--primary)" />
                 </svg>
               </a>

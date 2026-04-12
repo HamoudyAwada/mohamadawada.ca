@@ -265,8 +265,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 8px;
-  height: 112px;
+  padding: 14px 8px;
+  height: 124px;
   background-color: var(--input-background);
   border-radius: var(--radius-sm, 16px);
   box-shadow: 0px 8px 15px 0px rgba(14, 14, 14, 0.3);
@@ -284,13 +284,19 @@
 
 .anchorLabel {
   font-family: var(--font-family-body);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: var(--font-weight-bold);
   color: var(--foreground);
   text-decoration: underline;
   text-align: center;
   line-height: normal;
   white-space: nowrap;
+}
+
+.anchorIcon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
 }
 
 /* ── Contributions ───────────────────────────────── */
@@ -602,7 +608,23 @@
   }
 
   .anchorGrid {
-    grid-template-columns: repeat(3, 130px);
+    grid-template-columns: repeat(3, 96px);
+    column-gap: 6px;
+    row-gap: 12px;
+  }
+
+  .anchorCard {
+    padding: 10px 6px;
+    height: 92px;
+  }
+
+  .anchorLabel {
+    font-size: 10px;
+  }
+
+  .anchorIcon {
+    width: 40px;
+    height: 40px;
   }
 
   /* Related projects */
