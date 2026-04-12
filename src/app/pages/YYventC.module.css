@@ -256,7 +256,7 @@
 .anchorGrid {
   display: grid;
   grid-template-columns: repeat(6, 130px);
-  column-gap: 16px;
+  column-gap: 28px;
   row-gap: 20px;
 }
 
