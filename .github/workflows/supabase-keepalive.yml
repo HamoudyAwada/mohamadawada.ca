@@ -15,7 +15,8 @@ jobs:
       - name: Health check
         run: |
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "https://${{ secrets.SUPABASE_PROJECT_ID }}.supabase.co/auth/v1/health")
+            "https://${{ secrets.SUPABASE_PROJECT_ID }}.supabase.co/auth/v1/health" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}")
 
           echo "Supabase response status: $STATUS"
 
