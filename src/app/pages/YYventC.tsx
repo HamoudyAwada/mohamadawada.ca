@@ -7,11 +7,11 @@ import FadeInImage from "../components/FadeInImage";
 import styles from "./YYventC.module.css";
 import content from "../../content/yyventc.json";
 import {
-  iconEye,
+  iconFileMagnifyingGlass,
   iconWarningCircle,
   iconMagnifyingGlass,
-  iconArrowCircleUp,
-  iconClipboard,
+  iconHandArrowUp,
+  iconClipboardCheck,
   iconLightbulb,
 } from "../data/svgPaths";
 
@@ -67,17 +67,17 @@ export default function YYventC() {
         <section className={styles.anchorSection}>
           <div className={styles.anchorGrid}>
             {[
-              { label: "Overview", href: "#overview", icon: iconEye },
-              { label: "The Problem", href: "#the-problem", icon: iconWarningCircle },
-              { label: "Research", href: "#research", icon: iconMagnifyingGlass },
-              { label: "Contributions", href: "#contributions", icon: iconArrowCircleUp },
-              { label: "Outcome", href: "#outcome", icon: iconClipboard },
-              { label: "Reflection", href: "#reflection", icon: iconLightbulb },
+              { label: "Overview",      href: "#overview",      icon: iconFileMagnifyingGlass, viewBox: "0 0 44 52"  },
+              { label: "The Problem",   href: "#the-problem",   icon: iconWarningCircle,       viewBox: "0 0 256 256"},
+              { label: "Research",      href: "#research",      icon: iconMagnifyingGlass,     viewBox: "0 0 256 256"},
+              { label: "Contributions", href: "#contributions", icon: iconHandArrowUp,         viewBox: "0 0 60 54"  },
+              { label: "Outcome",       href: "#outcome",       icon: iconClipboardCheck,      viewBox: "0 0 64 62"  },
+              { label: "Reflection",    href: "#reflection",    icon: iconLightbulb,           viewBox: "0 0 256 256"},
             ].map((card) => (
               <a key={card.label} href={card.href} className={styles.anchorCard}>
                 <span className={styles.anchorLabel}>{card.label}</span>
-                <svg width="64" height="64" viewBox="0 0 256 256" fill="none" aria-hidden="true">
-                  <path d={card.icon} fill="currentColor" />
+                <svg width="64" height="64" viewBox={card.viewBox} fill="none" aria-hidden="true">
+                  <path d={card.icon} fill="var(--primary)" />
                 </svg>
               </a>
             ))}
