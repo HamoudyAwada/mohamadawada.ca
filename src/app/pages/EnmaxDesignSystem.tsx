@@ -3,8 +3,17 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
 import Tag from "../components/Tag";
+import FadeInImage from "../components/FadeInImage";
 import styles from "./EnmaxDesignSystem.module.css";
 import content from "../../content/enmax-design-system.json";
+
+import imgYYventC from "../../assets/yyventc-discover.webp";
+import imgTrumi   from "../../assets/trumi-hero.webp";
+
+const imageMap: Record<string, string> = {
+  yyventc: imgYYventC,
+  trumi:   imgTrumi,
+};
 
 function ExternalLinkIcon({ className }: { className?: string }) {
   return (
@@ -78,6 +87,34 @@ export default function EnmaxDesignSystem() {
             </Link>
             {content.ongoingText.after}
           </p>
+        </section>
+
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── Check Out These Projects ─────────────────────── */}
+        <section className={styles.relatedSection}>
+          <h2 className={styles.relatedTitle}>Check Out These Projects</h2>
+          <div className={styles.relatedGrid}>
+            {content.relatedProjects.map((proj) => (
+              <Link
+                key={proj.slug}
+                to={`/my-work/${proj.slug}`}
+                className={styles.relatedCard}
+              >
+                <p className={styles.relatedCardTitle}>{proj.title}</p>
+                <div className={styles.relatedCardBody}>
+                  <div className={styles.relatedCardImageSquare}>
+                    <FadeInImage
+                      src={imageMap[proj.imageKey]}
+                      alt={proj.title}
+                      className={styles.relatedCardImgSquare}
+                    />
+                  </div>
+                  <p className={styles.relatedCardDesc}>{proj.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
 
       </main>

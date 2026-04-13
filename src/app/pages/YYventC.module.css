@@ -332,12 +332,12 @@
    all baked into the image itself. No clipping or CSS shadow needed. */
 .phoneImageDiscover {
   flex-shrink: 0;
-  width: 350px;
+  width: 500px;
 }
 
 .phoneImageEvents {
   flex-shrink: 0;
-  width: 330px;
+  width: 470px;
 }
 
 .phoneImg {

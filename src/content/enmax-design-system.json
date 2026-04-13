@@ -22,5 +22,21 @@
     "before": "This project is currently ongoing. Feel free to ",
     "linkText": "Contact Me",
     "after": " to learn more about my experience."
-  }
+  },
+  "relatedProjects": [
+    {
+      "slug": "yyventc",
+      "title": "YYventC",
+      "description": "A community-first, mobile event discovery platform designed exclusively for Calgary.",
+      "imageKey": "yyventc",
+      "imageType": "square"
+    },
+    {
+      "slug": "trumi",
+      "title": "Trumi",
+      "description": "A personal growth app that helps you understand your values, set goals that align with them, and achieve what matters most.",
+      "imageKey": "trumi",
+      "imageType": "square"
+    }
+  ]
 }
