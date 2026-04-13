@@ -178,6 +178,7 @@
   border-radius: var(--radius-sm, 16px);
   padding: 24px 32px 24px 56px;
   overflow: hidden;
+  box-shadow: 0px 4px 10px 0px rgba(14, 14, 14, 0.25);
 }
 
 .calloutAccent {
