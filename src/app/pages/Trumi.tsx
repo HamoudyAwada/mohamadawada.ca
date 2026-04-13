@@ -175,7 +175,10 @@ export default function Trumi() {
         <section id="contributions" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.contributions.title}</h2>
-            <p className={styles.bodyParagraph}>{content.contributions.intro}</p>
+            <div className={styles.contributionBlock}>
+              <h3 className={styles.subHeading}>{content.contributions.introHeading}</h3>
+              <p className={styles.bodyParagraph}>{content.contributions.intro}</p>
+            </div>
 
             {content.contributions.sections.map((sec) => (
               <div key={sec.heading} className={styles.contributionBlock}>

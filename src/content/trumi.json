@@ -28,7 +28,8 @@
   "problem": {
     "title": "The Problem",
     "paragraphs": [
-      "Most self-improvement apps skip straight to execution \u2014 track this, optimize that, complete more. But for young adults already navigating identity, pressure, and burnout, being told to do more is exactly the wrong starting point."
+      "Most self-improvement apps skip straight to execution \u2014 track this, optimize that, complete more. But for young adults already navigating identity, pressure, and burnout, being told to do more is exactly the wrong starting point.",
+      "The real problem isn\u2019t a lack of productivity tools. It\u2019s that existing tools are built around output, not understanding. They push goals without asking who you are first, and when you inevitably fall behind, they make you feel worse for it."
     ],
     "callout": "Trumi transforms self-improvement into self-understanding by encouraging reflection without judgment, progress without pressure, and motivation without guilt."
   },
@@ -37,9 +38,9 @@
     "intro": "We surveyed 34 participants across a diverse demographic, with the majority aged 18 to 34. The findings painted a consistent picture of people who are genuinely trying, but being let down by the tools available to them.",
     "stats": [
       { "value": "68%", "label": "feel overwhelmed often or very often" },
-      { "value": "76%", "label": "want insights into their patterns and identity" },
-      { "value": "94%", "label": "find visual progress motivating" },
-      { "value": "85%", "label": "value emotional support in reaching goals" },
+      { "value": "76%", "label": "Want insights into their patterns and identity" },
+      { "value": "94%", "label": "Find visual progress motivating" },
+      { "value": "85%", "label": "Value emotional support in reaching goals." },
       { "value": "44%", "label": "feel guilty or anxious when they fall behind" }
     ],
     "postStats": "The top three challenges identified were losing motivation over time, feeling discouraged after missing days, and not knowing what to focus on.",
@@ -49,6 +50,7 @@
   },
   "contributions": {
     "title": "My Contributions",
+    "introHeading": "Overview",
     "intro": "My primary focus for the Trumi MVP centred on three interconnected areas: integrating a customizable character and AI into the app in a meaningful way, designing the reflection experience across multiple pathways, and ensuring that every interaction felt light, non-judgmental, and emotionally safe for the user.",
     "sections": [
       {
@@ -67,7 +69,8 @@
       {
         "heading": "Reflection Pathways",
         "paragraphs": [
-          "I designed the full reflection experience across multiple entry points. Users can complete guided daily check-ins in the morning, midday, or evening, or dive into deeper written reflections when they want to go further. Our survey showed that guided reflection questions scored an average of 3.6 out of 5 compared to blank journaling, confirming that structure genuinely helps as long as it does not feel rigid or prescriptive."
+          "I designed the full reflection experience across multiple entry points. Users can complete guided daily check-ins in the morning, midday, or evening, or dive into deeper written reflections when they want to go further. Our survey showed that guided reflection questions scored an average of 3.6 out of 5 compared to blank journaling, confirming that structure genuinely helps as long as it does not feel rigid or prescriptive.",
+          "Beyond individual sessions, I designed weekly and monthly progress summaries that surface patterns in a user\u2019s mood, habits, and movement toward their goals. The intention was to make users feel seen by their own data rather than evaluated by it."
         ]
       },
       {
