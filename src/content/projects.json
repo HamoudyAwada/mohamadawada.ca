@@ -30,10 +30,14 @@
       "imageFirst": true,
       "badge": "SAIT - Capstone",
       "tags": [
-        { "label": "Capstone",              "variant": "primary" },
-        { "label": "Application Design",    "variant": "secondary" },
-        { "label": "Agile",                 "variant": "purple" },
-        { "label": "AI UX",                 "variant": "purple" }
+        { "label": "Product Design",        "variant": "primary"    },
+        { "label": "AI UX Design Process",  "variant": "secondary"  },
+        { "label": "Agile Methodologies",   "variant": "red"        },
+        { "label": "Figma",                 "variant": "purple"     },
+        { "label": "Figma MCP",             "variant": "purple"     },
+        { "label": "Claude Code",           "variant": "purple"     },
+        { "label": "Gemini API",            "variant": "purple"     },
+        { "label": "Mobile App",            "variant": "tertiary"   }
       ],
       "featured": true,
       "status": "published"

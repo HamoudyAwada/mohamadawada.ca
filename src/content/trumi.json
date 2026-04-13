@@ -3,10 +3,14 @@
     "title": "Trumi",
     "subtitle": "A personal growth app that helps you understand your values, set goals that align with them, and achieve what matters most.",
     "tags": [
-      { "label": "Capstone",           "variant": "primary"   },
-      { "label": "Application Design", "variant": "secondary" },
-      { "label": "Agile",              "variant": "purple"    },
-      { "label": "AI UX",              "variant": "purple"    }
+      { "label": "Product Design",       "variant": "primary"   },
+      { "label": "AI UX Design Process", "variant": "secondary" },
+      { "label": "Agile Methodologies",  "variant": "red"       },
+      { "label": "Figma",                "variant": "purple"    },
+      { "label": "Figma MCP",            "variant": "purple"    },
+      { "label": "Claude Code",          "variant": "purple"    },
+      { "label": "Gemini API",           "variant": "purple"    },
+      { "label": "Mobile App",           "variant": "tertiary"  }
     ]
   },
   "meta": [
