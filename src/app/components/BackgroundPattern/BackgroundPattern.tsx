@@ -12,7 +12,7 @@ export default function BackgroundPattern({ contained = false }: BackgroundPatte
         top: 0,
         left: 0,
         width: '100%',
-        height: '100%',
+        height: contained ? '100%' : '100lvh',
         zIndex: contained ? 0 : -1,
         pointerEvents: 'none',
       }}
