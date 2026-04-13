@@ -17,6 +17,7 @@ const Process = lazy(() => import("./pages/Process"));
 const About = lazy(() => import("./pages/About"));
 const Work = lazy(() => import("./pages/Work"));
 const YYventC = lazy(() => import("./pages/YYventC"));
+const Trumi = lazy(() => import("./pages/Trumi"));
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +60,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageSkeleton variant="generic" />}>
             <YYventC />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/my-work/trumi",
+        element: (
+          <Suspense fallback={<PageSkeleton variant="generic" />}>
+            <Trumi />
           </Suspense>
         ),
       },
