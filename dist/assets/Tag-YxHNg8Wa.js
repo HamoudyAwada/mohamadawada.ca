@@ -1,0 +1,1 @@
+import{j as a}from"./index-4iaplL1m.js";const p="_tag_bvp8s_1",_="_primary_bvp8s_14",e="_secondary_bvp8s_19",o="_tertiary_bvp8s_24",n="_purple_bvp8s_29",c="_red_bvp8s_34",r={tag:p,primary:_,secondary:e,tertiary:o,purple:n,red:c};function y({children:s,variant:t="primary"}){return a.jsx("div",{className:`${r.tag} ${r[t]}`,children:s})}export{y as T};
