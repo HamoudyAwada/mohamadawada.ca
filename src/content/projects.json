@@ -11,13 +11,16 @@
       "imageFirst": true,
       "badge": "ENMAX Corporation",
       "tags": [
-        { "label": "Design System",    "variant": "primary" },
-        { "label": "GitHub Copilot",   "variant": "secondary" },
-        { "label": "Claude AI",        "variant": "purple" },
-        { "label": "AI",               "variant": "purple" }
+        { "label": "Design System",         "variant": "primary"   },
+        { "label": "AI UX Design Process",  "variant": "secondary" },
+        { "label": "Design System Website", "variant": "red"       },
+        { "label": "Figma",                 "variant": "purple"    },
+        { "label": "Figma MCP",             "variant": "purple"    },
+        { "label": "GitHub Copilot",        "variant": "purple"    },
+        { "label": "VS Code",               "variant": "purple"    }
       ],
       "featured": false,
-      "status": "coming-soon"
+      "status": "published"
     },
     {
       "slug": "trumi",

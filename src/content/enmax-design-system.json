@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "title": "ENMAX Design System",
+    "subtitle": "Understand how I helped shape ENMAX's design system and set the foundation for powerful AI assisted workflows.",
+    "tags": [
+      { "label": "Design System",         "variant": "primary"   },
+      { "label": "AI UX Design Process",  "variant": "secondary" },
+      { "label": "Design System Website", "variant": "red"       },
+      { "label": "Figma",                 "variant": "purple"    },
+      { "label": "Figma MCP",             "variant": "purple"    },
+      { "label": "GitHub Copilot",        "variant": "purple"    },
+      { "label": "VS Code",               "variant": "purple"    }
+    ]
+  },
+  "meta": [
+    { "label": "ROLE",     "value": "UX Design Co-op Student",                           "link": null },
+    { "label": "TIMELINE", "value": "January 2026 - August 2026",                         "link": null },
+    { "label": "TOOLS",    "value": "Figma, Figma Make, Figma MCP, GitHub Copilot, VS Code", "link": null },
+    { "label": "CLIENT",   "value": "ENMAX Corporation",                                   "link": "https://www.enmax.com" }
+  ],
+  "ongoingText": {
+    "before": "This project is currently ongoing. Feel free to ",
+    "linkText": "Contact Me",
+    "after": " to learn more about my experience."
+  }
+}

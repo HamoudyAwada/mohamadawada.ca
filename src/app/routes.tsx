@@ -18,6 +18,7 @@ const About = lazy(() => import("./pages/About"));
 const Work = lazy(() => import("./pages/Work"));
 const YYventC = lazy(() => import("./pages/YYventC"));
 const Trumi = lazy(() => import("./pages/Trumi"));
+const EnmaxDesignSystem = lazy(() => import("./pages/EnmaxDesignSystem"));
 
 export const router = createBrowserRouter([
   {
@@ -60,6 +61,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageSkeleton variant="generic" />}>
             <YYventC />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/my-work/enmax-design-system",
+        element: (
+          <Suspense fallback={<PageSkeleton variant="generic" />}>
+            <EnmaxDesignSystem />
           </Suspense>
         ),
       },
