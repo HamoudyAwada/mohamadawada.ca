@@ -28,7 +28,7 @@
   "problem": {
     "title": "The Problem",
     "paragraphs": [
-      "Most self-improvement apps skip straight to execution \u2014 track this, optimize that, complete more. But for young adults already navigating identity, pressure, and burnout, being told to do more is exactly the wrong starting point.",
+      "Most self-improvement apps skip straight to execution: track this, optimize that, complete more. But for young adults already navigating identity, pressure, and burnout, being told to do more is exactly the wrong starting point.",
       "The real problem isn\u2019t a lack of productivity tools. It\u2019s that existing tools are built around output, not understanding. They push goals without asking who you are first, and when you inevitably fall behind, they make you feel worse for it."
     ],
     "callout": "Trumi transforms self-improvement into self-understanding by encouraging reflection without judgment, progress without pressure, and motivation without guilt."
@@ -90,7 +90,7 @@
   "outcome": {
     "title": "Outcome",
     "paragraphs": [
-      "Trumi\u2019s MVP delivers guided daily check-ins, a customizable character that reflects real progress, AI-powered reflection conversations built on the Gemini API, written journaling pathways, and weekly and monthly insight summaries. The design language is soft, calm, and intentional across every state, including the difficult ones.",
+      "Trumi\u2019s MVP delivers guided daily check-ins, a customizable character that reflects the user, AI-powered reflection conversations built on the Gemini API, written journaling pathways, and weekly and monthly insight summaries. The design language is soft, calm, and intentional across every state, including the difficult ones.",
       "What differentiated Trumi in testing was tone. Users noticed that the app was not trying to push them. It was trying to understand them first."
     ]
   },
