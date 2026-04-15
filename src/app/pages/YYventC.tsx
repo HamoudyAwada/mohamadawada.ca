@@ -168,6 +168,11 @@ export default function YYventC() {
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.contributions.title}</h2>
 
+            <div className={styles.contributionBlock}>
+              <h3 className={styles.subHeading}>{content.contributions.introHeading}</h3>
+              <p className={styles.bodyParagraph}>{content.contributions.intro}</p>
+            </div>
+
             {content.contributions.sections.map((sec) => {
               if (sec.image === "discover") {
                 return (

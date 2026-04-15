@@ -19,7 +19,7 @@
   "overview": {
     "title": "Overview",
     "paragraphs": [
-      "YYventC (pronounced \"events\") is a community-first, mobile event discovery platform designed exclusively for Calgary. The name is a play on \"YYC\" (Calgary's airport code) and \"events,\" because this app was built for Calgarians, by Calgarians.",
+      "YYventC (pronounced \"events\") is a community-first, mobile event discovery platform designed exclusively for Calgary. The name is a play on \"YYC\" (Calgary's airport code) and \"events,\" because this app was built by Calgarians, for Calgarians.",
       "My role on the team spanned the full design lifecycle, from initial problem framing and research synthesis all the way through information architecture, interaction design, and prototype refinement for our final MVP presentation."
     ]
   },
@@ -49,10 +49,12 @@
   },
   "contributions": {
     "title": "My Contributions",
+    "introHeading": "Overview",
+    "intro": "Across this project I took ownership of YYventC's architecture and core experiences — from defining what belonged in the MVP and structuring the three-pillar navigation, to designing the Discover feed, the social Yvents layer, and the full signed-in/signed-out flow. My focus throughout was making sure every structural and interaction decision served the user's need to find events and feel connected to their city.",
     "sections": [
       {
         "heading": "Information Architecture",
-        "body": "Using FigJam, I ran affinity mapping and prioritization exercises to define what belonged in the MVP. One significant call: we cut a planned transit integration feature after recognizing it was scope creep that would require data partnerships we couldn\u2019t build. Instead, I refocused that energy on location-aware event surfacing for signed-in users \u2014 a simpler solution that delivered the same sense of local relevance.",
+        "body": "Using FigJam, I ran affinity mapping and prioritization exercises with my team to define what belonged in the MVP. One significant call: we cut a planned transit integration feature after recognizing it was scope creep that would require data partnerships we couldn\u2019t build. Instead, I refocused that energy on location-aware event surfacing for signed-in users \u2014 a simpler solution that delivered the same sense of local relevance.",
         "image": null
       },
       {
