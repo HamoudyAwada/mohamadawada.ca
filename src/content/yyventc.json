@@ -50,11 +50,11 @@
   "contributions": {
     "title": "My Contributions",
     "introHeading": "Overview",
-    "intro": "Across this project I took ownership of YYventC's architecture and core experiences — from defining what belonged in the MVP and structuring the three-pillar navigation, to designing the Discover feed, the social Yvents layer, and the full signed-in/signed-out flow. My focus throughout was making sure every structural and interaction decision served the user's need to find events and feel connected to their city.",
+    "intro": "Across this project I took ownership of YYventC's architecture and core experiences. From defining what belonged in the MVP and structuring the three-pillar navigation, to designing the Discover feed, the social Yvents layer, and the full signed-in/signed-out flow. My focus throughout was making sure every structural and interaction decision served the user's need to find events and feel connected to their city.",
     "sections": [
       {
         "heading": "Information Architecture",
-        "body": "Using FigJam, I ran affinity mapping and prioritization exercises with my team to define what belonged in the MVP. One significant call: we cut a planned transit integration feature after recognizing it was scope creep that would require data partnerships we couldn\u2019t build. Instead, I refocused that energy on location-aware event surfacing for signed-in users \u2014 a simpler solution that delivered the same sense of local relevance.",
+        "body": "Using FigJam, I ran affinity mapping and prioritization exercises with my team to define what belonged in the MVP. One significant call: we cut a planned transit integration feature after recognizing it was scope creep that would require data partnerships we couldn\u2019t build. Instead, I refocused that energy on location-aware event surfacing for signed-in users. A simpler solution that delivered the same sense of local relevance.",
         "image": null
       },
       {
@@ -64,7 +64,7 @@
       },
       {
         "heading": "Discover Page",
-        "body": "The Discover feed surfaces personalized, location-aware events with minimal category filters and a \u201cPopular Near You\u201d section. The design is deliberately uncluttered \u2014 62.5% of our users had missed events due to poor visibility, so the priority was making the right events impossible to miss, not showing everything at once.",
+        "body": "The Discover feed surfaces personalized, location-aware events with minimal category filters and a \u201cPopular Near You\u201d section. The design is deliberately uncluttered. 62.5% of our users had missed events due to poor visibility, so the priority was making the right events impossible to miss, not showing everything at once.",
         "image": "discover"
       },
       {
@@ -74,7 +74,7 @@
       },
       {
         "heading": "Signed-In vs. Signed-Out Flows",
-        "body": "I designed the full separation between signed-in and signed-out states \u2014 deciding what to surface at each level, where to place friction, and how to make sign-up feel worth it. The onboarding copy \u2014 \u201cWe\u2019re glad you\u2019re here. Enjoy the moment with us.\u201d \u2014 was a deliberate tonal choice to make the app feel warm from the first screen.",
+        "body": "I designed the full separation between signed-in and signed-out states, deciding what to surface at each level, where to place friction, and how to make sign-up feel worth it. The onboarding copy, \u201cWe\u2019re glad you\u2019re here. Enjoy the moment with us.\u201d, was a deliberate tonal choice to make the app feel warm from the first screen.",
         "image": null
       },
       {
