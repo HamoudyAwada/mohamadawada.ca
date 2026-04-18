@@ -10,7 +10,7 @@ import aboutContent from "../../content/about.json";
 
 // Import images from Figma
 import imgOutsideDesignPhoto from "../../assets/image 30.webp";
-import imgDesignerPhoto from "../../assets/a08415ea1b476b514183ff36dccdcb4995628663.webp";
+import imgDesignerPhoto from "../../assets/me-as-me.webp";
 
 const valueIconMap: Record<string, JSX.Element> = {
   "check-circle": <CheckCircle2 size={24} color="var(--primary-foreground)" />,
