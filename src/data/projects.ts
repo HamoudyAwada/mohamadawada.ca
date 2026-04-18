@@ -23,6 +23,7 @@ export interface Project {
   tags: ProjectTag[];
   featured: boolean;
   status: "published" | "coming-soon";
+  ctaLabel: string;
 }
 
 // Map simple image keys (from projects.json) to the actual imported assets.
@@ -46,6 +47,7 @@ const projects: Project[] = projectsContent.projects.map((p) => ({
   tags: p.tags.map((t) => ({ label: t.label, variant: t.variant as TagVariant })),
   featured: p.featured,
   status: p.status as "published" | "coming-soon",
+  ctaLabel: p.ctaLabel ?? `Explore ${p.title}`,
 }));
 
 export default projects;
