@@ -3,7 +3,7 @@
     {
       "slug": "enmax-design-system",
       "imageKey": "enmax",
-      "title": "ENMAX Design System",
+      "title": "Redesigning The ENMAX Design System",
       "description": "How I helped shape ENMAX's design system and set the foundation for powerful AI assisted workflows.",
       "coverImageAlt": "ENMAX Design System",
       "imageType": "cropped",
@@ -19,13 +19,14 @@
         { "label": "GitHub Copilot",        "variant": "purple"    },
         { "label": "VS Code",               "variant": "purple"    }
       ],
-      "featured": false,
+      "featured": true,
+      "ctaLabel": "Explore The ENMAX Design System",
       "status": "published"
     },
     {
       "slug": "trumi",
       "imageKey": "trumi",
-      "title": "Trumi",
+      "title": "Trumi: Goals That You Value",
       "description": "A gamified app to help you actually achieve your goals and understand your values.",
       "coverImageAlt": "Trumi App",
       "imageType": "square",
@@ -42,13 +43,14 @@
         { "label": "Gemini API",            "variant": "purple"     },
         { "label": "Mobile App",            "variant": "tertiary"   }
       ],
-      "featured": true,
+      "featured": false,
+      "ctaLabel": "Explore Trumi",
       "status": "published"
     },
     {
       "slug": "yyventc",
       "imageKey": "yyventc",
-      "title": "YYventC",
+      "title": "YYventC: Calgary's Centralized Event Discovery App",
       "description": "A community-first, mobile event discovery platform designed exclusively for Calgary.",
       "coverImageAlt": "YYventC Discover Page",
       "imageType": "square",
@@ -63,6 +65,7 @@
         { "label": "Mobile App",       "variant": "tertiary" }
       ],
       "featured": true,
+      "ctaLabel": "Explore YYventC",
       "status": "published"
     }
   ]

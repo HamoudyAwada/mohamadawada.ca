@@ -61,7 +61,7 @@ export default function Work() {
                     size="large"
                     href={`/my-work/${project.slug}`}
                   >
-                    Explore {project.title}
+                    {project.ctaLabel ?? `Explore ${project.title}`}
                   </Button>
                 </div>
               </div>
