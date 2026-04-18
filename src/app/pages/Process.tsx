@@ -25,35 +25,37 @@ export default function Process() {
 
         <Divider />
 
-        {/* Content Section - Two Column Layout */}
+        {/* Content Section */}
         <section className={styles.contentSection}>
+          {/* Full-width heading */}
+          <div className={styles.sectionHeading}>
+            <h2 className={styles.sectionTitle}>{content.title}</h2>
+            <p className={styles.sectionSubtitle}>{content.subtitle}</p>
+          </div>
+
+          {/* Two-column: body copy left, diagram right */}
           <div className={styles.twoColumnLayout}>
-            {/* Left Column - Text Content */}
+            {/* Left Column - Body + CTA */}
             <div className={styles.leftColumn}>
-              <div className={styles.textContent}>
-                <h2 className={styles.sectionTitle}>{content.title}</h2>
-                <p className={styles.sectionSubtitle}>{content.subtitle}</p>
+              {/* Mobile-only diagram — appears between subtitle and body copy */}
+              <div className={styles.mobileDiagram}>
+                <FadeInImage
+                  src={processDiagram}
+                  alt="Lean UX Process Diagram showing the cycle of Think, Make, and Check with Lean UX at the center"
+                  className={styles.diagram}
+                />
+              </div>
 
-                {/* Mobile-only diagram — appears between subtitle and body copy */}
-                <div className={styles.mobileDiagram}>
-                  <FadeInImage
-                    src={processDiagram}
-                    alt="Lean UX Process Diagram showing the cycle of Think, Make, and Check with Lean UX at the center"
-                    className={styles.diagram}
-                  />
-                </div>
+              <div className={styles.bodyText}>
+                {content.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
 
-                <div className={styles.bodyText}>
-                  {content.paragraphs.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                </div>
-
-                <div className={styles.ctaSection}>
-                  <Button variant="primary" size="large" href={content.cta.href}>
-                    {content.cta.label}
-                  </Button>
-                </div>
+              <div className={styles.ctaSection}>
+                <Button variant="primary" size="large" href={content.cta.href}>
+                  {content.cta.label}
+                </Button>
               </div>
             </div>
 

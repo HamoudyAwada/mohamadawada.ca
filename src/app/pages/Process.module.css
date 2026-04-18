@@ -44,28 +44,32 @@
 
 /* Content Section */
 .contentSection {
-  max-width: 1304px;
+  max-width: 1312px;
   margin: 0 auto;
   padding: 0 64px;
   margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Full-width heading above the two-column layout */
+.sectionHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
 }
 
 .twoColumnLayout {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 527px;
   gap: 64px;
   align-items: start;
 }
 
-/* Left Column - Text Content */
+/* Left Column - Body + CTA */
 .leftColumn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 600px;
-}
-
-.textContent {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -131,10 +135,9 @@
 }
 
 .diagramContainer {
-  width: 400px;
-  height: 400px;
+  width: 527px;
+  height: 527px;
   position: relative;
-  margin-top: 10px;
 }
 
 .diagram {
@@ -144,7 +147,7 @@
 }
 
 /* Tablet Styles */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .twoColumnLayout {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -161,10 +164,6 @@
     width: 100%;
     height: auto;
     display: block;
-  }
-
-  .leftColumn {
-    min-height: auto;
   }
 }
 
@@ -199,6 +198,11 @@
   .contentSection {
     padding: 0 24px;
     margin-top: 32px;
+    gap: 32px;
+  }
+
+  .sectionHeading {
+    align-items: center;
   }
 
   .sectionTitle {
