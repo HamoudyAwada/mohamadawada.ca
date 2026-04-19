@@ -91,7 +91,7 @@
     },
     {
       "id": "phase-4",
-      "heading": "Phase 4 – The Documentation Challenge & a New AI-Assisted Workflow",
+      "heading": "Phase 4 – The Documentation Challenge & A New AI-Assisted Workflow",
       "introRich": {
         "before": "Toward the end of the component rebuild phase, Figma began rolling out deeper AI integrations through what they call Skills - connective tools that let AI agents interact directly with Figma's canvas and data. One in particular changed everything for me: ",
         "bold": "use_figma",
