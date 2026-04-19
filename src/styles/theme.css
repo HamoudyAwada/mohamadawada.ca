@@ -202,6 +202,10 @@
     outline-color: rgb(from var(--ring) r g b / 0.5);
   }
 
+  p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-family-body);

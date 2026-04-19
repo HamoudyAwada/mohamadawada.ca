@@ -11,13 +11,13 @@
       "imageFirst": true,
       "badge": "ENMAX Corporation",
       "tags": [
-        { "label": "Design System",         "variant": "primary"   },
-        { "label": "AI UX Design Process",  "variant": "secondary" },
-        { "label": "Design System Website", "variant": "red"       },
-        { "label": "Figma",                 "variant": "purple"    },
-        { "label": "Figma MCP",             "variant": "purple"    },
-        { "label": "GitHub Copilot",        "variant": "purple"    },
-        { "label": "VS Code",               "variant": "purple"    }
+        { "label": "Design System",           "variant": "primary"   },
+        { "label": "AI workflow integration", "variant": "secondary" },
+        { "label": "Documentation Strategy",  "variant": "red"       },
+        { "label": "Figma",                   "variant": "purple"    },
+        { "label": "Figma MCP",               "variant": "purple"    },
+        { "label": "GitHub Copilot",          "variant": "purple"    },
+        { "label": "VS Code",                 "variant": "purple"    }
       ],
       "featured": true,
       "ctaLabel": "Explore The ENMAX Design System",
