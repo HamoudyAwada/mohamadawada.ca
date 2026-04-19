@@ -19,7 +19,7 @@ What started as a scoping exercise quickly became one of the most comprehensive 
 
 Before I could build anything new, I had to understand what already existed.
 
-I began with research - not just into ENMAX's system specifically, but into what truly makes a design system work at an enterprise scale. I needed to understand best practices, common failure points, and what it means to design a system that can outlive the tools and workflows of today.
+I began with research. Not just into ENMAX's system specifically, but into what truly makes a design system work at an enterprise scale. I needed to understand best practices, common failure points, and what it means to design a system that can outlive the tools and workflows of today.
 
 My first iteration was straightforward: a single-tiered variable system. Values mapped directly to outputs. It worked, in the way that a rough draft works - it proved the concept, but it wasn't going to scale.
 
@@ -29,7 +29,7 @@ The more I learned, the more I understood why.
 
 ## Phase 1 - Building the Foundation: A Three-Tier Token Architecture
 
-The turning point came when I shifted my mental model from *values* to *tokens* - and more specifically, to the relationships between them.
+The turning point came when I shifted my mental model from *values* to *tokens*, and more specifically, to the relationships between them.
 
 After deep research and consulting with industry experts, I made the decision to restructure ENMAX's variable system around a three-tiered architecture:
 
@@ -39,7 +39,7 @@ After deep research and consulting with industry experts, I made the decision to
 
 This wasn't just a naming exercise. This restructuring gave the design system flexibility, scalability, and consistency across naming conventions, use cases, and categories. It also became the scaffolding that everything else would be built on top of.
 
-And critically - every single token was validated for **WCAG contrast and accessibility compliance**. For a utility company with a broad and diverse user base, accessibility isn't a nice-to-have. It's a responsibility baked into every decision.
+And critically - every single token was validated for **WCAG contrast and accessibility compliance**. For a utility company with a broad and diverse user base, accessibility isn't a nice-to-have, it's a responsibility baked into every decision.
 
 ---
 
@@ -58,6 +58,8 @@ But while I was doing that, I noticed something beyond the missing tokens. Some 
 So I made a call: don't just map the tokens. Rebuild the components properly.
 
 With the support and guidance of my leaders and colleagues, I rebuilt each component to follow auto-layout best practices, assigned proper component properties, and ensured the system stayed human-first while becoming AI-digestible. It was a significant body of work - but it was the right one to do.
+
+One more thing came out of this phase that's worth naming on its own: during the token mapping process, I also took on the responsibility of introducing dark mode to enmax.com. By structuring the semantic tokens with mode-switching in mind, I was able to map a complete dark mode token set across the component library while maintaining at least AA WCAG compliance at every step, and always pushing for AAA where achievable. Whether or not I'm still at ENMAX when it ships, the work is complete and ready to hand off to the development team. That felt important to do right.
 
 ---
 
