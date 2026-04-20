@@ -155,7 +155,7 @@
 .bodyText {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .bodyText p,
@@ -164,7 +164,7 @@
   font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
-  line-height: 1.6;
+  line-height: normal;
   margin: 0;
 }
 
@@ -191,7 +191,7 @@
   font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
-  line-height: 1.6;
+  line-height: normal;
 }
 
 .bulletList li {
@@ -199,7 +199,7 @@
   font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
-  line-height: 1.6;
+  line-height: normal;
 }
 
 /* ── Divider ─────────────────────────────────────── */
