@@ -12,34 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Verify project is up
+      - name: Query keepalive table to register database activity
         run: |
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "https://${{ secrets.SUPABASE_PROJECT_ID }}.supabase.co/auth/v1/health")
-
-          echo "Auth health status: $STATUS"
-
-          if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 300 ]; then
-            echo "Supabase project is up."
-          else
-            echo "Project may be paused or unreachable. Status: $STATUS"
-            exit 1
-          fi
-
-      - name: Ping REST API to register activity
-        run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "https://${{ secrets.SUPABASE_PROJECT_ID }}.supabase.co/rest/v1/" \
+            "https://${{ secrets.SUPABASE_PROJECT_ID }}.supabase.co/rest/v1/keepalive?select=message&limit=1" \
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
 
-          echo "REST API status: $STATUS"
+          echo "Keepalive query status: $STATUS"
 
-          # 200 = success, 401 = auth required — both mean Supabase received the request
-          # A paused/unreachable project would return 5xx or time out entirely
-          if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 500 ]; then
-            echo "Activity registered with Supabase."
+          if [ "$STATUS" -eq 200 ]; then
+            echo "Database activity registered. Project is alive."
           else
-            echo "Unexpected status code: $STATUS"
+            echo "Unexpected status: $STATUS. Check that the keepalive table exists with anon SELECT access."
             exit 1
           fi
