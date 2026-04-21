@@ -12,17 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Ping database to prevent inactivity pause
+      - name: Ping Edge Function to prevent inactivity pause
         run: |
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "https://${{ secrets.SUPABASE_PROJECT_ID }}.supabase.co/rest/v1/?apikey=${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            "https://${{ secrets.SUPABASE_PROJECT_ID }}.supabase.co/functions/v1/server/make-server-2821aa23/health" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
 
           echo "Supabase response status: $STATUS"
 
           if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 300 ]; then
-            echo "Supabase database is alive."
+            echo "Supabase Edge Function is alive."
           else
             echo "Unexpected status code: $STATUS"
             exit 1
