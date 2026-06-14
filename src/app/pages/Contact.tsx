@@ -6,7 +6,6 @@ import Select from "../components/Select/Select";
 import TextArea from "../components/TextArea/TextArea";
 import Button from "../components/Button/Button";
 import BackgroundPattern from "../components/BackgroundPattern/BackgroundPattern";
-import { projectId, publicAnonKey } from "/utils/supabase/info";
 import contactContent from "../../content/contact.json";
 import styles from "./Contact.module.css";
 
@@ -32,17 +31,13 @@ export default function Contact() {
     setSubmitStatus("idle");
 
     try {
-      const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-2821aa23/contact`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${publicAnonKey}`,
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
 
