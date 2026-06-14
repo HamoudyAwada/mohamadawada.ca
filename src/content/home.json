@@ -1,8 +1,7 @@
 {
   "hero": {
     "title": "Hey There, It's Moe!",
-    "description": "I design experiences that actually matter to people, and I try to bring that same honesty and warmth to everything I do.",
-    "cta": { "label": "Explore My Work", "href": "/my-work" }
+    "description": "Designing the systems behind the systems."
   },
   "workSection": {
     "title": "My Work",

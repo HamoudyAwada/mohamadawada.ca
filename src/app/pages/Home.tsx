@@ -1,11 +1,11 @@
 import Navigation from "../components/Navigation";
 import HeroSection from "../components/HeroSection";
+import MoeSignature from "../components/MoeSignature";
 import SectionHeading from "../components/SectionHeading";
 import ProjectCard from "../components/ProjectCard";
 import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import imgHeadshot from "../../assets/83f4de12679ccac2d92d82eb66f087549d1db709.webp";
 import projects from "../../data/projects";
 import homeContent from "../../content/home.json";
 import styles from "./Home.module.css";
@@ -21,13 +21,14 @@ export default function Home() {
 
       <main className={styles.main}>
         {/* Hero Section */}
-        <HeroSection
-          image={imgHeadshot}
-          title={hero.title}
-          description={hero.description}
-          ctaLabel={hero.cta.label}
-          ctaHref={hero.cta.href}
-        />
+        <HeroSection title={hero.title} description={hero.description} />
+
+        {/* Moe Signature */}
+        <div className={styles.signatureSection}>
+          <div className={styles.signatureSvgWrapper}>
+            <MoeSignature />
+          </div>
+        </div>
 
         <Divider />
 

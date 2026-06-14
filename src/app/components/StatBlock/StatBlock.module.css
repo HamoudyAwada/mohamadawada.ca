@@ -7,7 +7,7 @@
 
 .value {
   font-family: var(--font-family-heading);
-  font-size: var(--text-h5);
+  font-size: var(--text-h6);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
   line-height: normal;

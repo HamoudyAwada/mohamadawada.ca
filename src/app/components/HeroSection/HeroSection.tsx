@@ -1,40 +1,16 @@
-import Button from "../Button";
-import FadeInImage from "../FadeInImage";
 import styles from "./HeroSection.module.css";
 
 interface HeroSectionProps {
-  image: string;
   title: string;
   description: string;
-  ctaLabel: string;
-  ctaHref: string;
 }
 
-export default function HeroSection({
-  image,
-  title,
-  description,
-  ctaLabel,
-  ctaHref,
-}: HeroSectionProps) {
+export default function HeroSection({ title, description }: HeroSectionProps) {
   return (
     <section className={styles.hero}>
-      <div className={styles.container}>
-        <div className={styles.imageWrapper}>
-          <div className={styles.imageContainer}>
-            <FadeInImage src={image} alt="Mohamad Awada" className={styles.image} loading="eager" />
-          </div>
-        </div>
-
-        <div className={styles.content}>
-          <div className={styles.text}>
-            <h1 className={styles.title}>{title}</h1>
-            <p className={styles.description}>{description}</p>
-          </div>
-          <Button variant="primary" size="large" href={ctaHref}>
-            {ctaLabel}
-          </Button>
-        </div>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.description}>{description}</p>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 
   # Mohamadawada.com
 
-  This is a code bundle for Mohamadawada.com. The original project is available at https://www.figma.com/design/BvCvjh7lJOk1yG3YBdddJ1/Mohamadawada.com.
+  This is a code bundle for Mohamadawada.ca. The original project is available at https://www.figma.com/design/BvCvjh7lJOk1yG3YBdddJ1/Mohamadawada.com.
 
   ## Running the code
 
