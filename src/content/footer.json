@@ -10,7 +10,7 @@
       "links": [
         { "label": "Projects", "href": "/my-work", "external": false },
         { "label": "My Process", "href": "/process", "external": false },
-        { "label": "Resume", "href": "/mohamad-awada-resume.pdf", "external": true }
+        { "label": "Resume", "href": "/resume", "external": false }
       ]
     },
     "connect": {

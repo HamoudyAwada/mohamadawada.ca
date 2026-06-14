@@ -1,14 +1,7 @@
-import { createBrowserRouter, Navigate } from "react-router";
-import { Suspense, lazy, useEffect } from "react";
+import { createBrowserRouter } from "react-router";
+import { Suspense, lazy } from "react";
 import PageSkeleton from "./components/PageSkeleton";
 import RootLayout from "./components/RootLayout";
-
-function ResumeRedirect() {
-  useEffect(() => {
-    window.open("/mohamad-awada-resume.pdf", "_blank", "noopener,noreferrer");
-  }, []);
-  return <Navigate to="/" replace />;
-}
 
 const Home = lazy(() => import("./pages/Home"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon"));
@@ -20,6 +13,7 @@ const YYventC = lazy(() => import("./pages/YYventC"));
 const Trumi = lazy(() => import("./pages/Trumi"));
 const EnmaxDesignSystem = lazy(() => import("./pages/EnmaxDesignSystem"));
 const SignatureTest = lazy(() => import("./pages/SignatureTest"));
+const Resume = lazy(() => import("./pages/Resume"));
 
 export const router = createBrowserRouter([
   {
@@ -83,7 +77,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/resume",
-        element: <ResumeRedirect />,
+        element: (
+          <Suspense fallback={<PageSkeleton variant="generic" />}>
+            <Resume />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",

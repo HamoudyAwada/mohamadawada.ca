@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "title": "Resume",
+    "subtitle": "A quick look at my experience, skills, and education.",
+    "cta": {
+      "label": "Download my Resume",
+      "href": "/mohamad-awada-resume.pdf"
+    }
+  }
+}

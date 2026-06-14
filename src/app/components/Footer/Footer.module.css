@@ -1,6 +1,5 @@
 .footer {
   background-color: var(--surface-dark);
-  border-top: 2px solid var(--accent);
   width: 100%;
   padding: 64px;
   overflow: hidden;
