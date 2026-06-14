@@ -8,21 +8,18 @@
     "work": {
       "title": "Work",
       "links": [
-        { "label": "Projects", "href": "/my-work", "icon": "projects", "external": false },
-        { "label": "My Process", "href": "/process", "icon": "process", "external": false }
+        { "label": "Projects", "href": "/my-work", "external": false },
+        { "label": "My Process", "href": "/process", "external": false },
+        { "label": "Resume", "href": "/mohamad-awada-resume.pdf", "external": true }
       ]
     },
-    "me": {
-      "title": "Me",
+    "connect": {
+      "title": "Connect",
       "links": [
-        { "label": "About Me", "href": "/about", "icon": "about", "external": false },
-        { "label": "Resume", "href": "/mohamad-awada-resume.pdf", "icon": "resume", "external": true },
-        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/mohamad-awada-ux-ui-designer/", "icon": "linkedin", "external": true }
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/mohamad-awada-ux-ui-designer/", "external": true },
+        { "label": "Email", "href": "/contact", "external": false }
       ]
     }
   },
-  "copyright": [
-    "© 2026 Mohamad Awada. All rights reserved.",
-    "Designed and built by Mohamad Awada (Moe)"
-  ]
+  "copyright": "© 2026 Mohamad Awada. All rights reserved."
 }

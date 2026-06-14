@@ -1,8 +1,7 @@
 import { Link } from "react-router";
 import Logo from "../Logo";
 import Button from "../Button";
-import Divider from "../Divider";
-import { arrowRight, iconProjects, iconProcess, iconAbout, iconResume, iconLinkedIn } from "../../data/svgPaths";
+import { arrowRight } from "../../data/svgPaths";
 import footerContent from "../../../content/footer.json";
 import styles from "./Footer.module.css";
 
@@ -14,66 +13,42 @@ function IconRight() {
   );
 }
 
-function ProjectsIcon() {
+function FooterLinks({ links }: { links: typeof footerContent.columns.work.links }) {
   return (
-    <svg width="24" height="24" viewBox="0 0 19.5 18" fill="none">
-      <path d={iconProjects} fill="currentColor" />
-    </svg>
+    <nav className={styles.linkList}>
+      {links.map((link) =>
+        link.external ? (
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.footerLink}
+          >
+            {link.label}
+          </a>
+        ) : (
+          <Link key={link.href} to={link.href} className={styles.footerLink}>
+            {link.label}
+          </Link>
+        )
+      )}
+    </nav>
   );
 }
-
-function ProcessIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 18 17.6377" fill="none">
-      <path d={iconProcess} fill="currentColor" />
-    </svg>
-  );
-}
-
-function AboutIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 19.5188 18.7697" fill="none">
-      <path d={iconAbout} fill="currentColor" />
-    </svg>
-  );
-}
-
-function ResumeIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 16.5 19.5" fill="none">
-      <path d={iconResume} fill="currentColor" />
-    </svg>
-  );
-}
-
-function LinkedInIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 19.5 19.5" fill="none">
-      <path d={iconLinkedIn} fill="currentColor" />
-    </svg>
-  );
-}
-
-const iconMap: Record<string, JSX.Element> = {
-  projects: <ProjectsIcon />,
-  process: <ProcessIcon />,
-  about: <AboutIcon />,
-  resume: <ResumeIcon />,
-  linkedin: <LinkedInIcon />,
-};
 
 export default function Footer() {
   const { cta, columns, copyright } = footerContent;
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          {/* Logo and CTA section */}
+      <div className={styles.content}>
+        <div className={styles.topRow}>
+          {/* Logo, slogan, and contact CTA */}
           <div className={styles.brandSection}>
-            <div className={styles.logoSection}>
-              <Logo variant="footer" showText />
-            </div>
+            <Logo variant="footer" showText />
+
+            <div className={styles.mobileDivider} />
 
             <div className={styles.ctaSection}>
               <p className={styles.ctaText}>{cta.text}</p>
@@ -88,66 +63,26 @@ export default function Footer() {
             </div>
           </div>
 
+          <div className={styles.mobileDivider} />
+
           {/* Links section */}
           <div className={styles.linksSection}>
-            {/* Work column */}
             <div className={styles.linkColumn}>
               <h4 className={styles.columnTitle}>{columns.work.title}</h4>
-              <nav className={styles.linkList}>
-                {columns.work.links.map((link) =>
-                  link.external ? (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.footerLink}
-                    >
-                      {iconMap[link.icon]}
-                      <span>{link.label}</span>
-                    </a>
-                  ) : (
-                    <Link key={link.href} to={link.href} className={styles.footerLink}>
-                      {iconMap[link.icon]}
-                      <span>{link.label}</span>
-                    </Link>
-                  )
-                )}
-              </nav>
+              <FooterLinks links={columns.work.links} />
             </div>
 
-            {/* Me column */}
+            <div className={styles.verticalDivider} />
+
             <div className={styles.linkColumn}>
-              <h4 className={styles.columnTitle}>{columns.me.title}</h4>
-              <nav className={styles.linkList}>
-                {columns.me.links.map((link) =>
-                  link.external ? (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.footerLink}
-                    >
-                      {iconMap[link.icon]}
-                      <span>{link.label}</span>
-                    </a>
-                  ) : (
-                    <Link key={link.href} to={link.href} className={styles.footerLink}>
-                      {iconMap[link.icon]}
-                      <span>{link.label}</span>
-                    </Link>
-                  )
-                )}
-              </nav>
+              <h4 className={styles.columnTitle}>{columns.connect.title}</h4>
+              <FooterLinks links={columns.connect.links} />
             </div>
           </div>
         </div>
 
         <div className={styles.copyright}>
-          {copyright.map((line, i) => (
-            <p key={i}>{line}</p>
-          ))}
+          <p>{copyright}</p>
         </div>
       </div>
     </footer>
