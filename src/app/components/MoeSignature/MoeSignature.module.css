@@ -7,3 +7,9 @@
   width: 100%;
   height: auto;
 }
+
+.spotlight {
+  opacity: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}

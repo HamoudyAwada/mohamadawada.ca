@@ -9,33 +9,78 @@ interface MoeSignatureProps {
   className?: string;
 }
 
-const SESSION_KEY = "moe-signature-animated";
+const VIEWBOX_WIDTH = 4172;
+const SPOTLIGHT_RADIUS = 260;
 
-// Soft glow stroke (blurred), stroke-width 16
+// Soft glow stroke (blurred), stroke-width 8
 const GLOW_PATH =
-  "M1535.69 278.748C1657.26 146.908 1669.88 110.128 1657.74 107.81C1656.19 107.515 1654.69 107.884 1653.25 108.518C1651.31 109.37 1650.02 110.526 1648.46 111.957C1565.46 188.184 713.602 484.797 84.052 114.998M1535.69 278.748C1523.02 292.482 1509.18 307.249 1494.05 323.115C1507.48 307.888 1521.43 293.052 1535.69 278.748ZM1535.69 278.748C1706.89 106.982 1921.82 11.9884 1790.09 240.051M2111.69 231.534C2009.46 310.336 1962.6 325.245 1934.92 308.206C1912.77 294.576 1931.37 264.191 1943.44 250.702C1961.89 231.534 2000.51 186.809 2007.33 161.251C2042.31 30.0779 1841.21 167.641 1790.09 240.051C1728.35 312.438 1726.2 314.592 1724.07 316.723M2111.69 231.534C2126.6 191.068 2188.36 110.136 2286.33 93.0981C2323.1 89.2948 2374.37 106.198 2369.39 148.473C2365.13 184.679 2277.81 283.149 2211.79 310.336C2175.58 325.245 2092.52 325.245 2111.69 231.534ZM2364.55 122.894C2336.86 103.727 2286.33 156.992 2318.28 229.404C2328.93 240.055 2350.22 261.353 2392.82 259.223C2435.5 257.089 2466.65 233.664 2475.88 225.145M2475.88 225.145C2479.98 209.422 2492.2 190.408 2508.95 171.625M2475.88 225.145C2470.27 246.66 2458.84 280.519 2501.44 312.466C2530.93 334.587 2626.94 318.181 2708.77 270.872C2760.57 240.929 2805.32 199.135 2863.88 186.898C3174.35 122.023 4099.17 172.039 4089.55 108.998M2475.88 153.998C2480.45 156.565 2502.89 168.751 2508.95 171.625M2508.95 171.625C2548.14 190.21 2614.77 211.725 2659.04 191.066C2722.94 161.25 2718.68 131.433 2714.42 122.913C2710.16 114.394 2703.77 82.4475 2642.01 88.8369C2600.07 93.1755 2544.38 131.885 2508.95 171.625Z";
+  "M1533.66 274.749C1655.24 142.909 1667.86 106.129 1655.71 103.811C1654.17 103.515 1652.66 103.885 1651.22 104.519C1649.28 105.371 1647.99 106.526 1646.43 107.958C1563.44 184.185 711.576 480.798 82.0259 110.999M1533.66 274.749C1521 288.483 1507.15 303.249 1492.03 319.116C1505.45 303.889 1519.41 289.053 1533.66 274.749ZM1533.66 274.749C1704.87 102.983 1919.79 7.98924 1788.07 236.052M2109.66 227.535C2007.43 306.337 1960.58 321.245 1932.89 304.207C1910.74 290.577 1929.34 260.192 1941.41 246.703C1959.87 227.535 1998.49 182.809 2005.3 157.252C2040.28 26.0788 1839.18 163.641 1788.07 236.052C1726.33 308.439 1724.17 310.593 1722.04 312.724M2109.66 227.535C2124.57 187.069 2186.34 106.137 2284.31 89.099C2321.07 85.2957 2372.34 102.199 2367.37 144.473C2363.11 180.68 2275.79 279.15 2209.76 306.337C2173.56 321.245 2090.49 321.245 2109.66 227.535ZM2362.52 118.895C2334.83 99.7276 2284.31 152.993 2316.25 225.405C2326.9 236.056 2348.2 257.354 2390.79 255.224C2433.47 253.09 2464.63 229.665 2473.86 221.146M2473.86 221.146C2477.96 205.423 2490.18 186.409 2506.92 167.625M2473.86 221.146C2468.24 242.661 2456.82 276.52 2499.41 308.467C2528.91 330.588 2624.92 314.182 2706.75 266.873C2758.54 236.93 2803.3 195.136 2861.86 182.899C3172.33 118.024 4097.14 168.04 4087.53 104.999M2473.86 149.999C2478.42 152.566 2500.86 164.751 2506.92 167.625M2506.92 167.625C2546.11 186.211 2612.75 207.726 2657.02 187.067C2720.91 157.25 2716.65 127.433 2712.39 118.914C2708.13 110.395 2701.74 78.4484 2639.98 84.8377C2598.04 89.1763 2542.35 127.886 2506.92 167.625Z";
 
-// Sharp signature stroke, stroke-width 12
+// Sharp signature stroke, stroke-width 12, round caps
 const LINE_PATH =
-  "M1535.69 278.748C1657.26 146.908 1669.88 110.128 1657.74 107.81C1655.83 107.445 1653.99 108.093 1652.24 109.002C1651.02 109.64 1650.17 110.282 1649.1 111.152C1565.25 179.099 724.589 496.82 78.2288 110.028M1535.69 278.748C1523.02 292.482 1509.18 307.249 1494.05 323.115C1507.48 307.888 1521.43 293.052 1535.69 278.748ZM1535.69 278.748C1706.89 106.982 1921.82 11.9884 1790.09 240.051M2111.69 231.534C2009.46 310.336 1962.6 325.245 1934.92 308.206C1912.77 294.576 1931.37 264.191 1943.44 250.702C1961.89 231.534 2000.51 186.809 2007.33 161.251C2042.31 30.0779 1841.21 167.641 1790.09 240.051C1728.35 312.438 1726.2 314.592 1724.07 316.723M2111.69 231.534C2126.6 191.068 2188.36 110.136 2286.33 93.0981C2323.1 89.2949 2374.37 106.198 2369.39 148.473C2365.13 184.679 2277.81 283.149 2211.79 310.336C2175.58 325.245 2092.52 325.245 2111.69 231.534ZM2364.55 122.894C2336.86 103.727 2297.32 139.087 2329.27 211.498C2339.91 222.149 2355.24 242.628 2397.84 240.498C2440.52 238.364 2466.65 233.664 2475.88 225.145M2475.88 225.145C2479.98 209.422 2492.2 190.408 2508.95 171.625M2475.88 225.145C2471.41 242.306 2463.23 267.321 2481.72 292.955C2492.54 307.952 2509.93 317.086 2528.32 319.01C2577.64 324.165 2658.03 305.484 2725.77 262.111C2765.68 236.552 2800.45 202.3 2846.32 190.38C3135.69 115.188 4100.04 174.341 4090.23 110.028M2475.88 153.998C2480.45 156.565 2502.89 168.751 2508.95 171.625M2508.95 171.625C2548.14 190.21 2614.77 211.725 2659.04 191.066C2722.94 161.25 2715.52 132.374 2714.42 122.913C2713.27 112.999 2703.77 82.4475 2642.01 88.8369C2600.07 93.1755 2544.38 131.885 2508.95 171.625Z";
+  "M1533.66 274.749C1655.24 142.909 1667.86 106.129 1655.71 103.811C1653.81 103.446 1651.96 104.094 1650.22 105.003C1648.99 105.641 1648.14 106.283 1647.07 107.153C1563.23 175.1 722.562 492.821 76.2026 106.029M1533.66 274.749C1521 288.483 1507.15 303.249 1492.03 319.116C1505.45 303.889 1519.41 289.053 1533.66 274.749ZM1533.66 274.749C1704.87 102.983 1919.79 7.98926 1788.07 236.052M2109.66 227.535C2007.43 306.337 1960.58 321.245 1932.89 304.207C1910.74 290.577 1929.34 260.192 1941.41 246.703C1959.87 227.535 1998.49 182.809 2005.3 157.252C2040.28 26.0788 1839.18 163.641 1788.07 236.052C1726.33 308.439 1724.17 310.593 1722.04 312.724M2109.66 227.535C2124.57 187.069 2186.34 106.137 2284.31 89.099C2321.07 85.2957 2372.34 102.199 2367.37 144.473C2363.11 180.68 2275.79 279.15 2209.76 306.337C2173.56 321.245 2090.49 321.245 2109.66 227.535ZM2362.52 118.895C2334.83 99.7276 2295.29 135.087 2327.24 207.499C2337.89 218.15 2353.22 238.629 2395.81 236.499C2438.49 234.365 2464.63 229.665 2473.86 221.146M2473.86 221.146C2477.96 205.423 2490.18 186.409 2506.92 167.625M2473.86 221.146C2469.38 238.307 2461.2 263.322 2479.7 288.956C2490.51 303.953 2507.91 313.087 2526.3 315.01C2575.61 320.166 2656 301.485 2723.74 258.112C2763.66 232.553 2798.42 198.301 2844.29 186.38C3133.66 111.189 4098.01 170.341 4088.2 106.029M2473.86 149.999C2478.42 152.566 2500.86 164.751 2506.92 167.625M2506.92 167.625C2546.11 186.211 2612.75 207.726 2657.02 187.067C2720.91 157.25 2713.49 128.375 2712.39 118.914C2711.24 109 2701.74 78.4484 2639.98 84.8377C2598.04 89.1763 2542.35 127.886 2506.92 167.625Z";
+
+function setupSpotlight(
+  svg: SVGSVGElement,
+  gradient: SVGRadialGradientElement | null,
+  hotGroup: SVGGElement | null
+) {
+  if (!gradient || !hotGroup) return undefined;
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return undefined;
+
+  const pos = { x: 0, y: 0 };
+  const setX = gsap.quickTo(pos, "x", {
+    duration: 0.4,
+    ease: "power3",
+    onUpdate: () => gradient.setAttribute("cx", pos.x.toFixed(2)),
+  });
+  const setY = gsap.quickTo(pos, "y", {
+    duration: 0.4,
+    ease: "power3",
+    onUpdate: () => gradient.setAttribute("cy", pos.y.toFixed(2)),
+  });
+
+  const handleMove = (e: MouseEvent) => {
+    // viewBox aspect ratio is preserved, so one scale factor maps screen px to viewBox units
+    const rect = svg.getBoundingClientRect();
+    const scale = VIEWBOX_WIDTH / rect.width;
+    setX((e.clientX - rect.left) * scale);
+    setY((e.clientY - rect.top) * scale);
+  };
+  const handleEnter = () => gsap.to(hotGroup, { opacity: 1, duration: 0.3, overwrite: true });
+  const handleLeave = () => gsap.to(hotGroup, { opacity: 0, duration: 0.4, overwrite: true });
+
+  svg.addEventListener("mousemove", handleMove);
+  svg.addEventListener("mouseenter", handleEnter);
+  svg.addEventListener("mouseleave", handleLeave);
+
+  return () => {
+    svg.removeEventListener("mousemove", handleMove);
+    svg.removeEventListener("mouseenter", handleEnter);
+    svg.removeEventListener("mouseleave", handleLeave);
+  };
+}
 
 export default function MoeSignature({ className }: MoeSignatureProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
   const glowRef = useRef<SVGPathElement>(null);
   const lineRef = useRef<SVGPathElement>(null);
+  const hotGroupRef = useRef<SVGGElement>(null);
+  const gradientRef = useRef<SVGRadialGradientElement>(null);
   const uid = useId().replace(/:/g, "");
   const glowFilterId = `moe-signature-glow-${uid}`;
-  const lineFilterId = `moe-signature-line-${uid}`;
+  const hotGlowFilterId = `moe-signature-hot-glow-${uid}`;
+  const spotlightGradientId = `moe-signature-spotlight-${uid}`;
 
   useGSAP(
     () => {
       const glow = glowRef.current;
       const line = lineRef.current;
-      if (!glow || !line) return;
+      const svg = svgRef.current;
+      if (!glow || !line || !svg) return;
 
-      if (sessionStorage.getItem(SESSION_KEY)) {
-        return;
-      }
+      const cleanupSpotlight = setupSpotlight(svg, gradientRef.current, hotGroupRef.current);
 
       const paths = [glow, line];
       const lengths = paths.map((path) => path.getTotalLength());
@@ -48,8 +93,9 @@ export default function MoeSignature({ className }: MoeSignatureProps) {
         strokeDashoffset: 0,
         duration: 7,
         ease: "sine.inOut",
-        onComplete: () => sessionStorage.setItem(SESSION_KEY, "true"),
       });
+
+      return () => cleanupSpotlight?.();
     },
     { scope: containerRef }
   );
@@ -57,29 +103,41 @@ export default function MoeSignature({ className }: MoeSignatureProps) {
   return (
     <div ref={containerRef} className={`${styles.container} ${className ?? ""}`}>
       <svg
+        ref={svgRef}
         className={styles.svg}
-        viewBox="0 0 4178 411"
+        viewBox="0 0 4172 403"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
         <g filter={`url(#${glowFilterId})`}>
-          <path ref={glowRef} d={GLOW_PATH} stroke="#28A070" strokeWidth="16" />
+          <path ref={glowRef} d={GLOW_PATH} stroke="#ADE9D1" strokeWidth="8" />
         </g>
-        <g filter={`url(#${lineFilterId})`}>
-          <path ref={lineRef} d={LINE_PATH} stroke="#28A070" strokeWidth="12" />
+        <path ref={lineRef} d={LINE_PATH} stroke="#28A070" strokeWidth="12" strokeLinecap="round" />
+        <g ref={hotGroupRef} className={styles.spotlight} filter={`url(#${hotGlowFilterId})`}>
+          <path d={LINE_PATH} stroke={`url(#${spotlightGradientId})`} strokeWidth="28" />
         </g>
         <defs>
-          <filter id={glowFilterId} x="0" y="0" width="4177.63" height="410.18" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <filter id={glowFilterId} x="0" y="0" width="4171.6" height="402.181" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feGaussianBlur stdDeviation="40" result="effect1_foregroundBlur" />
           </filter>
-          <filter id={lineFilterId} x="74.1477" y="80.9675" width="4023.16" height="247.287" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-            <feGaussianBlur stdDeviation="0.5" result="effect1_foregroundBlur" />
+          <filter id={hotGlowFilterId} x="0" y="0" width="4171.6" height="402.181" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feGaussianBlur stdDeviation="10" />
           </filter>
+          <radialGradient
+            ref={gradientRef}
+            id={spotlightGradientId}
+            gradientUnits="userSpaceOnUse"
+            cx="2086"
+            cy="201.5"
+            r={SPOTLIGHT_RADIUS}
+          >
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.85" />
+            <stop offset="35%" stopColor="#7CFFC2" stopOpacity="0.45" />
+            <stop offset="100%" stopColor="#28A070" stopOpacity="0" />
+          </radialGradient>
         </defs>
       </svg>
     </div>

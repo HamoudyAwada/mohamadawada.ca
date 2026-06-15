@@ -3,7 +3,7 @@
 :root {
   --font-size: 16px;
   /* The default background color for the application. */
-  --background: rgba(242, 242, 242, 1.00);
+  --background: rgba(5, 20, 14, 1.00);
   /* The default color for elements or text that appears on top of the background. */
   --foreground: rgba(14, 14, 14, 1.00);
   /* The background color for cards, modals, and other containers. */

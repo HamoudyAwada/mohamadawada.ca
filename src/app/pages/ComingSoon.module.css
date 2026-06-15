@@ -26,7 +26,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h2);
   font-weight: var(--font-weight-bold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
 }
 

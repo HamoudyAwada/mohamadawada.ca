@@ -18,7 +18,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h2);
   font-weight: var(--font-weight-bold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: 1.2;
   word-wrap: break-word;
@@ -28,7 +28,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h6);
   font-weight: var(--font-weight-medium);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: 1.3;
   word-wrap: break-word;

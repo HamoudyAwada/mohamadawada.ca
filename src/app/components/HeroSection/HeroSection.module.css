@@ -18,7 +18,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h1);
   font-weight: var(--font-weight-extrabold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   text-align: center;
   margin: 0;
   line-height: normal;
@@ -28,7 +28,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h5);
   font-weight: var(--font-weight-medium);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   text-align: center;
   margin: 0;
   line-height: normal;

@@ -42,7 +42,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h1);
   font-weight: var(--font-weight-extrabold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }
@@ -51,7 +51,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h5); /* 32px — matches Figma H5 fallback of 32px */
   font-weight: var(--font-weight-medium);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }
@@ -128,7 +128,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h1);
   font-weight: var(--font-weight-extrabold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }
@@ -137,7 +137,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h5); /* 32px */
   font-weight: var(--font-weight-medium);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }

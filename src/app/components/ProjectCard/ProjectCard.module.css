@@ -61,7 +61,7 @@
 /* ── Content section ──────────────────────────── */
 .content {
   flex: 1;
-  background-color: var(--background); /* #f2f2f2 */
+  background-color: var(--background); /* #05140E */
   border-radius: 0 0 32px 32px;
   padding: 24px;
   display: flex;
@@ -91,7 +91,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h4);
   font-weight: var(--font-weight-bold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   text-align: center;
   text-transform: uppercase;
   margin: 0;
@@ -102,7 +102,7 @@
   font-family: var(--font-family-body);
   font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: 1.5;
 }
@@ -138,7 +138,7 @@
   font-family: var(--font-family-body);
   font-size: var(--text-label);
   font-weight: var(--font-weight-bold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -153,7 +153,7 @@
   font-family: var(--font-family-body);
   font-size: var(--text-label);
   font-weight: var(--font-weight-bold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   padding: 8px 0;
 }
 

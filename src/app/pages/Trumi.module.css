@@ -61,7 +61,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h2);
   font-weight: var(--font-weight-extrabold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }
@@ -70,7 +70,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h5);
   font-weight: var(--font-weight-medium);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }
@@ -127,7 +127,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h3);
   font-weight: var(--font-weight-bold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }
@@ -136,7 +136,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h5);
   font-weight: var(--font-weight-medium);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }
@@ -152,7 +152,7 @@
   font-family: var(--font-family-body);
   font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   line-height: normal;
   margin: 0;
 }
@@ -362,7 +362,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--text-h2);
   font-weight: var(--font-weight-extrabold);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
   text-align: center;
