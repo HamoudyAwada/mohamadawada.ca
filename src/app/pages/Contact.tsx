@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import { Mail } from "lucide-react";
 import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer";
 import Input from "../components/Input/Input";
@@ -10,7 +11,7 @@ import contactContent from "../../content/contact.json";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
-  const { heading, description, responseNote, form } = contactContent;
+  const { heading, description, form } = contactContent;
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -88,8 +89,19 @@ export default function Contact() {
                 <p className={styles.description}>{description}</p>
               </div>
 
-              <div className={styles.responseNote}>
-                <p className={styles.responseText}>{responseNote}</p>
+              <div className={styles.emailButtonWrapper}>
+                <div className={styles.orDivider}>
+                  <span>OR</span>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="medium"
+                  href="mailto:moeawada04@gmail.com"
+                  target="_blank"
+                  icon={<Mail size={16} />}
+                >
+                  Email Me Directly
+                </Button>
               </div>
             </div>
           </div>
@@ -201,7 +213,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   variant="ghost"
-                  size="large"
+                  size="medium"
                   disabled={!isFormValid || isSubmitting}
                 >
                   {isSubmitting ? form.submittingButton : form.submitButton}

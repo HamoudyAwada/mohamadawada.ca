@@ -27,7 +27,7 @@
   font-family: var(--font-family-body);
   font-size: 14px;
   font-weight: var(--font-weight-medium);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   line-height: normal;
 }
 
@@ -40,7 +40,7 @@
   font-family: var(--font-family-body);
   font-size: 10px;
   font-weight: var(--font-weight-normal);
-  color: var(--border);
+  color: var(--muted-foreground);
   line-height: normal;
 }
 
@@ -48,7 +48,7 @@
   font-family: var(--font-family-body);
   font-size: 10px;
   font-weight: var(--font-weight-normal);
-  color: var(--foreground);
+  color: var(--primary-foreground);
   padding-bottom: 4px;
   padding-right: 8px;
 }
