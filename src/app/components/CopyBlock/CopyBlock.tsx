@@ -35,7 +35,7 @@ export default function CopyBlock({
 
         {ctaLabel && ctaHref && (
           <div className={styles.cta}>
-            <Button variant="primary" size="large" href={ctaHref}>
+            <Button variant="ghost" size="large" href={ctaHref}>
               {ctaLabel}
             </Button>
           </div>

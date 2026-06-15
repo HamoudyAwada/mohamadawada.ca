@@ -71,16 +71,17 @@
 
 .ghost {
   background-color: transparent;
-  color: var(--secondary);
-  padding: 8px 16px;
+  color: var(--muted);
+  border: 2px solid var(--muted);
+  box-shadow: none;
 }
 
 .ghost:hover {
-  background-color: color-mix(in srgb, var(--secondary) 5%, transparent);
+  background-color: color-mix(in srgb, var(--muted) 5%, transparent);
 }
 
 .ghost:active {
-  background-color: color-mix(in srgb, var(--secondary) 10%, transparent);
+  background-color: color-mix(in srgb, var(--muted) 10%, transparent);
 }
 
 /* States */

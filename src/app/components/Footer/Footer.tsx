@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import Logo from "../Logo";
-import Button from "../Button";
 import { arrowRight } from "../../data/svgPaths";
 import footerContent from "../../../content/footer.json";
 import styles from "./Footer.module.css";
@@ -44,22 +43,18 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.content}>
         <div className={styles.topRow}>
-          {/* Logo, slogan, and contact CTA */}
+          {/* Logo and contact CTA */}
           <div className={styles.brandSection}>
-            <Logo variant="footer" showText />
+            <Logo showText />
 
             <div className={styles.mobileDivider} />
 
             <div className={styles.ctaSection}>
               <p className={styles.ctaText}>{cta.text}</p>
-              <Button
-                variant="primary"
-                href={cta.href}
-                icon={<IconRight />}
-                fullWidth
-              >
+              <Link to={cta.href} className={styles.ctaButton}>
                 {cta.button}
-              </Button>
+                <IconRight />
+              </Link>
             </div>
           </div>
 

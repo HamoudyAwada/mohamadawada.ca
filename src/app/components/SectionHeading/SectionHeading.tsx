@@ -8,7 +8,7 @@ interface SectionHeadingProps {
   cta?: {
     label: string;
     href: string;
-    variant?: "primary" | "secondary";
+    variant?: "primary" | "secondary" | "ghost";
   };
   align?: "left" | "center";
   mobileCentered?: boolean;
@@ -37,7 +37,7 @@ export default function SectionHeading({
       </div>
       {cta && (
         <div className={styles.cta}>
-          <Button variant={cta.variant || "primary"} size="large" href={cta.href}>
+          <Button variant={cta.variant || "ghost"} size="large" href={cta.href}>
             {cta.label}
           </Button>
         </div>

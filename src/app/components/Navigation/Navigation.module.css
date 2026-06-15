@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: var(--surface-dark);
+  background-color: var(--brand-primary-800);
 }
 
 .navContainer {
@@ -50,18 +50,44 @@
 }
 
 .navLink:hover {
-  color: var(--accent);
+  color: var(--muted);
 }
 
 .navLink.active {
-  color: var(--accent);
+  color: #ffffff;
   text-decoration: underline;
-  text-decoration-color: var(--accent);
+  text-decoration-color: #ffffff;
   text-underline-offset: 4px;
 }
 
 .desktopButton {
   display: flex;
+}
+
+/* Outlined CTA pill ("Contact Me") */
+.navCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 2px solid var(--muted);
+  border-radius: var(--radius-button);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.navCta:hover {
+  background-color: rgba(214, 244, 232, 0.12);
+  transform: translateY(-1px);
+}
+
+.navCta:active {
+  transform: translateY(0);
 }
 
 /* Hamburger menu */
@@ -87,7 +113,7 @@
 .mobileOverlay {
   position: fixed;
   inset: 0;
-  background-color: var(--surface-dark);
+  background-color: var(--brand-primary-800);
   z-index: 200;
   display: none;
   flex-direction: column;
@@ -148,7 +174,7 @@
 }
 
 .mobileNavLink:hover {
-  color: var(--accent);
+  color: var(--muted);
 }
 
 .mobileNavLinkActive {
@@ -163,7 +189,7 @@
   transform: translateY(-50%);
   height: 36px;
   width: 4px;
-  background-color: var(--accent);
+  background-color: #ffffff;
   border-radius: 2px;
 }
 
@@ -197,13 +223,18 @@
 }
 
 .mobileSocialLink:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--muted);
+  text-decoration-color: var(--muted);
 }
 
 /* Contact Me button */
 .mobileButton {
   padding: 20px 16px 32px;
+}
+
+.mobileNavCta {
+  padding: 12px 24px;
+  font-size: var(--text-label);
 }
 
 /* ── Responsive ─────────────────────────────────────────── */

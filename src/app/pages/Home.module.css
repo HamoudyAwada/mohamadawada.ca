@@ -6,35 +6,6 @@
   overflow-x: clip;
 }
 
-.processSection {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-}
-
-.processTitle {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h2);
-  font-weight: var(--font-weight-bold);
-  color: var(--primary-foreground);
-  margin: 0;
-}
-
-.processDescription {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h5);
-  font-weight: var(--font-weight-medium);
-  color: var(--primary-foreground);
-  margin: 0;
-}
-
-.processButtons {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -42,6 +13,7 @@
   width: 100%;
   flex: 1;
   padding-top: 73px; /* Height of the fixed navigation */
+  padding-bottom: 64px;
 }
 
 .section {
@@ -58,6 +30,7 @@
   justify-content: center;
   padding-right: 6.6667vw; /* 96px at 1440px reference width */
   box-sizing: border-box;
+  margin-top: -32px;
 }
 
 .signatureSvgWrapper {
@@ -65,90 +38,105 @@
   width: 290vw;
 }
 
-.sectionHeading {
-  padding: 0 64px 80px 64px;
-}
-
-.processSection {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+/* Work grid (bento) */
+.workGrid {
   width: 100%;
-}
-
-.processTitle {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h2);
-  font-weight: var(--font-weight-bold);
-  color: var(--primary-foreground);
-  margin: 0;
-}
-
-.processDescription {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h5);
-  font-weight: var(--font-weight-medium);
-  color: var(--primary-foreground);
-  margin: 0;
-}
-
-.processButtons {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-
-/* Resume */
-.resumeSection {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-}
-
-.resumeTitle {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h2);
-  font-weight: var(--font-weight-bold);
-  line-height: normal;
-  color: var(--primary-foreground);
-  margin: 0;
-}
-
-.resumeDescription {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h6);
-  font-weight: var(--font-weight-medium);
-  line-height: normal;
-  color: var(--primary-foreground);
-  margin: 0;
-}
-
-.resumeButtons {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-
-/* Project grid */
-.projectGrid {
-  display: flex;
-  gap: 128px;
-  justify-content: center;
-  align-items: stretch;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 0 64px;
-  flex-wrap: wrap;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.workHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.seeAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-family-body);
+  font-size: var(--text-h6);
+  font-weight: var(--font-weight-bold);
+  color: var(--muted);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.seeAllLink:hover {
+  opacity: 0.75;
+}
+
+.seeAllLink svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.seeAllMobile {
+  display: none;
+}
+
+.bentoGridWrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.bentoGridWrapper::before {
+  content: "";
+  display: block;
+  padding-top: 70.4268%; /* 924 / 1312 */
+}
+
+.bentoGrid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.cellLarge {
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 4;
+}
+
+.cellSmall1 {
+  grid-column: 5 / span 3;
+  grid-row: 1 / span 2;
+}
+
+.cellSmall2 {
+  grid-column: 5 / span 3;
+  grid-row: 3 / span 4;
+}
+
+.cellSmall3 {
+  grid-column: 1 / span 2;
+  grid-row: 5 / span 2;
+}
+
+.cellSmall4 {
+  grid-column: 3 / span 2;
+  grid-row: 5 / span 2;
 }
 
 /* ─── Tablet ─────────────────────────────── */
 @media (min-width: 769px) and (max-width: 1200px) {
-  .sectionHeading {
-    padding: 0 32px 48px 32px;
+  .workGrid {
+    padding: 0 32px;
   }
 
-  .projectGrid {
-    gap: 48px;
-    padding: 0 32px;
+  .bentoGrid {
+    gap: 32px;
   }
 }
 
@@ -157,6 +145,7 @@
   .main {
     gap: 48px;
     padding-top: 84px;
+    padding-bottom: 48px;
   }
 
   .section {
@@ -165,65 +154,57 @@
 
   .signatureSection {
     padding-right: 8.1425vw; /* 32px at 393px reference width */
+    margin-top: -24px;
   }
 
   .signatureSvgWrapper {
     width: 265vw;
   }
 
-  .sectionHeading {
-    padding: 0 24px 24px 24px;
-  }
-
-  /* Process: center everything on mobile */
-  .processSection {
-    align-items: center;
-    text-align: center;
-  }
-
-  .processTitle {
-    font-size: var(--text-h3);
-    text-align: center;
-  }
-
-  .processDescription {
-    font-size: var(--text-base);
-    text-align: center;
-  }
-
-  .processButtons {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  /* Resume: center everything on mobile */
-  .resumeSection {
-    align-items: center;
-    text-align: center;
-  }
-
-  .resumeTitle {
-    font-size: var(--text-h3);
-    text-align: center;
-  }
-
-  .resumeDescription {
-    font-size: var(--text-base);
-    text-align: center;
-  }
-
-  .resumeButtons {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-  }
-
-  .projectGrid {
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+  .workGrid {
     padding: 0 24px;
+    gap: 32px;
+  }
+
+  .workHeading {
+    align-items: center;
+  }
+
+  .bentoGridWrapper {
+    width: 100%;
+    max-width: 345px;
+    margin: 0 auto;
+  }
+
+  .bentoGridWrapper::before {
+    display: none;
+  }
+
+  .bentoGrid {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .cellSmall3,
+  .cellSmall4 {
+    display: none;
+  }
+
+  .seeAllDesktop {
+    display: none;
+  }
+
+  .seeAllMobile {
+    display: inline-flex;
+    align-self: center;
+    font-size: var(--text-base);
+    gap: 12px;
+  }
+
+  .seeAllMobile svg {
+    width: 20px;
+    height: 20px;
   }
 }

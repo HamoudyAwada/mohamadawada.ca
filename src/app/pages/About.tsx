@@ -39,7 +39,7 @@ export default function About() {
               <h1 className={styles.heroTitle}>{hero.title}</h1>
               <p className={styles.heroSubtitle}>{hero.subtitle}</p>
               <Button
-                variant="primary"
+                variant="ghost"
                 size="large"
                 onClick={handleSkipToValues}
                 icon={<ArrowDown size={16} />}
@@ -89,7 +89,7 @@ export default function About() {
               <h2 className={styles.valuesTitle}>{valuesSection.title}</h2>
               <p className={styles.valuesSubtitle}>{valuesSection.subtitle}</p>
               <div className={styles.valuesButton}>
-                <Button variant="primary" size="large" href={valuesSection.cta.href}>
+                <Button variant="ghost" size="large" href={valuesSection.cta.href}>
                   {valuesSection.cta.label}
                 </Button>
               </div>

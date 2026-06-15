@@ -18,6 +18,8 @@
   --primary: rgba(30, 120, 84, 1.00);
   /* The default color for text or elements that appear on top of primary colored elements. */
   --primary-foreground: rgba(242, 242, 242, 1.00);
+  /* Darkest brand green (Brand/Primary/800) — used as the background for the nav and footer. */
+  --brand-primary-800: rgba(20, 80, 56, 1.00);
   /* The secondary color used for secondary(but NOT-DESTRUCTIVE) buttons and interactive elements. */
   --secondary: rgba(11, 46, 80, 1.00);
   /* The default color for text or elements that appear on top of secondary colored elements. */

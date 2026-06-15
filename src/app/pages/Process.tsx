@@ -53,7 +53,7 @@ export default function Process() {
               </div>
 
               <div className={styles.ctaSection}>
-                <Button variant="primary" size="large" href={content.cta.href}>
+                <Button variant="ghost" size="large" href={content.cta.href}>
                   {content.cta.label}
                 </Button>
               </div>

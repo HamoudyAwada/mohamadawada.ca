@@ -15,7 +15,7 @@ export default function Resume() {
         <div className={styles.heroSection}>
           <h1 className={styles.title}>{hero.title}</h1>
           <p className={styles.subtitle}>{hero.subtitle}</p>
-          <Button variant="primary" size="large" href={hero.cta.href} target="_blank">
+          <Button variant="ghost" size="large" href={hero.cta.href} target="_blank">
             {hero.cta.label}
           </Button>
         </div>

@@ -200,7 +200,7 @@ export default function Contact() {
               <div className={styles.submitWrapper}>
                 <Button
                   type="submit"
-                  variant="primary"
+                  variant="ghost"
                   size="large"
                   disabled={!isFormValid || isSubmitting}
                 >

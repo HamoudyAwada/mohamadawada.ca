@@ -30,7 +30,7 @@
   font-family: var(--font-family-heading);
   font-size: 28px;
   font-weight: var(--font-weight-medium);
-  color: white;
+  color: var(--primary-foreground);
   white-space: nowrap;
 }
 

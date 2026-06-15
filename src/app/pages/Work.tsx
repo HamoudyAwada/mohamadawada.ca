@@ -57,7 +57,7 @@ export default function Work() {
                     </p>
                   </div>
                   <Button
-                    variant="primary"
+                    variant="ghost"
                     size="large"
                     href={`/my-work/${project.slug}`}
                   >

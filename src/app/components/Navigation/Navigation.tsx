@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import Logo from "../Logo";
-import Button from "../Button";
 import navContent from "../../../content/nav.json";
 import styles from "./Navigation.module.css";
 
@@ -69,9 +68,9 @@ export default function Navigation() {
 
             {/* Contact button (desktop) */}
             <div className={styles.desktopButton}>
-              <Button variant="primary" size="small" href="/contact">
+              <Link to="/contact" className={styles.navCta}>
                 {navContent.contactButton}
-              </Button>
+              </Link>
             </div>
 
             {/* Hamburger menu (mobile) */}
@@ -163,9 +162,13 @@ export default function Navigation() {
 
         {/* Contact button */}
         <div className={styles.mobileButton}>
-          <Button variant="primary" size="medium" href="/contact">
+          <Link
+            to="/contact"
+            className={`${styles.navCta} ${styles.mobileNavCta}`}
+            onClick={() => setMobileMenuOpen(false)}
+          >
             {navContent.contactButton}
-          </Button>
+          </Link>
         </div>
 
       </div>
