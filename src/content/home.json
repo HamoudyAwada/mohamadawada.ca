@@ -5,7 +5,7 @@
     "cta": "Explore My Work"
   },
   "workSection": {
-    "title": "Discover My Work",
+    "title": "My Work",
     "cta": { "label": "See All Projects", "href": "/my-work" }
   }
 }
