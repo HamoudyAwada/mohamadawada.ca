@@ -1,106 +1,199 @@
 .page {
   width: 100%;
   min-height: 100vh;
+  padding-top: 73px;
+  background-color: var(--background);
+}
+
+/* ── Shared ─────────────────────────────── */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .section {
-  padding: 80px 64px;
+  padding: 64px;
   box-sizing: border-box;
-}
-
-.projectGrid {
-  max-width: 1312px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 48px;
-}
-
-.contactHeader {
-  padding: 80px 64px 40px;
-  max-width: 1312px;
-  margin: 0 auto;
-}
-
-.contactTitle {
-  background: var(--card);
-  height: 64px;
-  width: 300px;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  animation: shimmer 1.5s ease-in-out infinite;
-}
-
-.contactSubtitle {
-  background: var(--card);
-  height: 20px;
-  width: 500px;
-  border-radius: 8px;
-  animation: shimmer 1.5s ease-in-out infinite;
-}
-
-.contactForm {
-  padding: 0 64px 80px;
-  max-width: 1312px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.formField {
-  background: var(--card);
-  height: 56px;
+.sectionHeading {
+  max-width: 1312px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Home — bento grid ───────────────────── */
+
+.bentoGrid {
+  max-width: 1312px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 180px);
+  gap: 48px;
+}
+
+.bentoLarge {
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 3;
   border-radius: var(--radius);
-  animation: shimmer 1.5s ease-in-out infinite;
+  overflow: hidden;
 }
 
-.formButton {
-  background: var(--card);
-  height: 56px;
-  width: 150px;
-  border-radius: var(--radius-button);
-  animation: shimmer 1.5s ease-in-out infinite;
+.bentoSmall1 {
+  grid-column: 5 / span 3;
+  grid-row: 1 / span 1;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
-@keyframes shimmer {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+.bentoSmall2 {
+  grid-column: 5 / span 3;
+  grid-row: 2 / span 2;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
-/* Responsive */
+/* ── Contact layout ─────────────────────── */
+
+.contactLayout {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 73px);
+}
+
+.contactSidebar {
+  width: 510px;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebarHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebarBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactForm {
+  flex: 1;
+  padding: 64px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: flex-start;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.formRow {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.formSubmit {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* ── Responsive ─────────────────────────── */
+
 @media (max-width: 768px) {
-  .section {
-    padding: 40px 24px;
+  .page {
+    padding-top: 84px;
   }
 
-  .projectGrid {
-    grid-template-columns: 1fr;
+  .section {
+    padding: 48px 24px;
+    gap: 24px;
+  }
+
+  .bentoGrid {
+    display: flex;
+    flex-direction: column;
     gap: 32px;
   }
 
-  .contactHeader {
-    padding: 40px 24px 24px;
+  .bentoLarge,
+  .bentoSmall1,
+  .bentoSmall2 {
+    grid-column: unset;
+    grid-row: unset;
+    height: 220px;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .contactLayout {
+    flex-direction: column;
+  }
+
+  .contactSidebar {
+    width: 100%;
+    padding: 32px 24px;
+    justify-content: flex-start;
   }
 
   .contactForm {
-    padding: 0 24px 40px;
+    padding: 32px 24px;
   }
 
-  .contactTitle {
-    width: 200px;
-    height: 48px;
+  .formRow {
+    flex-direction: column;
+    gap: 24px;
   }
 
-  .contactSubtitle {
+  .formSubmit {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contactSidebar {
     width: 100%;
-    max-width: 350px;
+  }
+
+  .contactLayout {
+    flex-direction: column;
+  }
+
+  .contactForm {
+    padding: 48px 32px;
+  }
+
+  .section {
+    padding: 48px 32px;
+  }
+
+  .bentoGrid {
+    gap: 32px;
   }
 }

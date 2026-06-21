@@ -46,6 +46,6 @@
   }
 
   .description {
-    font-size: var(--text-base);
+    font-size: var(--text-label);
   }
 }

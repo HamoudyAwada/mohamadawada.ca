@@ -13,6 +13,7 @@ const YYventC = lazy(() => import("./pages/YYventC"));
 const Trumi = lazy(() => import("./pages/Trumi"));
 const EnmaxDesignSystem = lazy(() => import("./pages/EnmaxDesignSystem"));
 const SignatureTest = lazy(() => import("./pages/SignatureTest"));
+const SkeletonTest = lazy(() => import("./pages/SkeletonTest"));
 const Resume = lazy(() => import("./pages/Resume"));
 
 export const router = createBrowserRouter([
@@ -96,6 +97,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageSkeleton variant="generic" />}>
             <SignatureTest />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/skeleton-test",
+        element: (
+          <Suspense fallback={null}>
+            <SkeletonTest />
           </Suspense>
         ),
       },

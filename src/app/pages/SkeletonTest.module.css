@@ -1,0 +1,31 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 10px 24px;
+  background-color: rgba(20, 80, 56, 0.9);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-foreground);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.preview {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
