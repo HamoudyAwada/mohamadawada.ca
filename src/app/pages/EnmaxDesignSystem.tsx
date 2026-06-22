@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { Link } from "react-router";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
@@ -8,37 +7,39 @@ import FadeInImage from "../components/FadeInImage";
 import styles from "./EnmaxDesignSystem.module.css";
 import content from "../../content/enmax-design-system.json";
 
-import imgYYventC from "../../assets/yyventc-discover.webp";
-import imgTrumi   from "../../assets/trumi-hero.webp";
+import imgHero               from "../../assets/enmax-case-study-hero.png";
+import imgVariableCollections from "../../assets/variable-collections.png";
+import imgPrimitive          from "../../assets/primitive-variable.png";
+import imgGlobal             from "../../assets/global-variable.png";
+import imgSemantic           from "../../assets/semantic-variable.png";
+import imgDropdown           from "../../assets/dropdown-slots.png";
+import imgYYventC            from "../../assets/yyventc-discover.webp";
+import imgTrumi              from "../../assets/trumi-hero.webp";
 
 const imageMap: Record<string, string> = {
   yyventc: imgYYventC,
   trumi:   imgTrumi,
 };
 
-function ExternalLinkIcon({ className }: { className?: string }) {
+function CheckIcon() {
   return (
-    <svg className={className} viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-      <path d="M224,104a8,8,0,0,1-16,0V59.32l-82.34,82.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z" />
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" className={styles.checkIcon}>
+      <circle cx="11" cy="11" r="11" fill="rgba(40, 160, 112, 0.15)" />
+      <path d="M6.5 11L9.5 14L15.5 8" stroke="rgba(40, 160, 112, 1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-type Section = {
-  id: string;
-  heading: string;
-  introRich?: { before: string; bold: string; after: string };
-  paragraphs?: string[];
-  richParagraph?: { before: string; bold: string; after: string };
-  bulletList?: string[];
-  numberedList?: string[];
-  paragraphsAfter?: string[];
-  closingRich?: { before: string; bold: string; after: string };
-};
+function ArrowRightIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" className={styles.arrowIcon}>
+      <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 
 export default function EnmaxDesignSystem() {
-  const sections = content.sections as Section[];
-
   return (
     <div className={styles.page}>
       <Navigation />
@@ -47,110 +48,172 @@ export default function EnmaxDesignSystem() {
 
         {/* ── Hero ─────────────────────────────────────────── */}
         <section className={styles.heroSection}>
-          <div className={styles.heroInner}>
+          <div className={styles.heroImageWrap}>
+            <FadeInImage
+              src={imgHero}
+              alt="ENMAX Design System — full design system overview in Figma"
+              className={styles.heroImg}
+              loading="eager"
+            />
+            <div className={styles.heroOverlay} />
             <div className={styles.heroText}>
-              <h1 className={styles.heroTitle}>{content.hero.title}</h1>
-              <p className={styles.heroSubtitle}>{content.hero.subtitle}</p>
+              <div className={styles.heroTextBox}>
+                <h1 className={styles.heroTitle}>{content.hero.title}</h1>
+                <p className={styles.heroSubtitle}>{content.hero.subtitle}</p>
+              </div>
+              <div className={styles.heroTags}>
+                {content.hero.tags.map((t) => (
+                  <Tag key={t.label} variant={t.variant as "primary" | "secondary" | "tertiary" | "purple" | "red"}>
+                    {t.label}
+                  </Tag>
+                ))}
+              </div>
             </div>
-            <div className={styles.heroTags}>
-              {content.hero.tags.map((t) => (
-                <Tag key={t.label} variant={t.variant as "primary" | "secondary" | "tertiary" | "purple" | "red"}>
-                  {t.label}
-                </Tag>
+          </div>
+        </section>
+
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── What I delivered ─────────────────────────────── */}
+        <section className={styles.deliverablesSection}>
+          <div className={styles.deliverablesCard}>
+            <span className={styles.deliverablesLabel}>What I delivered</span>
+            <ul className={styles.deliverablesList}>
+              {content.deliverables.map((item, i) => (
+                <li key={i} className={styles.deliverablesItem}>
+                  <CheckIcon />
+                  <span>{item}</span>
+                </li>
               ))}
+            </ul>
+          </div>
+        </section>
+
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── The problem ───────────────────────────────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{content.problem.heading}</h2>
+            <div className={styles.bodyText}>
+              {content.problem.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
             </div>
           </div>
         </section>
 
-        {/* ── Meta bar ─────────────────────────────────────── */}
-        <section className={styles.metaSection}>
-          <div className={styles.metaBar}>
-            {content.meta.map((item) => (
-              <div key={item.label} className={styles.metaItem}>
-                <span className={styles.metaLabel}>{item.label}</span>
-                {item.link ? (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className={styles.metaLink}>
-                    {item.value}
-                    <ExternalLinkIcon className={styles.metaLinkIcon} />
-                  </a>
-                ) : (
-                  <span className={styles.metaValue}>{item.value}</span>
-                )}
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── A foundation built to scale ───────────────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{content.foundation.heading}</h2>
+            <div className={styles.bodyText}>
+              <p>{content.foundation.intro}</p>
+            </div>
+
+            {/* Token architecture images */}
+            <figure className={styles.archFigure}>
+              <div className={styles.archCollectionsWrap}>
+                <FadeInImage
+                  src={imgVariableCollections}
+                  alt="Variable collections panel in Figma showing Primitive, Global, and Semantic tiers"
+                  className={styles.archCollectionsImg}
+                />
               </div>
-            ))}
+              <div className={styles.archTierRow}>
+                <div className={styles.archTierItem}>
+                  <div className={styles.archTierImgWrap}>
+                    <FadeInImage
+                      src={imgPrimitive}
+                      alt="Primitive variable panel"
+                      className={styles.archTierImg}
+                    />
+                  </div>
+                  <span className={styles.archTierLabel}>Primitive</span>
+                  <span className={styles.archTierDesc}>Raw values. Source of truth.</span>
+                </div>
+                <ArrowRightIcon />
+                <div className={styles.archTierItem}>
+                  <div className={styles.archTierImgWrap}>
+                    <FadeInImage
+                      src={imgGlobal}
+                      alt="Global variable panel"
+                      className={styles.archTierImg}
+                    />
+                  </div>
+                  <span className={styles.archTierLabel}>Global</span>
+                  <span className={styles.archTierDesc}>Named aliases with meaning.</span>
+                </div>
+                <ArrowRightIcon />
+                <div className={styles.archTierItem}>
+                  <div className={styles.archTierImgWrap}>
+                    <FadeInImage
+                      src={imgSemantic}
+                      alt="Semantic variable panel"
+                      className={styles.archTierImg}
+                    />
+                  </div>
+                  <span className={styles.archTierLabel}>Semantic</span>
+                  <span className={styles.archTierDesc}>Intent-based UI decisions.</span>
+                </div>
+              </div>
+              <figcaption className={styles.figCaption}>{content.foundation.archImageCaption}</figcaption>
+            </figure>
+
+            <div className={styles.bodyText}>
+              {content.foundation.bodyParagraphs.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+
+            {/* Dropdown slots image */}
+            <figure className={styles.sectionFigure}>
+              <div className={styles.sectionImgWrap}>
+                <FadeInImage
+                  src={imgDropdown}
+                  alt="Dropdown component in Figma showing six slot-based content zones"
+                  className={styles.sectionImg}
+                />
+              </div>
+              <figcaption className={styles.figCaption}>{content.foundation.dropdownCaption}</figcaption>
+            </figure>
           </div>
         </section>
 
         <div className={styles.dividerWrap}><Divider /></div>
 
-        {/* ── Content Sections ─────────────────────────────── */}
-        {sections.map((sec, i) => (
-          <Fragment key={sec.id}>
-            <section className={styles.section}>
-              <div className={styles.sectionInner}>
-                <h2 className={styles.sectionTitle}>{sec.heading}</h2>
-
-                {sec.introRich && (
-                  <p className={styles.bodyParagraph}>
-                    {sec.introRich.before}<strong>{sec.introRich.bold}</strong>{sec.introRich.after}
-                  </p>
-                )}
-
-                {sec.paragraphs && sec.paragraphs.length > 0 && (
-                  <div className={styles.bodyText}>
-                    {sec.paragraphs.map((p, j) => <p key={j}>{p}</p>)}
-                  </div>
-                )}
-
-                {sec.richParagraph && (
-                  <p className={styles.bodyParagraph}>
-                    {sec.richParagraph.before}<strong>{sec.richParagraph.bold}</strong>{sec.richParagraph.after}
-                  </p>
-                )}
-
-                {sec.bulletList && sec.bulletList.length > 0 && (
-                  <ul className={styles.bulletList}>
-                    {sec.bulletList.map((item, j) => <li key={j}>{item}</li>)}
-                  </ul>
-                )}
-
-                {sec.numberedList && sec.numberedList.length > 0 && (
-                  <ol className={styles.numberedList}>
-                    {sec.numberedList.map((item, j) => <li key={j}>{item}</li>)}
-                  </ol>
-                )}
-
-                {sec.paragraphsAfter && sec.paragraphsAfter.length > 0 && (
-                  <div className={styles.bodyText}>
-                    {sec.paragraphsAfter.map((p, j) => <p key={j}>{p}</p>)}
-                  </div>
-                )}
-
-                {sec.closingRich && (
-                  <p className={styles.bodyParagraph}>
-                    {sec.closingRich.before}<strong>{sec.closingRich.bold}</strong>{sec.closingRich.after}
-                  </p>
-                )}
-              </div>
-            </section>
-            <div className={styles.dividerWrap}><Divider /></div>
-          </Fragment>
-        ))}
-
-        {/* ── Ongoing message ───────────────────────────────── */}
-        <section className={styles.ongoingSection}>
-          <p className={styles.ongoingText}>
-            {content.ongoingText.before}
-            <Link to="/contact" className={styles.ongoingLink}>
-              {content.ongoingText.linkText}
-            </Link>
-            {content.ongoingText.after}
-          </p>
+        {/* ── AI-assisted workflow ──────────────────────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{content.aiWorkflow.heading}</h2>
+            <div className={styles.bodyText}>
+              {content.aiWorkflow.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+          </div>
         </section>
 
         <div className={styles.dividerWrap}><Divider /></div>
 
-        {/* ── Check Out These Projects ─────────────────────── */}
+        {/* ── Closing the loop ──────────────────────────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{content.codeLoop.heading}</h2>
+            <div className={styles.bodyText}>
+              {content.codeLoop.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+          </div>
+        </section>
+
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── Closing statement ─────────────────────────────── */}
+        <section className={styles.closingSection}>
+          <div className={styles.closingInner}>
+            <p className={styles.closingText}>{content.closing}</p>
+          </div>
+        </section>
+
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── Related projects ─────────────────────────────── */}
         <section className={styles.relatedSection}>
           <h2 className={styles.relatedTitle}>Check Out These Projects</h2>
           <div className={styles.relatedGrid}>
