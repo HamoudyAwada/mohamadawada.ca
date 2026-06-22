@@ -1,8 +1,11 @@
+const PATTERN_ENABLED = true;
+
 interface BackgroundPatternProps {
   contained?: boolean;
 }
 
 export default function BackgroundPattern({ contained = false }: BackgroundPatternProps) {
+  if (!PATTERN_ENABLED) return null;
   return (
     <svg
       width="100%"
