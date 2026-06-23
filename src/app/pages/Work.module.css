@@ -200,12 +200,12 @@
   }
 
   .heroTitle {
-    font-size: 64px;
+    font-size: var(--text-h4); /* 40px */
     text-align: center;
   }
 
   .heroDescription {
-    font-size: 28px;
+    font-size: var(--text-base); /* 20px */
     text-align: center;
   }
 
@@ -238,12 +238,12 @@
   }
 
   .projectTitle {
-    font-size: 64px;
+    font-size: var(--text-h5); /* 32px */
     text-align: center;
   }
 
   .projectDescription {
-    font-size: 32px;
+    font-size: var(--text-label); /* 16px */
     text-align: center;
   }
 }

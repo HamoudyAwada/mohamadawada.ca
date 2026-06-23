@@ -204,15 +204,6 @@ export default function EnmaxDesignSystem() {
 
         <div className={styles.dividerWrap}><Divider /></div>
 
-        {/* ── Closing statement ─────────────────────────────── */}
-        <section className={styles.closingSection}>
-          <div className={styles.closingInner}>
-            <p className={styles.closingText}>{content.closing}</p>
-          </div>
-        </section>
-
-        <div className={styles.dividerWrap}><Divider /></div>
-
         {/* ── Related projects ─────────────────────────────── */}
         <section className={styles.relatedSection}>
           <h2 className={styles.relatedTitle}>Check Out These Projects</h2>

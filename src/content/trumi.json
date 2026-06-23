@@ -1,4 +1,12 @@
 {
+  "deliverables": [
+    "Integrated a working AI into the prototype using the free Gemini API, giving users a real conversational companion",
+    "Designed the character and AI chat screen, applying the advice-sandwich principle directly from user research",
+    "Built the full reflection experience: guided daily check-ins across morning, midday, and evening, plus deeper journaling pathways",
+    "Designed weekly and monthly insight summaries that surface patterns in mood, habits, and goal progress",
+    "Mapped character changes to user actions, making gamification emotionally meaningful rather than decorative",
+    "Maintained a consistent non-judgmental emotional register across every state and interaction throughout the product"
+  ],
   "hero": {
     "title": "Trumi",
     "subtitle": "A personal growth app that helps you understand your values, set goals that align with them, and achieve what matters most.",
@@ -104,7 +112,7 @@
   "relatedProjects": [
     {
       "slug": "enmax-design-system",
-      "title": "ENMAX Design System",
+      "title": "The ENMAX Design System",
       "description": "Understand how I helped shape ENMAX\u2019s design system and set the foundation for powerful AI assisted workflows.",
       "imageKey": "enmax",
       "imageType": "cropped"

@@ -6,22 +6,24 @@ import Tag from "../components/Tag";
 import FadeInImage from "../components/FadeInImage";
 import styles from "./Trumi.module.css";
 import content from "../../content/trumi.json";
-import {
-  iconFileMagnifyingGlass,
-  iconWarningCircle,
-  iconMagnifyingGlass,
-  iconHandArrowUp,
-  iconClipboardCheck,
-  iconLightbulb,
-} from "../data/svgPaths";
 
-import imgEnmax   from "../../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
-import imgYYventC from "../../assets/yyventc-discover.webp";
+import imgTrumiHero from "../../assets/trumi-hero.webp";
+import imgEnmax     from "../../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
+import imgYYventC   from "../../assets/yyventc-discover.webp";
 
 const imageMap: Record<string, string> = {
   enmax:   imgEnmax,
   yyventc: imgYYventC,
 };
+
+function CheckIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" className={styles.checkIcon}>
+      <circle cx="11" cy="11" r="11" fill="rgba(40, 160, 112, 0.15)" />
+      <path d="M6.5 11L9.5 14L15.5 8" stroke="rgba(40, 160, 112, 1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 export default function Trumi() {
   return (
@@ -33,58 +35,42 @@ export default function Trumi() {
         {/* ── Hero ─────────────────────────────────────────── */}
         <section className={styles.heroSection}>
           <div className={styles.heroInner}>
-            <div className={styles.heroText}>
+            <div className={styles.heroLeft}>
               <h1 className={styles.heroTitle}>{content.hero.title}</h1>
               <p className={styles.heroSubtitle}>{content.hero.subtitle}</p>
-            </div>
-            <div className={styles.heroTags}>
-              {content.hero.tags.map((t) => (
-                <Tag key={t.label} variant={t.variant as "primary" | "secondary" | "tertiary" | "purple" | "red"}>
-                  {t.label}
-                </Tag>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Meta bar ─────────────────────────────────────── */}
-        <section className={styles.metaSection}>
-          <div className={styles.metaBar}>
-            {content.meta.map((item) => (
-              <div key={item.label} className={styles.metaItem}>
-                <span className={styles.metaLabel}>{item.label}</span>
-                <span className={styles.metaValue}>{item.value}</span>
+              <div className={styles.heroTags}>
+                {content.hero.tags.map((t) => (
+                  <Tag key={t.label} variant={t.variant as "primary" | "secondary" | "tertiary" | "purple" | "red"}>
+                    {t.label}
+                  </Tag>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className={styles.heroRight}>
+              <FadeInImage
+                src={imgTrumiHero}
+                alt="Trumi app hero screenshot"
+                className={styles.heroPhone}
+                loading="eager"
+              />
+            </div>
           </div>
         </section>
 
-        {/* ── Anchor Cards ─────────────────────────────────── */}
-        <section className={styles.anchorSection}>
-          <div className={styles.anchorGrid}>
-            {[
-              { label: "Overview",      id: "overview",      icon: iconFileMagnifyingGlass, viewBox: "0 0 44 52"   },
-              { label: "The Problem",   id: "the-problem",   icon: iconWarningCircle,       viewBox: "0 0 256 256" },
-              { label: "Research",      id: "research",      icon: iconMagnifyingGlass,     viewBox: "0 0 256 256" },
-              { label: "Contributions", id: "contributions", icon: iconHandArrowUp,         viewBox: "0 0 60 54"   },
-              { label: "Outcome",       id: "outcome",       icon: iconClipboardCheck,      viewBox: "0 0 64 62"   },
-              { label: "Reflection",    id: "reflection",    icon: iconLightbulb,           viewBox: "0 0 256 256" },
-            ].map((card) => (
-              <a
-                key={card.label}
-                href={`#${card.id}`}
-                className={styles.anchorCard}
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById(card.id)?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                <span className={styles.anchorLabel}>{card.label}</span>
-                <svg width="56" height="56" viewBox={card.viewBox} fill="none" aria-hidden="true" className={styles.anchorIcon}>
-                  <path d={card.icon} fill="var(--primary)" />
-                </svg>
-              </a>
-            ))}
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── What I contributed ───────────────────────────── */}
+        <section className={styles.deliverablesSection}>
+          <div className={styles.deliverablesCard}>
+            <span className={styles.deliverablesLabel}>What I contributed</span>
+            <ul className={styles.deliverablesList}>
+              {content.deliverables.map((item, i) => (
+                <li key={i} className={styles.deliverablesItem}>
+                  <CheckIcon />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -116,10 +102,9 @@ export default function Trumi() {
           </div>
         </section>
 
-        {/* ── Callout block (Problem) ───────────────────────── */}
+        {/* Problem callout quote */}
         <div className={styles.calloutWrap}>
-          <div className={styles.callout}>
-            <div className={styles.calloutAccent} />
+          <div className={styles.calloutCard}>
             <p className={styles.calloutText}>{content.problem.callout}</p>
           </div>
         </div>
@@ -130,21 +115,28 @@ export default function Trumi() {
         <section id="research" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.research.title}</h2>
-            <p className={styles.bodyParagraph}>{content.research.intro}</p>
+            <div className={styles.bodyText}>
+              <p>{content.research.intro}</p>
+            </div>
           </div>
         </section>
 
-        {/* Stats bar */}
+        {/* Stats — single white card */}
         <div className={styles.statsWrap}>
-          {content.research.stats.map((s) => (
-            <div key={s.label} className={styles.statCard}>
-              <span className={styles.statValue}>{s.value}</span>
-              <span className={styles.statLabel}>{s.label}</span>
-            </div>
-          ))}
+          <div className={styles.statsCard}>
+            {content.research.stats.map((s, i) => (
+              <div key={s.label} className={styles.statItem}>
+                {i > 0 && <div className={styles.statDivider} />}
+                <div className={styles.statContent}>
+                  <span className={styles.statValue}>{s.value}</span>
+                  <span className={styles.statLabel}>{s.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Post-stats + qualitative paragraphs */}
+        {/* Post-stats qualitative paragraphs */}
         <section className={styles.section}>
           <div className={styles.sectionInner}>
             <div className={styles.bodyText}>
@@ -154,10 +146,9 @@ export default function Trumi() {
           </div>
         </section>
 
-        {/* ── Callout block (Research) ──────────────────────── */}
+        {/* Research callout quote */}
         <div className={styles.calloutWrap}>
-          <div className={styles.callout}>
-            <div className={styles.calloutAccent} />
+          <div className={styles.calloutCard}>
             <p className={styles.calloutText}>{content.research.callout}</p>
           </div>
         </div>
@@ -165,7 +156,9 @@ export default function Trumi() {
         {/* Post-callout paragraph */}
         <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <p className={styles.bodyParagraph}>{content.research.postCallout}</p>
+            <div className={styles.bodyText}>
+              <p>{content.research.postCallout}</p>
+            </div>
           </div>
         </section>
 
@@ -175,9 +168,12 @@ export default function Trumi() {
         <section id="contributions" className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.contributions.title}</h2>
+
             <div className={styles.contributionBlock}>
               <h3 className={styles.subHeading}>{content.contributions.introHeading}</h3>
-              <p className={styles.bodyParagraph}>{content.contributions.intro}</p>
+              <div className={styles.bodyText}>
+                <p>{content.contributions.intro}</p>
+              </div>
             </div>
 
             {content.contributions.sections.map((sec) => (
@@ -223,7 +219,7 @@ export default function Trumi() {
 
         <div className={styles.dividerWrap}><Divider /></div>
 
-        {/* ── Check Out These Projects ─────────────────────── */}
+        {/* ── Related projects ─────────────────────────────── */}
         <section className={styles.relatedSection}>
           <h2 className={styles.relatedTitle}>Check Out These Projects</h2>
           <div className={styles.relatedGrid}>

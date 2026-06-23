@@ -1,3 +1,4 @@
+/* ── Page shell ──────────────────────────────────── */
 .page {
   min-height: 100vh;
   display: flex;
@@ -8,7 +9,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding-top: 173px; /* 100px original + 73px fixed nav */
+  padding-top: 173px;
   padding-bottom: 80px;
   gap: 64px;
 }
@@ -27,34 +28,39 @@
 }
 
 .sectionInner {
-  max-width: 1440px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 64px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 /* ── Hero ────────────────────────────────────────── */
 .heroSection {
   width: 100%;
+  margin-top: -90px;
 }
 
 .heroInner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 80px 64px 60px;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: row;
+  gap: 80px;
+  align-items: center;
   box-sizing: border-box;
 }
 
-.heroText {
+.heroLeft {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
+  min-width: 0;
 }
 
 .heroTitle {
@@ -63,16 +69,18 @@
   font-weight: var(--font-weight-extrabold);
   color: var(--primary-foreground);
   margin: 0;
-  line-height: normal;
+  line-height: 1.15;
 }
 
 .heroSubtitle {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h5);
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
   color: var(--primary-foreground);
+  opacity: 0.75;
   margin: 0;
-  line-height: normal;
+  line-height: 1.65;
+  max-width: 520px;
 }
 
 .heroTags {
@@ -81,55 +89,79 @@
   gap: 8px;
 }
 
-/* ── Meta bar ────────────────────────────────────── */
-.metaSection {
+.heroRight {
+  flex-shrink: 0;
+  width: 300px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.heroPhone {
   width: 100%;
-  max-width: 1440px;
+  height: auto;
+  display: block;
+}
+
+/* ── What I contributed card ─────────────────────── */
+.deliverablesSection {
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 64px;
+  width: 100%;
   box-sizing: border-box;
 }
 
-.metaBar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 48px;
+.deliverablesCard {
   background-color: var(--input-background);
-  border-radius: var(--radius);
-  padding: 33px 96px;
-  box-shadow: 0px 8px 15px 0px rgba(14, 14, 14, 0.3);
-}
-
-.metaItem {
+  border-radius: 20px;
+  box-shadow: var(--elevation-sm);
+  padding: 40px 48px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 24px;
 }
 
-.metaLabel {
-  font-family: var(--font-family-body);
-  font-size: var(--text-base);
+.deliverablesLabel {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h5);
   font-weight: var(--font-weight-bold);
   color: var(--primary);
   line-height: normal;
 }
 
-.metaValue {
+.deliverablesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.deliverablesItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
   font-family: var(--font-family-body);
   font-size: var(--text-label);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
-  line-height: 1.4;
+  line-height: 1.55;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
 /* ── Section typography ──────────────────────────── */
 .sectionTitle {
   font-family: var(--font-family-heading);
-  font-size: var(--text-h3);
+  font-size: var(--text-h4);
   font-weight: var(--font-weight-bold);
   color: var(--primary-foreground);
   margin: 0;
-  line-height: normal;
+  line-height: 1.2;
 }
 
 .subHeading {
@@ -138,22 +170,21 @@
   font-weight: var(--font-weight-medium);
   color: var(--primary-foreground);
   margin: 0;
-  line-height: normal;
+  line-height: 1.3;
 }
 
 .bodyText {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
-.bodyText p,
-.bodyParagraph {
+.bodyText p {
   font-family: var(--font-family-body);
   font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
   color: var(--primary-foreground);
-  line-height: normal;
+  line-height: 1.7;
   margin: 0;
 }
 
@@ -162,9 +193,9 @@
   text-decoration: underline;
 }
 
-/* ── Callout block ───────────────────────────────── */
+/* ── Callout (centered card, no left border) ─────── */
 .calloutWrap {
-  max-width: 1440px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 64px;
   width: 100%;
@@ -172,131 +203,82 @@
 }
 
 .callout {
-  position: relative;
   background-color: var(--input-background);
-  border-radius: var(--radius-sm, 16px);
-  padding: 24px 32px 24px 56px;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px 0px rgba(14, 14, 14, 0.25);
-}
-
-.calloutAccent {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 17px;
-  background-color: var(--primary);
+  border-radius: 20px;
+  padding: 32px 48px;
+  box-shadow: var(--elevation-sm);
+  text-align: center;
 }
 
 .calloutText {
-  font-family: var(--font-family-body);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h5);
+  font-weight: var(--font-weight-medium);
   color: var(--foreground);
   margin: 0;
-  line-height: normal;
+  line-height: 1.45;
+  font-style: italic;
 }
 
-/* ── Stats ───────────────────────────────────────── */
+/* ── Stats — single white card with horizontal items ─ */
 .statsWrap {
-  max-width: 1440px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 64px;
   width: 100%;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  flex-wrap: wrap;
 }
 
-.statCard {
+.statsCard {
+  background-color: var(--input-background);
+  border-radius: 20px;
+  box-shadow: var(--elevation-sm);
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.statItem {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  background-color: var(--input-background);
-  border-radius: var(--radius-sm, 16px);
-  padding: 12px;
-  box-shadow: 0px 4px 10px 0px rgba(14, 14, 14, 0.25);
-  width: 186px;
-  min-height: 104px;
-  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  position: relative;
+  padding: 0 24px;
   box-sizing: border-box;
+}
+
+.statDivider {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background-color: rgba(14, 14, 14, 0.12);
 }
 
 .statValue {
   font-family: var(--font-family-heading);
   font-size: var(--text-h4);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
   color: var(--primary);
   line-height: normal;
   white-space: nowrap;
+  text-align: center;
 }
 
 .statLabel {
   font-family: var(--font-family-body);
-  font-size: 14px;
-  font-weight: var(--font-weight-normal);
-  color: var(--foreground-muted, #3c3c3c);
-  line-height: normal;
-}
-
-/* ── Anchor Cards ────────────────────────────────── */
-.anchorSection {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 64px;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-}
-
-.anchorGrid {
-  display: grid;
-  grid-template-columns: repeat(6, 130px);
-  column-gap: 28px;
-  row-gap: 20px;
-}
-
-.anchorCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 8px;
-  height: 124px;
-  background-color: var(--input-background);
-  border-radius: var(--radius-sm, 16px);
-  box-shadow: 0px 8px 15px 0px rgba(14, 14, 14, 0.3);
-  text-decoration: none;
-  overflow: hidden;
-  box-sizing: border-box;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
   color: var(--foreground);
-}
-
-.anchorCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 12px 20px 0px rgba(14, 14, 14, 0.35);
-}
-
-.anchorLabel {
-  font-family: var(--font-family-body);
-  font-size: 13px;
-  font-weight: var(--font-weight-bold);
-  color: var(--foreground);
-  text-decoration: underline;
+  opacity: 0.65;
+  line-height: 1.4;
   text-align: center;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.anchorIcon {
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
 }
 
 /* ── Contributions ───────────────────────────────── */
@@ -306,15 +288,14 @@
   gap: 20px;
 }
 
-/* Row with image on right (Discover) */
+/* Row with image (Discover — image right, Yvents — image left via reverse) */
 .contributionRow {
   display: flex;
   flex-direction: row;
-  gap: 64px;
+  gap: 80px;
   align-items: center;
 }
 
-/* Row with image on left (Yvents) */
 .contributionRowReverse {
   flex-direction: row-reverse;
 }
@@ -327,16 +308,9 @@
   min-width: 0;
 }
 
-/* Phone mockup images — the frame, tilt, cream blob, and shadow are
-   all baked into the image itself. No clipping or CSS shadow needed. */
-.phoneImageDiscover {
+.phoneImageWrap {
   flex-shrink: 0;
-  width: 500px;
-}
-
-.phoneImageEvents {
-  flex-shrink: 0;
-  width: 470px;
+  width: 280px;
 }
 
 .phoneImg {
@@ -345,7 +319,7 @@
   display: block;
 }
 
-/* ── Related projects (Check Out These Projects) ─── */
+/* ── Related projects ────────────────────────────── */
 .relatedSection {
   max-width: 1440px;
   margin: 0 auto;
@@ -381,14 +355,15 @@
   flex-direction: column;
   gap: 32px;
   background-color: var(--input-background);
-  border-radius: var(--radius-md, 24px);
-  padding: 32px 24px;
-  box-shadow: 0px 4px 10px 0px rgba(14, 14, 14, 0.25);
-  width: 380px;
+  border-radius: 24px;
+  padding: 32px 0;
+  box-shadow: var(--elevation-sm);
+  width: 345px;
   flex-shrink: 0;
   text-decoration: none;
   box-sizing: border-box;
   align-items: center;
+  overflow: hidden;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -408,7 +383,6 @@
   text-decoration: underline;
 }
 
-/* Stacked: image then description */
 .relatedCardBody {
   display: flex;
   flex-direction: column;
@@ -421,7 +395,6 @@
 .relatedCardImage {
   width: 100%;
   height: 180px;
-  border-radius: var(--radius-sm, 16px);
   overflow: hidden;
   contain: paint;
   flex-shrink: 0;
@@ -434,7 +407,7 @@
   display: block;
 }
 
-/* Phone mockup — no container box, image sits freely on the card */
+/* Phone mockup — no container box, sits freely on the card */
 .relatedCardImageSquare {
   display: flex;
   justify-content: center;
@@ -453,6 +426,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--foreground);
   margin: 0;
+  padding: 0 24px;
   line-height: 1.5;
   text-align: center;
 }
@@ -463,30 +437,34 @@
     gap: 48px;
   }
 
+  .heroInner {
+    gap: 48px;
+    padding: 80px 32px 60px;
+  }
+
+  .heroRight {
+    width: 240px;
+  }
+
   .dividerWrap,
-  .heroInner,
-  .metaSection,
   .sectionInner,
   .calloutWrap,
   .statsWrap,
+  .deliverablesSection,
   .relatedSection {
     padding-left: 32px;
     padding-right: 32px;
   }
 
-  .metaBar {
-    grid-template-columns: 1fr 1fr;
-    padding: 24px 32px;
-    gap: 24px;
-  }
-
-  .statsWrap {
+  .statsCard {
     flex-wrap: wrap;
     gap: 24px;
+    padding: 32px;
   }
 
-  .statCard {
-    width: calc(50% - 12px);
+  .statItem {
+    min-width: 45%;
+    flex: 1 1 45%;
   }
 
   .contributionRow,
@@ -495,10 +473,9 @@
     gap: 40px;
   }
 
-  .phoneImageDiscover,
-  .phoneImageEvents {
+  .phoneImageWrap {
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
     margin: 0 auto;
   }
 
@@ -512,10 +489,6 @@
     width: 100%;
     max-width: 420px;
   }
-
-  .anchorGrid {
-    grid-template-columns: repeat(3, 130px);
-  }
 }
 
 /* ── Mobile (max-width: 768px) ───────────────────── */
@@ -523,68 +496,85 @@
   .main {
     padding-top: 120px;
     padding-bottom: 60px;
-    gap: 32px;
+    gap: 40px;
   }
 
-  .dividerWrap,
-  .heroInner,
-  .metaSection,
-  .sectionInner,
-  .calloutWrap,
-  .statsWrap,
-  .relatedSection {
-    padding-left: 24px;
-    padding-right: 24px;
+  .heroSection {
+    margin-top: -21px;
   }
 
-  /* Hero */
-  .heroTitle {
-    font-size: var(--text-h3);
+  .heroInner {
+    flex-direction: column;
+    padding: 100px 24px 48px;
+    gap: 40px;
+  }
+
+  .heroLeft {
+    align-items: center;
     text-align: center;
   }
 
   .heroSubtitle {
-    font-size: var(--text-body, 20px);
-    font-weight: var(--font-weight-bold);
+    max-width: 100%;
     text-align: center;
-  }
-
-  .heroText {
-    align-items: center;
   }
 
   .heroTags {
     justify-content: center;
   }
 
-  /* Meta bar */
-  .metaBar {
-    grid-template-columns: 1fr;
-    padding: 24px;
-    gap: 24px;
-  }
-
-  /* Section title */
-  .sectionTitle {
-    font-size: var(--text-h4);
+  .heroTitle {
+    font-size: var(--text-h3);
     text-align: center;
   }
 
-  /* Stats */
-  .statsWrap {
-    flex-direction: column;
+  .heroRight {
+    width: 240px;
     align-items: center;
-    gap: 16px;
+    margin: 0 auto;
   }
 
-  .statCard {
-    width: 100%;
-    max-width: 345px;
+  .dividerWrap,
+  .sectionInner,
+  .calloutWrap,
+  .statsWrap,
+  .deliverablesSection,
+  .relatedSection {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
-  /* Callout */
+  .sectionTitle {
+    font-size: var(--text-h5);
+  }
+
+  .deliverablesCard {
+    padding: 28px 24px 28px 28px;
+  }
+
   .callout {
-    padding: 24px 24px 24px 48px;
+    padding: 24px 28px;
+  }
+
+  .calloutText {
+    font-size: var(--text-h6);
+  }
+
+  .statsCard {
+    flex-wrap: wrap;
+    padding: 28px 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .statItem {
+    min-width: 45%;
+    flex: 1 1 45%;
+    padding: 0 12px;
+  }
+
+  .statDivider {
+    display: none;
   }
 
   /* Contributions with images — stack on mobile */
@@ -594,37 +584,10 @@
     gap: 32px;
   }
 
-  .phoneImageDiscover,
-  .phoneImageEvents {
+  .phoneImageWrap {
     width: 100%;
-    max-width: 300px;
+    max-width: 260px;
     margin: 0 auto;
-  }
-
-  /* Anchor cards */
-  .anchorSection {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .anchorGrid {
-    grid-template-columns: repeat(3, 96px);
-    column-gap: 6px;
-    row-gap: 12px;
-  }
-
-  .anchorCard {
-    padding: 10px 6px;
-    height: 92px;
-  }
-
-  .anchorLabel {
-    font-size: 10px;
-  }
-
-  .anchorIcon {
-    width: 40px;
-    height: 40px;
   }
 
   /* Related projects */
@@ -641,7 +604,6 @@
   .relatedCard {
     width: 100%;
     max-width: 345px;
-    padding: 24px;
   }
 
   .relatedCardImgSquare {
