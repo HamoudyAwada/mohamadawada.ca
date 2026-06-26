@@ -14,60 +14,66 @@
   gap: 64px;
 }
 
-/* ── Shared divider wrapper ──────────────────────── */
-.dividerWrap {
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* ── Shared section wrapper ─────────────────────── */
-.section {
-  width: 100%;
-}
-
-.sectionInner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 64px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
 /* ── Hero ────────────────────────────────────────── */
 .heroSection {
   width: 100%;
   margin-top: -90px;
 }
 
-.heroInner {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 80px 64px 60px;
+.heroImageWrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: #f5f0e8;
+}
+
+.heroImgDesktop {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.heroImgMobile {
+  display: none;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.heroText {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-direction: row;
-  gap: 80px;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 120px;
+  gap: 16px;
   box-sizing: border-box;
 }
 
-.heroLeft {
-  flex: 1;
+.heroTextBox {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 28px 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  min-width: 0;
+  gap: 10px;
+  max-width: 700px;
 }
 
 .heroTitle {
   font-family: var(--font-family-heading);
   font-size: var(--text-h2);
   font-weight: var(--font-weight-extrabold);
-  color: var(--primary-foreground);
+  color: #0e0e0e;
   margin: 0;
   line-height: 1.15;
 }
@@ -76,33 +82,20 @@
   font-family: var(--font-family-body);
   font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
-  color: var(--primary-foreground);
-  opacity: 0.75;
+  color: rgba(14, 14, 14, 0.72);
   margin: 0;
   line-height: 1.65;
-  max-width: 520px;
 }
 
-.heroTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.heroRight {
-  flex-shrink: 0;
-  width: 300px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.heroPhone {
+/* ── Divider ─────────────────────────────────────── */
+.dividerWrap {
+  max-width: 1440px;
+  margin: 0 auto;
   width: 100%;
-  height: auto;
-  display: block;
+  box-sizing: border-box;
 }
 
-/* ── What I contributed card ─────────────────────── */
+/* ── What I contributed ──────────────────────────── */
 .deliverablesSection {
   max-width: 1100px;
   margin: 0 auto;
@@ -154,7 +147,22 @@
   margin-top: 1px;
 }
 
-/* ── Section typography ──────────────────────────── */
+/* ── Content sections ────────────────────────────── */
+.section {
+  width: 100%;
+}
+
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .sectionTitle {
   font-family: var(--font-family-heading);
   font-size: var(--text-h4);
@@ -193,21 +201,14 @@
   text-decoration: underline;
 }
 
-/* ── Callout (centered card, no left border) ─────── */
-.calloutWrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 64px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
+/* ── Callout quote ───────────────────────────────── */
 .callout {
   background-color: var(--input-background);
   border-radius: 20px;
   padding: 32px 48px;
   box-shadow: var(--elevation-sm);
   text-align: center;
+  margin: 0;
 }
 
 .calloutText {
@@ -220,35 +221,27 @@
   font-style: italic;
 }
 
-/* ── Stats — single white card with horizontal items ─ */
-.statsWrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 64px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
+/* ── Stats card ──────────────────────────────────── */
 .statsCard {
   background-color: var(--input-background);
   border-radius: 20px;
   box-shadow: var(--elevation-sm);
-  padding: 40px 48px;
+  padding: 40px 16px;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .statItem {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex: 1;
   position: relative;
-  padding: 0 24px;
+  padding: 16px 20px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .statDivider {
@@ -257,7 +250,7 @@
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
-  height: 60%;
+  height: 68px;
   background-color: rgba(14, 14, 14, 0.12);
 }
 
@@ -281,42 +274,112 @@
   text-align: center;
 }
 
-/* ── Contributions ───────────────────────────────── */
+/* ── Contribution text blocks ────────────────────── */
 .contributionBlock {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Row with image (Discover — image right, Yvents — image left via reverse) */
-.contributionRow {
-  display: flex;
-  flex-direction: row;
-  gap: 80px;
-  align-items: center;
+/* ── Figure caption (shared) ─────────────────────── */
+.figCaption {
+  font-family: var(--font-family-body);
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground);
+  opacity: 0.55;
+  font-style: italic;
+  text-align: center;
+  padding: 16px 32px;
+  line-height: 1.5;
+  background-color: var(--input-background);
 }
 
-.contributionRowReverse {
-  flex-direction: row-reverse;
-}
-
-.contributionText {
-  flex: 1;
+/* ── Wide figure (key screens combined) ──────────── */
+.wideFigure {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  min-width: 0;
+  background-color: var(--input-background);
+  border-radius: 20px;
+  box-shadow: var(--elevation-sm);
+  overflow: hidden;
 }
 
-.phoneImageWrap {
-  flex-shrink: 0;
-  width: 280px;
+.wideFigureImgWrap {
+  background-color: #f5f5f5;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.wideFigureImg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* ── Single phone figure ─────────────────────────── */
+.phoneFigure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--input-background);
+  border-radius: 20px;
+  box-shadow: var(--elevation-sm);
+  overflow: hidden;
+  align-self: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.phoneImgWrap {
+  background-color: #f5f5f5;
+  padding: 40px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .phoneImg {
-  width: 100%;
+  width: 240px;
   height: auto;
   display: block;
+  border-radius: 12px;
+}
+
+/* ── Dual phone figure (onboarding + tickets) ────── */
+.dualPhoneFigure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--input-background);
+  border-radius: 20px;
+  box-shadow: var(--elevation-sm);
+  overflow: hidden;
+}
+
+.dualPhoneImgWrap {
+  background-color: #f5f5f5;
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dualPhoneImg {
+  width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
 
 /* ── Related projects ────────────────────────────── */
@@ -391,13 +454,10 @@
   width: 100%;
 }
 
-/* Cropped banner image (e.g. ENMAX) */
 .relatedCardImage {
   width: 100%;
   height: 180px;
   overflow: hidden;
-  contain: paint;
-  flex-shrink: 0;
 }
 
 .relatedCardImg {
@@ -407,7 +467,6 @@
   display: block;
 }
 
-/* Phone mockup — no container box, sits freely on the card */
 .relatedCardImageSquare {
   display: flex;
   justify-content: center;
@@ -437,47 +496,49 @@
     gap: 48px;
   }
 
-  .heroInner {
-    gap: 48px;
-    padding: 80px 32px 60px;
-  }
-
-  .heroRight {
-    width: 240px;
-  }
-
   .dividerWrap,
   .sectionInner,
-  .calloutWrap,
-  .statsWrap,
   .deliverablesSection,
   .relatedSection {
     padding-left: 32px;
     padding-right: 32px;
   }
 
-  .statsCard {
-    flex-wrap: wrap;
+  .heroImgDesktop {
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .wideFigureImgWrap {
+    padding: 28px;
+  }
+
+  .dualPhoneImgWrap {
+    padding: 36px 40px;
     gap: 24px;
-    padding: 32px;
+  }
+
+  .dualPhoneImg {
+    width: 180px;
+  }
+
+  .statsCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0;
+    gap: 1px;
+    background-color: rgba(14, 14, 14, 0.1);
   }
 
   .statItem {
-    min-width: 45%;
-    flex: 1 1 45%;
+    background-color: var(--input-background);
+    padding: 28px 20px;
+    min-width: unset;
+    flex: unset;
   }
 
-  .contributionRow,
-  .contributionRowReverse {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .phoneImageWrap {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
+  /* Last two stats span one column each in the second row */
 
   .relatedGrid {
     flex-direction: column;
@@ -503,41 +564,32 @@
     margin-top: -21px;
   }
 
-  .heroInner {
-    flex-direction: column;
-    padding: 100px 24px 48px;
-    gap: 40px;
+  .heroText {
+    padding: 32px 24px;
   }
 
-  .heroLeft {
-    align-items: center;
-    text-align: center;
+  .heroImgDesktop {
+    display: none;
   }
 
-  .heroSubtitle {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .heroTags {
-    justify-content: center;
+  .heroImgMobile {
+    display: block;
+    width: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    object-position: center top;
   }
 
   .heroTitle {
     font-size: var(--text-h3);
-    text-align: center;
   }
 
-  .heroRight {
-    width: 240px;
-    align-items: center;
-    margin: 0 auto;
+  .heroSubtitle {
+    font-size: var(--text-label);
   }
 
   .dividerWrap,
   .sectionInner,
-  .calloutWrap,
-  .statsWrap,
   .deliverablesSection,
   .relatedSection {
     padding-left: 24px;
@@ -561,36 +613,52 @@
   }
 
   .statsCard {
-    flex-wrap: wrap;
-    padding: 28px 20px;
-    gap: 20px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
   }
 
   .statItem {
-    min-width: 45%;
-    flex: 1 1 45%;
-    padding: 0 12px;
+    padding: 24px 32px;
+    min-width: unset;
+    flex: unset;
+    border-top: 1px solid rgba(14, 14, 14, 0.08);
+  }
+
+  .statItem:first-child {
+    border-top: none;
   }
 
   .statDivider {
     display: none;
   }
 
-  /* Contributions with images — stack on mobile */
-  .contributionRow,
-  .contributionRowReverse {
-    flex-direction: column;
-    gap: 32px;
+  .wideFigureImgWrap {
+    padding: 20px;
   }
 
-  .phoneImageWrap {
-    width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
+  .phoneFigure {
+    max-width: 100%;
   }
 
-  /* Related projects */
+  .phoneImgWrap {
+    padding: 32px 40px;
+  }
+
+  .phoneImg {
+    width: 200px;
+  }
+
+  .dualPhoneImgWrap {
+    padding: 32px 24px;
+    gap: 16px;
+  }
+
+  .dualPhoneImg {
+    width: 140px;
+  }
+
   .relatedTitle {
     font-size: var(--text-h3);
   }

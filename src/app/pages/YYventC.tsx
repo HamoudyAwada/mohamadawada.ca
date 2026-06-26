@@ -2,22 +2,25 @@ import { Link } from "react-router";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
-import Tag from "../components/Tag";
 import FadeInImage from "../components/FadeInImage";
 import styles from "./YYventC.module.css";
 import content from "../../content/yyventc.json";
 
-import imgDiscover from "../../assets/yyventc-discover.webp";
-import imgEvents from "../../assets/yyventc-events.webp";
-import imgEnmax from "../../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
-import imgTrumi from "../../assets/trumi-hero.webp";
+import imgHero       from "../../assets/yyventc-hero-desktop.png";
+import imgKeyScreens from "../../assets/yyventc-key-screens.png";
+import imgDiscover   from "../../assets/yyventc-discover.png";
+import imgCommunity  from "../../assets/yyventc-community.png";
+import imgOnboarding from "../../assets/yyventc-hero-onboarding.png";
+import imgTickets    from "../../assets/yyventc-tickets.png";
+import imgEnmax      from "../../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
+import imgTrumi      from "../../assets/trumi-hero.webp";
 
-const imageMap: Record<string, string> = {
-  discover: imgDiscover,
-  events: imgEvents,
+const relatedImageMap: Record<string, string> = {
   enmax: imgEnmax,
   trumi: imgTrumi,
 };
+
+const sections = content.contributions.sections;
 
 function CheckIcon() {
   return (
@@ -37,25 +40,25 @@ export default function YYventC() {
 
         {/* ── Hero ─────────────────────────────────────────── */}
         <section className={styles.heroSection}>
-          <div className={styles.heroInner}>
-            <div className={styles.heroLeft}>
-              <h1 className={styles.heroTitle}>{content.hero.title}</h1>
-              <p className={styles.heroSubtitle}>{content.hero.subtitle}</p>
-              <div className={styles.heroTags}>
-                {content.hero.tags.map((t) => (
-                  <Tag key={t.label} variant={t.variant as "primary" | "secondary" | "tertiary" | "purple" | "red"}>
-                    {t.label}
-                  </Tag>
-                ))}
+          <div className={styles.heroImageWrap}>
+            <FadeInImage
+              src={imgHero}
+              alt="YYventC — onboarding and account creation flow"
+              className={styles.heroImgDesktop}
+              loading="eager"
+            />
+            <FadeInImage
+              src={imgOnboarding}
+              alt="YYventC — welcome screen"
+              className={styles.heroImgMobile}
+              loading="eager"
+            />
+            <div className={styles.heroOverlay} />
+            <div className={styles.heroText}>
+              <div className={styles.heroTextBox}>
+                <h1 className={styles.heroTitle}>{content.hero.title}</h1>
+                <p className={styles.heroSubtitle}>{content.hero.subtitle}</p>
               </div>
-            </div>
-            <div className={styles.heroRight}>
-              <FadeInImage
-                src={imgDiscover}
-                alt="YYventC Discover feed — personalized location-aware event feed"
-                className={styles.heroPhone}
-                loading="eager"
-              />
             </div>
           </div>
         </section>
@@ -80,13 +83,11 @@ export default function YYventC() {
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Overview ─────────────────────────────────────── */}
-        <section id="overview" className={styles.section}>
+        <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.overview.title}</h2>
             <div className={styles.bodyText}>
-              {content.overview.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+              {content.overview.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
             </div>
           </div>
         </section>
@@ -94,52 +95,38 @@ export default function YYventC() {
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── The Problem ──────────────────────────────────── */}
-        <section id="the-problem" className={styles.section}>
+        <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.problem.title}</h2>
             <div className={styles.bodyText}>
-              {content.problem.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+              {content.problem.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
             </div>
+            <blockquote className={styles.callout}>
+              <p className={styles.calloutText}>{content.problem.callout}</p>
+            </blockquote>
           </div>
         </section>
-
-        {/* Problem callout quote */}
-        <div className={styles.calloutWrap}>
-          <div className={styles.callout}>
-            <p className={styles.calloutText}>{content.problem.callout}</p>
-          </div>
-        </div>
 
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Research ─────────────────────────────────────── */}
-        <section id="research" className={styles.section}>
+        <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.research.title}</h2>
             <div className={styles.bodyText}>
               <p>{content.research.intro}</p>
             </div>
-          </div>
-        </section>
 
-        {/* Stats — single card with all stats in a row */}
-        <div className={styles.statsWrap}>
-          <div className={styles.statsCard}>
-            {content.research.stats.map((s, i) => (
-              <div key={s.label} className={styles.statItem}>
-                {i > 0 && <div className={styles.statDivider} />}
-                <span className={styles.statValue}>{s.value}</span>
-                <span className={styles.statLabel}>{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+            <div className={styles.statsCard}>
+              {content.research.stats.map((s, i) => (
+                <div key={s.label} className={styles.statItem}>
+                  {i > 0 && <div className={styles.statDivider} />}
+                  <span className={styles.statValue}>{s.value}</span>
+                  <span className={styles.statLabel}>{s.label}</span>
+                </div>
+              ))}
+            </div>
 
-        {/* Qualitative finding */}
-        <section className={styles.section}>
-          <div className={styles.sectionInner}>
             <div className={styles.bodyText}>
               <p>
                 {content.research.qualitative.prefix}
@@ -149,85 +136,136 @@ export default function YYventC() {
                 {content.research.qualitative.suffix}
               </p>
             </div>
+
+            <blockquote className={styles.callout}>
+              <p className={styles.calloutText}>{content.research.researchCallout}</p>
+            </blockquote>
           </div>
         </section>
 
-        {/* Research callout quote */}
-        <div className={styles.calloutWrap}>
-          <div className={styles.callout}>
-            <p className={styles.calloutText}>{content.research.researchCallout}</p>
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── My Contributions — overview + IA + Nav ────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{content.contributions.title}</h2>
+            <div className={styles.bodyText}>
+              <p>{content.contributions.intro}</p>
+            </div>
+
+            {/* Key screens overview figure */}
+            <figure className={styles.wideFigure}>
+              <div className={styles.wideFigureImgWrap}>
+                <FadeInImage
+                  src={imgKeyScreens}
+                  alt="YYventC key screens: Discover, Tickets, Friends, and Yvents social feed"
+                  className={styles.wideFigureImg}
+                />
+              </div>
+              <figcaption className={styles.figCaption}>
+                The four core experiences: Discover, Tickets, Friends, and Yvents.
+              </figcaption>
+            </figure>
+
+            {/* Information Architecture */}
+            <div className={styles.contributionBlock}>
+              <h3 className={styles.subHeading}>{sections[0].heading}</h3>
+              <div className={styles.bodyText}><p>{sections[0].body}</p></div>
+            </div>
+
+            {/* Navigation Structure */}
+            <div className={styles.contributionBlock}>
+              <h3 className={styles.subHeading}>{sections[1].heading}</h3>
+              <div className={styles.bodyText}><p>{sections[1].body}</p></div>
+            </div>
           </div>
-        </div>
+        </section>
 
         <div className={styles.dividerWrap}><Divider /></div>
 
-        {/* ── My Contributions ─────────────────────────────── */}
-        <section id="contributions" className={styles.section}>
+        {/* ── Discover Page ─────────────────────────────────── */}
+        <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>{content.contributions.title}</h2>
-
-            <div className={styles.contributionBlock}>
-              <h3 className={styles.subHeading}>{content.contributions.introHeading}</h3>
-              <div className={styles.bodyText}>
-                <p>{content.contributions.intro}</p>
+            <h2 className={styles.sectionTitle}>{sections[2].heading}</h2>
+            <div className={styles.bodyText}><p>{sections[2].body}</p></div>
+            <figure className={styles.phoneFigure}>
+              <div className={styles.phoneImgWrap}>
+                <FadeInImage
+                  src={imgDiscover}
+                  alt="YYventC Discover feed showing location-aware event surfacing"
+                  className={styles.phoneImg}
+                />
               </div>
-            </div>
+              <figcaption className={styles.figCaption}>
+                The Discover feed: location-aware events with minimal friction, making the right events impossible to miss.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
 
-            {content.contributions.sections.map((sec) => {
-              if (sec.image === "discover") {
-                return (
-                  <div key={sec.heading} className={styles.contributionRow}>
-                    <div className={styles.contributionText}>
-                      <h3 className={styles.subHeading}>{sec.heading}</h3>
-                      <div className={styles.bodyText}>
-                        <p>{sec.body}</p>
-                      </div>
-                    </div>
-                    <div className={styles.phoneImageWrap}>
-                      <FadeInImage
-                        src={imageMap.discover}
-                        alt="YYventC Discover feed — personalized location-aware event feed"
-                        className={styles.phoneImg}
-                      />
-                    </div>
-                  </div>
-                );
-              }
-              if (sec.image === "events") {
-                return (
-                  <div key={sec.heading} className={`${styles.contributionRow} ${styles.contributionRowReverse}`}>
-                    <div className={styles.contributionText}>
-                      <h3 className={styles.subHeading}>{sec.heading}</h3>
-                      <div className={styles.bodyText}>
-                        <p>{sec.body}</p>
-                      </div>
-                    </div>
-                    <div className={styles.phoneImageWrap}>
-                      <FadeInImage
-                        src={imageMap.events}
-                        alt="YYventC Social / Yvents feed — friends activity and attendee posts"
-                        className={styles.phoneImg}
-                      />
-                    </div>
-                  </div>
-                );
-              }
-              return (
-                <div key={sec.heading} className={styles.contributionBlock}>
-                  <h3 className={styles.subHeading}>{sec.heading}</h3>
-                  <div className={styles.bodyText}>
-                    <p>{sec.body}</p>
-                  </div>
-                </div>
-              );
-            })}
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── Social / Yvents ───────────────────────────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{sections[3].heading}</h2>
+            <div className={styles.bodyText}><p>{sections[3].body}</p></div>
+            <figure className={styles.phoneFigure}>
+              <div className={styles.phoneImgWrap}>
+                <FadeInImage
+                  src={imgCommunity}
+                  alt="YYventC Yvents feed showing friends activity and community posts"
+                  className={styles.phoneImg}
+                />
+              </div>
+              <figcaption className={styles.figCaption}>
+                The Yvents feed: friends' activity and real attendee posts turning event discovery into a social experience.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── Signed-in vs. Signed-out Flows ───────────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{sections[4].heading}</h2>
+            <div className={styles.bodyText}><p>{sections[4].body}</p></div>
+            <figure className={styles.dualPhoneFigure}>
+              <div className={styles.dualPhoneImgWrap}>
+                <FadeInImage
+                  src={imgOnboarding}
+                  alt="YYventC welcome screen and onboarding flow"
+                  className={styles.dualPhoneImg}
+                />
+                <FadeInImage
+                  src={imgTickets}
+                  alt="YYventC tickets screen showing upcoming and past events"
+                  className={styles.dualPhoneImg}
+                />
+              </div>
+              <figcaption className={styles.figCaption}>
+                Left: the welcome screen with deliberate onboarding copy. Right: the signed-in tickets view with upcoming and past events.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <div className={styles.dividerWrap}><Divider /></div>
+
+        {/* ── Prototype Refinement ──────────────────────────── */}
+        <section className={styles.section}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>{sections[5].heading}</h2>
+            <div className={styles.bodyText}><p>{sections[5].body}</p></div>
           </div>
         </section>
 
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Outcome ──────────────────────────────────────── */}
-        <section id="outcome" className={styles.section}>
+        <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.outcome.title}</h2>
             <div className={styles.bodyText}>
@@ -239,13 +277,11 @@ export default function YYventC() {
         <div className={styles.dividerWrap}><Divider /></div>
 
         {/* ── Reflection ───────────────────────────────────── */}
-        <section id="reflection" className={styles.section}>
+        <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.reflection.title}</h2>
             <div className={styles.bodyText}>
-              {content.reflection.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+              {content.reflection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
             </div>
           </div>
         </section>
@@ -257,18 +293,12 @@ export default function YYventC() {
           <h2 className={styles.relatedTitle}>Check Out These Projects</h2>
           <div className={styles.relatedGrid}>
             {content.relatedProjects.map((proj) => (
-              <Link
-                key={proj.slug}
-                to={`/my-work/${proj.slug}`}
-                className={styles.relatedCard}
-              >
+              <Link key={proj.slug} to={`/my-work/${proj.slug}`} className={styles.relatedCard}>
                 <p className={styles.relatedCardTitle}>{proj.title}</p>
                 <div className={styles.relatedCardBody}>
-                  <div
-                    className={proj.imageType === "square" ? styles.relatedCardImageSquare : styles.relatedCardImage}
-                  >
+                  <div className={proj.imageType === "square" ? styles.relatedCardImageSquare : styles.relatedCardImage}>
                     <FadeInImage
-                      src={imageMap[proj.imageKey]}
+                      src={relatedImageMap[proj.imageKey]}
                       alt={proj.title}
                       className={proj.imageType === "square" ? styles.relatedCardImgSquare : styles.relatedCardImg}
                     />
