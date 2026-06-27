@@ -117,18 +117,18 @@ export default function Home() {
                 />
                 <ProjectTile className={styles.cellSmall3} title="Coming Soon" placeholder />
                 <ProjectTile className={styles.cellSmall4} title="Coming Soon" placeholder />
-
-                <Link
-                  to={workSection.cta.href}
-                  className={`${styles.seeAllLink} ${styles.seeAllMobile}`}
-                >
-                  {workSection.cta.label}
-                  <svg viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d={arrowRight} fill="currentColor" />
-                  </svg>
-                </Link>
               </div>
             </div>
+
+            <Link
+              to={workSection.cta.href}
+              className={`${styles.seeAllLink} ${styles.seeAllMobile}`}
+            >
+              {workSection.cta.label}
+              <svg viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d={arrowRight} fill="currentColor" />
+              </svg>
+            </Link>
           </div>
         </section>
 

@@ -6,12 +6,12 @@ import FadeInImage from "../components/FadeInImage";
 import styles from "./YYventC.module.css";
 import content from "../../content/yyventc.json";
 
-import imgHero       from "../../assets/yyventc-hero-desktop.png";
-import imgKeyScreens from "../../assets/yyventc-key-screens.png";
-import imgDiscover   from "../../assets/yyventc-discover.png";
-import imgCommunity  from "../../assets/yyventc-community.png";
-import imgOnboarding from "../../assets/yyventc-hero-onboarding.png";
-import imgTickets    from "../../assets/yyventc-tickets.png";
+import imgHero       from "../../assets/yyventc-hero-desktop.webp";
+import imgKeyScreens from "../../assets/yyventc-key-screens.webp";
+import imgDiscover   from "../../assets/yyventc-discover.webp";
+import imgCommunity  from "../../assets/yyventc-community.webp";
+import imgOnboarding from "../../assets/yyventc-hero-onboarding.webp";
+import imgTickets    from "../../assets/yyventc-tickets.webp";
 import imgEnmax      from "../../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
 import imgTrumi      from "../../assets/trumi-hero.webp";
 
@@ -82,18 +82,6 @@ export default function YYventC() {
 
         <div className={styles.dividerWrap}><Divider /></div>
 
-        {/* ── Overview ─────────────────────────────────────── */}
-        <section className={styles.section}>
-          <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>{content.overview.title}</h2>
-            <div className={styles.bodyText}>
-              {content.overview.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
-            </div>
-          </div>
-        </section>
-
-        <div className={styles.dividerWrap}><Divider /></div>
-
         {/* ── The Problem ──────────────────────────────────── */}
         <section className={styles.section}>
           <div className={styles.sectionInner}>
@@ -136,10 +124,6 @@ export default function YYventC() {
                 {content.research.qualitative.suffix}
               </p>
             </div>
-
-            <blockquote className={styles.callout}>
-              <p className={styles.calloutText}>{content.research.researchCallout}</p>
-            </blockquote>
           </div>
         </section>
 
@@ -167,17 +151,6 @@ export default function YYventC() {
               </figcaption>
             </figure>
 
-            {/* Information Architecture */}
-            <div className={styles.contributionBlock}>
-              <h3 className={styles.subHeading}>{sections[0].heading}</h3>
-              <div className={styles.bodyText}><p>{sections[0].body}</p></div>
-            </div>
-
-            {/* Navigation Structure */}
-            <div className={styles.contributionBlock}>
-              <h3 className={styles.subHeading}>{sections[1].heading}</h3>
-              <div className={styles.bodyText}><p>{sections[1].body}</p></div>
-            </div>
           </div>
         </section>
 
@@ -254,34 +227,12 @@ export default function YYventC() {
 
         <div className={styles.dividerWrap}><Divider /></div>
 
-        {/* ── Prototype Refinement ──────────────────────────── */}
-        <section className={styles.section}>
-          <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>{sections[5].heading}</h2>
-            <div className={styles.bodyText}><p>{sections[5].body}</p></div>
-          </div>
-        </section>
-
-        <div className={styles.dividerWrap}><Divider /></div>
-
-        {/* ── Outcome ──────────────────────────────────────── */}
-        <section className={styles.section}>
-          <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>{content.outcome.title}</h2>
-            <div className={styles.bodyText}>
-              <p>{content.outcome.body}</p>
-            </div>
-          </div>
-        </section>
-
-        <div className={styles.dividerWrap}><Divider /></div>
-
         {/* ── Reflection ───────────────────────────────────── */}
         <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>{content.reflection.title}</h2>
             <div className={styles.bodyText}>
-              {content.reflection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+              <p>{content.reflection.paragraphs[0]}</p>
             </div>
           </div>
         </section>

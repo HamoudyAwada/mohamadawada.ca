@@ -7,12 +7,12 @@ import FadeInImage from "../components/FadeInImage";
 import styles from "./EnmaxDesignSystem.module.css";
 import content from "../../content/enmax-design-system.json";
 
-import imgHero               from "../../assets/enmax-case-study-hero.png";
-import imgVariableCollections from "../../assets/variable-collections.png";
-import imgPrimitive          from "../../assets/primitive-variable.png";
-import imgGlobal             from "../../assets/global-variable.png";
-import imgSemantic           from "../../assets/semantic-variable.png";
-import imgDropdown           from "../../assets/dropdown-slots.png";
+import imgHero               from "../../assets/enmax-case-study-hero.webp";
+import imgVariableCollections from "../../assets/variable-collections.webp";
+import imgPrimitive          from "../../assets/primitive-variable.webp";
+import imgGlobal             from "../../assets/global-variable.webp";
+import imgSemantic           from "../../assets/semantic-variable.webp";
+import imgDropdown           from "../../assets/dropdown-slots.webp";
 import imgYYventC            from "../../assets/yyventc-discover.webp";
 import imgTrumi              from "../../assets/trumi-hero.webp";
 
