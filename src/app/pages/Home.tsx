@@ -99,21 +99,21 @@ export default function Home() {
                 />
                 <ProjectTile
                   className={styles.cellSmall1}
-                  image={trumi.coverImage}
-                  imageAlt={trumi.coverImageAlt}
-                  imageType={trumi.imageType}
-                  imageBg={trumi.coverImageBg}
-                  title={trumi.title}
-                  href={`/my-work/${trumi.slug}`}
-                />
-                <ProjectTile
-                  className={styles.cellSmall2}
                   image={yyventc.coverImage}
                   imageAlt={yyventc.coverImageAlt}
                   imageType={yyventc.imageType}
                   imageBg={yyventc.coverImageBg}
                   title={yyventc.title}
                   href={`/my-work/${yyventc.slug}`}
+                />
+                <ProjectTile
+                  className={styles.cellSmall2}
+                  image={trumi.coverImage}
+                  imageAlt={trumi.coverImageAlt}
+                  imageType={trumi.imageType}
+                  imageBg={trumi.coverImageBg}
+                  title={trumi.title}
+                  href={`/my-work/${trumi.slug}`}
                 />
                 <ProjectTile className={styles.cellSmall3} title="Coming Soon" placeholder />
                 <ProjectTile className={styles.cellSmall4} title="Coming Soon" placeholder />
