@@ -87,7 +87,8 @@
 }
 
 .ctaButton:active {
-  transform: translateY(0);
+  background-color: rgba(214, 244, 232, 0.2);
+  transform: translateY(1px);
 }
 
 .ctaButton svg {

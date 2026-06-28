@@ -15,7 +15,7 @@
   },
   "meta": [
     { "label": "ROLE",     "value": "UX Design Co-op Student",                                         "link": null },
-    { "label": "TIMELINE", "value": "January 2026 – August 2026 (Ongoing)",                            "link": null },
+    { "label": "TIMELINE", "value": "January 2026 to August 2026 (Ongoing)",                            "link": null },
     { "label": "TOOLS",    "value": "Figma, Claude, Figma MCP, GitHub Copilot, VS Code",               "link": null },
     { "label": "CLIENT",   "value": "ENMAX Corporation",                                               "link": "https://www.enmax.com" }
   ],

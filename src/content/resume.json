@@ -3,8 +3,80 @@
     "title": "Resume",
     "subtitle": "A quick look at my experience, skills, and education.",
     "cta": {
-      "label": "Download my Resume",
+      "label": "Download Resume",
       "href": "/mohamad-awada-resume.pdf"
     }
+  },
+  "experience": [
+    {
+      "company": "ENMAX Corporation",
+      "role": "UX Design Co-op",
+      "period": "January 2026 – Present",
+      "location": "Calgary, AB",
+      "current": true,
+      "bullets": [
+        "Established a standardized design system that improved cross-team alignment, reduced UX debt, and enabled faster iteration across multiple ENMAX digital products using Figma MCP, GitHub Copilot, and Claude to increase documentation efficiency by 10x.",
+        "Achieved full WCAG AA contrast compliance across ENMAX design system through comprehensive component audit and rebuild, introducing dark mode as an accessibility feature.",
+        "Positioned ENMAX's digital products for compliance with emerging Canadian accessibility regulations, reinforcing brand credibility and user trust across digital touchpoints.",
+        "Designed a solar education page on enmax.com for Alberta's competitive energy market, translating customer feedback into installation guidance and driving conversions to ENMAX's vetted installer portal.",
+        "Conducted user research for regulated power services, surfacing insights that informed enmax.com form design."
+      ]
+    },
+    {
+      "company": "Avid Learner Inc.",
+      "role": "Digital Experience Designer",
+      "period": "October 2025 – January 2026",
+      "location": "Remote",
+      "current": false,
+      "bullets": [
+        "Developed a branded content design system and rolling planning calendar, standardizing templates, posting cadences, and content objectives into a scalable, handoff-ready system for company leadership.",
+        "Designed social media and email templates alongside structured member portal content architecture, establishing consistent visual identity and a high-value onboarding experience.",
+        "Implemented Google Analytics across Avid Learner's website and built a recurring month-over-month analytics reporting template, enabling data-informed content decisions.",
+        "Converted Avid Learner's Instagram to a business account and established a branded content presence on LinkedIn, expanding the organization's digital reach across platforms."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Southern Alberta Institute of Technology (SAIT)",
+      "credential": "Diploma, User Experience / User Interface Design",
+      "period": "2024 – 2026",
+      "location": "Calgary, AB",
+      "gpa": "3.83",
+      "gpaMax": "4.0",
+      "coursework": [
+        "Advanced User Experience",
+        "Interaction Design",
+        "User Research",
+        "Advanced Visual Design",
+        "Product Management",
+        "Technical Communications"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Trumi",
+      "subtitle": "Growth That Feels Like You",
+      "period": "January 2026 – April 2026",
+      "slug": "trumi",
+      "bullets": [
+        "Led end-to-end UX and product design for a live-deployed self-growth app, from a 34-participant research study and brand identity to a shipped React prototype featuring values-based onboarding, an AI chatbot (Groq), and a layered character customization system.",
+        "Directed all front-end implementations without a coding background by using Claude and Figma MCP as a design-to-code pipeline, personally owning full delivery from Figma to production.",
+        "Translated user research revealing guilt and pressure as the primary barriers to goal-tracking into a guilt-free emotional design system, a deliberate product POV embedded at every touchpoint."
+      ]
+    }
+  ],
+  "skills": {
+    "technologies": [
+      "Figma", "Figma MCP", "Figma Make", "GitHub Copilot",
+      "Claude", "Claude Code", "Google Workspace", "Microsoft 365",
+      "Adobe Illustrator", "Adobe Photoshop", "HTML5", "CSS3", "React.js"
+    ],
+    "design": [
+      "UX/UI Design", "Information Architecture (IA)", "AI-Assisted Design Workflows",
+      "User Research", "Design Thinking", "Usability Heuristics",
+      "Product Thinking", "User Testing", "Prototyping"
+    ]
   }
 }

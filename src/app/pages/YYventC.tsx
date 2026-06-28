@@ -8,7 +8,7 @@ import content from "../../content/yyventc.json";
 
 import imgHero       from "../../assets/yyventc-hero-desktop.webp";
 import imgKeyScreens from "../../assets/yyventc-key-screens.webp";
-import imgDiscover   from "../../assets/yyventc-discover.webp";
+import imgDiscover   from "../../assets/yyventc-discovery-full.png";
 import imgCommunity  from "../../assets/yyventc-community.webp";
 import imgOnboarding from "../../assets/yyventc-hero-onboarding.webp";
 import imgTickets    from "../../assets/yyventc-tickets.webp";
@@ -147,7 +147,7 @@ export default function YYventC() {
                 />
               </div>
               <figcaption className={styles.figCaption}>
-                The four core experiences: Discover, Tickets, Friends, and Yvents.
+                The four core experiences are Discover, Tickets, Friends, and Yvents.
               </figcaption>
             </figure>
 
@@ -170,7 +170,7 @@ export default function YYventC() {
                 />
               </div>
               <figcaption className={styles.figCaption}>
-                The Discover feed: location-aware events with minimal friction, making the right events impossible to miss.
+                The Discover feed surfaces location-aware events with minimal friction, making the right events impossible to miss.
               </figcaption>
             </figure>
           </div>
@@ -192,7 +192,7 @@ export default function YYventC() {
                 />
               </div>
               <figcaption className={styles.figCaption}>
-                The Yvents feed: friends' activity and real attendee posts turning event discovery into a social experience.
+                The Yvents feed brings together friends' activity and real attendee posts, turning event discovery into a social experience.
               </figcaption>
             </figure>
           </div>
@@ -219,7 +219,7 @@ export default function YYventC() {
                 />
               </div>
               <figcaption className={styles.figCaption}>
-                Left: the welcome screen with deliberate onboarding copy. Right: the signed-in tickets view with upcoming and past events.
+                The welcome screen on the left features deliberate onboarding copy. The signed-in tickets view on the right shows upcoming and past events.
               </figcaption>
             </figure>
           </div>

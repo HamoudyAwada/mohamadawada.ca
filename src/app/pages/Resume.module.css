@@ -6,40 +6,367 @@
 
 .main {
   flex: 1;
-  padding-top: 173px; /* 100px original padding + 73px for fixed navigation */
-  padding-bottom: 80px;
+  padding-top: 173px;
+  padding-bottom: 96px;
 }
 
-.heroSection {
-  max-width: 1304px;
+.inner {
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 64px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+  gap: 64px;
 }
 
-.title {
+/* ── Page Header ─────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pageTitle {
   font-family: var(--font-family-heading);
   font-size: var(--text-h1);
   font-weight: var(--font-weight-extrabold);
   color: var(--primary-foreground);
   margin: 0;
-  line-height: normal;
+  line-height: 1.1;
 }
 
-.subtitle {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h5);
+.pageSubtitle {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
-  color: var(--primary-foreground);
+  color: var(--muted);
   margin: 0;
-  line-height: normal;
+  opacity: 0.75;
 }
+
+.rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ── Section ─────────────────────────────────── */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sectionLabel {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-bold);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+/* ── Entry (experience / education / projects) ── */
+
+.entryList {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 24px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Header row: org + period */
+.entryHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.entryTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
+  line-height: 1;
+}
+
+.entryOrg {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--primary-foreground);
+  line-height: 1.2;
+}
+
+.currentBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-button);
+  border: 1px solid var(--accent);
+  background-color: rgba(40, 160, 112, 0.12);
+  color: var(--accent);
+  font-family: var(--font-family-body);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.entryPeriod {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--muted);
+  opacity: 0.65;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+/* Sub-header row: role + location */
+.entrySubheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.entryRole {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-style: italic;
+  font-weight: var(--font-weight-bold);
+  color: var(--muted);
+}
+
+.entryLocation {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--muted);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* Bullets */
+.bullets {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bullet {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--primary-foreground);
+  opacity: 0.82;
+  line-height: 1.7;
+  padding-left: 20px;
+  position: relative;
+}
+
+.bullet::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Education extras ────────────────────────── */
+
+.eduFooter {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.gpaBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.gpaNumber {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--accent);
+  line-height: 1;
+}
+
+.gpaDenom {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--muted);
+  opacity: 0.65;
+}
+
+.coursework {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+/* ── Projects extras ─────────────────────────── */
+
+.projSubtitle {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--muted);
+  opacity: 0.65;
+}
+
+.projHeaderRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.projLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-bold);
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease, gap 0.2s ease;
+}
+
+.projLink:hover {
+  opacity: 0.75;
+  gap: 10px;
+}
+
+.projLinkIcon {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Skills ──────────────────────────────────── */
+
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.skillGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skillGroupLabel {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-bold);
+  color: var(--muted);
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Tablet ───────────────────────────────────── */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .inner {
+    padding: 0 32px;
+  }
+}
+
+/* ── Mobile ───────────────────────────────────── */
 
 @media (max-width: 768px) {
-  .heroSection {
+  .main {
+    padding-top: 100px;
+    padding-bottom: 64px;
+  }
+
+  .inner {
     padding: 0 24px;
+    gap: 48px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .pageTitle {
+    font-size: 48px;
+  }
+
+  .entryHeader {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .entrySubheader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .entryOrg {
+    font-size: var(--text-h5);
+  }
+
+  .projHeaderRight {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .eduFooter {
+    flex-direction: column;
+    gap: 16px;
   }
 }

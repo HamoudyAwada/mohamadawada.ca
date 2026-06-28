@@ -60,7 +60,7 @@
 
 .secondary:hover {
   background-color: var(--secondary-hover);
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--secondary) 30%, transparent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
   transform: translateY(-1px);
 }
 
@@ -77,11 +77,19 @@
 }
 
 .ghost:hover {
-  background-color: color-mix(in srgb, var(--muted) 5%, transparent);
+  background-color: rgba(40, 160, 112, 0.22);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 4px 16px rgba(40, 160, 112, 0.15);
+  transform: translateY(-1px);
 }
 
 .ghost:active {
-  background-color: color-mix(in srgb, var(--muted) 10%, transparent);
+  background-color: rgba(40, 160, 112, 0.32);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: none;
+  transform: translateY(1px);
 }
 
 /* States */

@@ -153,8 +153,13 @@
   font-family: var(--font-family-body);
   font-size: var(--text-label);
   font-weight: var(--font-weight-bold);
+  color: var(--muted);
+  margin-top: 20px;
+  transition: color 0.2s ease;
+}
+
+.projectRow:hover .cta {
   color: var(--accent);
-  margin-top: 6px;
 }
 
 /* ── Thumbnail ────────────────────────────────────── */

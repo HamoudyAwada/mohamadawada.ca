@@ -2,8 +2,8 @@
   "deliverables": [
     "Integrated a working AI into the prototype using the free Gemini API, giving users a real conversational companion",
     "Designed the character and AI chat screen, applying the advice-sandwich principle directly from user research",
-    "Built the full reflection experience: guided daily check-ins across morning, midday, and evening, plus deeper journaling pathways",
-    "Designed weekly and monthly insight summaries that surface patterns in mood, habits, and goal progress",
+    "Designed the goals experience and My Journey map so users could see what they are working toward and watch their progress take shape over time",
+    "Designed the achievements system so every badge reflects something the user genuinely did, and built the Goals Summary to keep streaks and recent wins front and center",
     "Mapped character changes to user actions, making gamification emotionally meaningful rather than decorative",
     "Maintained a consistent non-judgmental emotional register across every state and interaction throughout the product"
   ],
@@ -75,16 +75,17 @@
         ]
       },
       {
-        "heading": "Reflection Pathways",
+        "heading": "Gamification and Achievements",
         "paragraphs": [
-          "I designed the full reflection experience across multiple entry points. Users can complete guided daily check-ins in the morning, midday, or evening, or dive into deeper written reflections when they want to go further. Our survey showed that guided reflection questions scored an average of 3.6 out of 5 compared to blank journaling, confirming that structure genuinely helps as long as it does not feel rigid or prescriptive.",
-          "Beyond individual sessions, I designed weekly and monthly progress summaries that surface patterns in a user\u2019s mood, habits, and movement toward their goals. The intention was to make users feel seen by their own data rather than evaluated by it."
+          "Gamification only works when it means something real. From the start, we wanted users to be able to open the app and physically see the marks of their progress in a way that felt fun and rewarding to look at.",
+          "Every badge in Trumi is earned through something the user genuinely did. Earning Streak Master means you kept showing up. Goal Setter means your goals did not just sit there, they actually got completed. The Goals Summary keeps your live streak data and recent wins visible the moment you open the app, and the achievements grid gives you a broader picture of everything you have built and everything still waiting to be unlocked."
         ]
       },
       {
-        "heading": "Reflection and Insights Screen",
+        "heading": "Goals and Your Journey",
         "paragraphs": [
-          "The reflection and insights view brings a user\u2019s entries together into something meaningful over time. Rather than a list of completed tasks, it is a picture of who they are and how they are growing."
+          "The goals screen gives users a clear view of everything they are working toward, organized between short and long term so nothing gets buried. Each goal has its own entry log, meaning users are not just marking things complete or incomplete but actively adding context to their progress over time. A paused goal stays visible rather than disappearing, which keeps the picture honest without making people feel like they have failed.",
+          "The My Journey map is where that progress becomes something you can actually look at. As users hit milestones their character moves forward along the path and visually evolves from a simple outline into a fully realized figure. The further along you get the more your character looks like someone who has actually been on a journey. It was important to us that growth felt tangible and rewarding to witness rather than just a number going up."
         ]
       },
       {

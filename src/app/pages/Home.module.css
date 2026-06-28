@@ -57,26 +57,41 @@
   gap: 8px;
 }
 
+
 .seeAllLink {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   font-family: var(--font-family-body);
   font-size: var(--text-h6);
   font-weight: var(--font-weight-bold);
   color: var(--muted);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .seeAllLink:hover {
+  color: var(--accent);
+}
+
+.seeAllLink:active {
+  color: var(--accent);
   opacity: 0.75;
 }
 
 .seeAllLink svg {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.seeAllLink:hover svg {
+  transform: translateX(4px);
+}
+
+.seeAllLink:active svg {
+  transform: translateX(2px);
 }
 
 .seeAllMobile {
@@ -205,8 +220,4 @@
     z-index: 1;
   }
 
-  .seeAllMobile svg {
-    width: 20px;
-    height: 20px;
-  }
 }
