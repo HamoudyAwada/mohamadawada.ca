@@ -89,7 +89,7 @@
   font-size: 96px;
   font-weight: var(--font-weight-extrabold);
   color: var(--primary-foreground);
-  opacity: 0.09;
+  opacity: 0.2;
   line-height: 1;
   flex-shrink: 0;
   width: 128px;

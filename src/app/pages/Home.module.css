@@ -83,15 +83,6 @@
   width: 22px;
   height: 22px;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.seeAllLink:hover svg {
-  transform: translateX(4px);
-}
-
-.seeAllLink:active svg {
-  transform: translateX(2px);
 }
 
 .seeAllMobile {

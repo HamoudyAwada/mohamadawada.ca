@@ -6,16 +6,24 @@
 
 .main {
   flex: 1;
-  padding-top: 173px; /* 100px original padding + 73px for fixed navigation */
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 173px;
   padding-bottom: 80px;
 }
 
-/* Hero Section */
+/* ── Hero ────────────────────────────────────────── */
+
 .heroSection {
   max-width: 1304px;
   margin: 0 auto;
   padding: 0 64px;
-  margin-bottom: 48px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .heroContent {
@@ -24,7 +32,7 @@
   gap: 16px;
 }
 
-.title {
+.heroTitle {
   font-family: var(--font-family-heading);
   font-size: var(--text-h1);
   font-weight: var(--font-weight-extrabold);
@@ -33,7 +41,7 @@
   line-height: normal;
 }
 
-.subtitle {
+.heroSubtitle {
   font-family: var(--font-family-heading);
   font-size: var(--text-h5);
   font-weight: var(--font-weight-medium);
@@ -42,220 +50,208 @@
   line-height: normal;
 }
 
-/* Content Section */
-.contentSection {
+/* ── Approach + Diagram ──────────────────────────── */
+
+.approachSection {
   max-width: 1312px;
   margin: 0 auto;
   padding: 0 64px;
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-}
-
-/* Full-width heading above the two-column layout */
-.sectionHeading {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   width: 100%;
-}
-
-.twoColumnLayout {
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr 527px;
-  gap: 64px;
-  align-items: start;
+  grid-template-columns: 1fr 420px;
+  column-gap: 80px;
+  align-items: center;
 }
 
-/* Left Column - Body + CTA */
-.leftColumn {
+.approachText {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.sectionTitle {
+.approachTitle {
   font-family: var(--font-family-heading);
-  font-size: var(--text-h2);
+  font-size: var(--text-h3);
   font-weight: var(--font-weight-bold);
   color: var(--primary-foreground);
   margin: 0;
   line-height: normal;
 }
 
-.sectionSubtitle {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h6);
+.approachBody {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
   color: var(--primary-foreground);
+  line-height: 1.75;
   margin: 0;
-  line-height: normal;
 }
 
-.bodyText {
+.diagramWrap {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 24px;
-}
-
-.bodyText p {
-  font-family: var(--font-family-body);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-medium);
-  color: var(--primary-foreground);
-  line-height: normal;
-  margin: 0;
-}
-
-.calloutText {
-  font-family: var(--font-family-body);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-medium);
-  color: var(--primary-foreground);
-  margin: 0;
-}
-
-.ctaSection {
-  margin-top: 32px;
-}
-
-/* Mobile-only diagram — hidden on desktop */
-.mobileDiagram {
-  display: none;
-}
-
-/* Right Column - Diagram */
-.rightColumn {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-}
-
-.diagramContainer {
-  width: 527px;
-  height: 527px;
-  position: relative;
+  align-items: center;
+  gap: 16px;
 }
 
 .diagram {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
 }
 
-/* Tablet Styles */
-@media (max-width: 1100px) {
-  .twoColumnLayout {
-    grid-template-columns: 1fr;
-    gap: 48px;
+.diagramCaption {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-foreground);
+  opacity: 0.45;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Principles ──────────────────────────────────── */
+
+.principlesSection {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 0 64px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.principle {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 64px;
+  padding: 48px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: start;
+}
+
+.principle:first-child {
+  border-top: none;
+}
+
+.principle:last-of-type {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.principleHeading {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--primary-foreground);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.principleBody {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-foreground);
+  opacity: 0.75;
+  line-height: 1.75;
+  margin: 0;
+  padding-top: 6px;
+}
+
+/* ── CTA ─────────────────────────────────────────── */
+
+.ctaRow {
+  padding-top: 48px;
+}
+
+/* ── Tablet ───────────────────────────────────────── */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .heroSection,
+  .principlesSection {
+    padding: 0 32px;
   }
 
-  .rightColumn {
-    display: none;
-  }
-
-  .mobileDiagram {
+  .approachSection {
     display: block;
-    width: 100%;
-    max-width: 480px;
-    margin: 0 auto;
+    padding: 0 32px;
   }
 
-  .diagramContainer {
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    margin: 0 auto;
+  .diagramWrap {
+    max-width: 400px;
+    margin: 48px auto 0;
   }
 
-  .diagram {
-    width: 100%;
-    height: auto;
-    display: block;
+  .principle {
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
   }
 }
 
-/* Mobile Styles */
+/* ── Mobile ───────────────────────────────────────── */
+
 @media (max-width: 768px) {
   .main {
     padding-top: 80px;
     padding-bottom: 60px;
+    gap: 32px;
   }
 
-  /* Hero section: extra top padding for nav breathing room, centred layout */
-  .heroSection {
+  .heroSection,
+  .principlesSection {
     padding: 40px 24px 0;
-    margin-bottom: 32px;
-    text-align: center;
   }
 
-  .heroContent {
-    align-items: center;
+  .heroSection {
+    padding-top: 0;
   }
 
-  .title {
+  .heroTitle {
     font-size: 64px;
     text-align: center;
   }
 
-  .subtitle {
-    font-size: 28px;
+  .heroSubtitle {
+    font-size: var(--text-h6);
     text-align: center;
   }
 
-  .contentSection {
+  .approachSection {
+    display: block;
     padding: 0 24px;
-    margin-top: 32px;
-    gap: 32px;
   }
 
-  .sectionHeading {
-    align-items: center;
-  }
-
-  .sectionTitle {
-    font-size: 40px;
+  .approachTitle {
     text-align: center;
+    margin-bottom: 24px;
   }
 
-  .sectionSubtitle {
-    font-size: 20px;
-    text-align: left;
+  .diagramWrap {
+    max-width: 300px;
+    margin: 40px auto 0;
   }
 
-  .bodyText p {
-    font-size: 18px;
+  .principle {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 36px 0;
   }
 
-  .ctaSection {
-    margin-top: 24px;
+  .principleHeading {
+    font-size: var(--text-h4);
+  }
+
+  .principleBody {
+    padding-top: 0;
+  }
+
+  .ctaRow {
     display: flex;
     justify-content: center;
-  }
-
-  .mobileDiagram {
-    display: block;
-    width: 100%;
-    max-width: 345px;
-    margin: 0 auto;
-  }
-
-  .rightColumn {
-    display: none;
-  }
-
-  .diagramContainer {
-    width: 100%;
-    max-width: 345px;
-    height: auto;
-  }
-
-  .diagram {
-    width: 100%;
-    height: auto;
-    display: block;
+    padding-top: 36px;
   }
 }
