@@ -1,7 +1,6 @@
 import processDiagram from '../../assets/0191a5b5151fbbffdac8e9a28bb15384029781f4.webp';
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import Button from "../components/Button";
 import Divider from "../components/Divider";
 import FadeInImage from "../components/FadeInImage";
 import processContent from "../../content/process.json";
@@ -53,11 +52,6 @@ export default function Process() {
             </div>
           ))}
 
-          <div className={styles.ctaRow}>
-            <Button variant="ghost" size="medium" href={cta.href}>
-              {cta.label}
-            </Button>
-          </div>
         </section>
 
       </main>
