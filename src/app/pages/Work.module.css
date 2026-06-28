@@ -8,242 +8,268 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  padding-top: 73px; /* height of the fixed navigation */
-  padding-bottom: 80px;
-}
-
-/* ─── Hero Section ─────────────────────────────── */
-
-.heroSection {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.heroContent {
-  max-width: 1304px;
-  width: 100%;
-  padding: 64px 64px 0 64px;
-  display: flex;
-  flex-direction: column;
+  padding-top: 173px; /* 100px content gap + 73px fixed nav — matches Resume and Process */
+  padding-bottom: 96px;
   gap: 48px;
-  box-sizing: border-box;
-  align-items: flex-start;
 }
 
-.heroText {
+/* ── Page Header ──────────────────────────────────── */
+
+.pageHeader {
+  width: 100%;
+}
+
+.pageHeaderInner {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 0 64px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
-.heroTitle {
+.projectCount {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.pageTitle {
   font-family: var(--font-family-heading);
   font-size: var(--text-h1);
   font-weight: var(--font-weight-extrabold);
   color: var(--primary-foreground);
   margin: 0;
-  line-height: normal;
+  line-height: 1.1;
 }
 
-.heroDescription {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h5); /* 32px — matches Figma H5 fallback of 32px */
+.pageSubtitle {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
-  color: var(--primary-foreground);
+  color: var(--muted);
   margin: 0;
-  line-height: normal;
+  max-width: 580px;
+  line-height: 1.6;
 }
 
-/* ─── Project Sections ─────────────────────────────── */
+/* ── List ─────────────────────────────────────────── */
 
-.projectSection {
+.listSection {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
+
+.listInner {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 0 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Row ──────────────────────────────────────────── */
 
 .projectRow {
-  max-width: 1304px;
-  width: 100%;
-  padding: 0 64px;
   display: flex;
-  gap: 64px;
   align-items: center;
-  box-sizing: border-box;
+  gap: 40px;
+  padding: 52px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: inherit;
 }
 
-.projectRowReverse {
-  flex-direction: row-reverse;
-}
+/* ── Number ───────────────────────────────────────── */
 
-/* Image wrappers */
-.projectImageWrapper {
+.projectNum {
+  font-family: var(--font-family-heading);
+  font-size: 96px;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--primary-foreground);
+  opacity: 0.09;
+  line-height: 1;
   flex-shrink: 0;
-  width: 528px;
+  width: 128px;
+  text-align: right;
+  user-select: none;
 }
 
-.imageCropped {
-  height: 380px;
+/* ── Project info ─────────────────────────────────── */
+
+.projectInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.badge {
+  font-family: var(--font-family-body);
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--primary-foreground);
+  margin: 0;
+  line-height: 1.15;
+  transition: color 0.2s ease;
+}
+
+.projectRow:hover .title {
+  color: var(--accent);
+}
+
+.desc {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.65;
+  max-width: 480px;
+  opacity: 0.75;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.cta {
+  font-family: var(--font-family-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-bold);
+  color: var(--accent);
+  margin-top: 6px;
+}
+
+/* ── Thumbnail ────────────────────────────────────── */
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 248px;
+  height: 180px;
+  border-radius: 14px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+  transition: transform 0.3s ease;
 }
 
-.imageCropped .projectImg {
+.projectRow:hover .thumbnail {
+  transform: scale(1.05);
+}
+
+.thumbImgCover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  display: block;
+  flex-shrink: 0;
 }
 
-/* Phone mockup images have their frame, blob, and shadow baked into the asset —
-   no clipping, rounding, or CSS shadow applied. */
-.imageSquare {
-  width: 380px;
-}
-
-.imageSquare .projectImg {
-  width: 100%;
-  height: auto;
+.thumbImgSquare {
+  max-height: 80%;
+  width: auto;
+  object-fit: contain;
   display: block;
 }
 
-/* Project text + CTA */
-.projectContent {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  align-items: flex-start;
-}
-
-.projectText {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.projectTitle {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h1);
-  font-weight: var(--font-weight-extrabold);
-  color: var(--primary-foreground);
-  margin: 0;
-  line-height: normal;
-}
-
-.projectDescription {
-  font-family: var(--font-family-heading);
-  font-size: var(--text-h5); /* 32px */
-  font-weight: var(--font-weight-medium);
-  color: var(--primary-foreground);
-  margin: 0;
-  line-height: normal;
-}
-
-/* ─── Tablet ─────────────────────────────── */
+/* ── Tablet ───────────────────────────────────────── */
 @media (min-width: 769px) and (max-width: 1200px) {
-  .heroContent {
-    padding: 48px 32px 0 32px;
+  .pageHeaderInner {
+    padding: 0 32px;
   }
 
-  .heroTitle {
-    font-size: 60px;
+  .listInner {
+    padding: 0 32px;
   }
 
-  .heroDescription {
-    font-size: var(--text-h6); /* 28px */
+  .projectNum {
+    font-size: 72px;
+    width: 100px;
+  }
+
+  .title {
+    font-size: var(--text-h4);
+  }
+
+  .thumbnail {
+    width: 200px;
+    height: 148px;
   }
 
   .projectRow {
-    padding: 0 32px;
-    gap: 32px;
-  }
-
-  .projectImageWrapper {
-    width: 360px;
-  }
-
-  .imageCropped {
-    height: 280px;
-  }
-
-  .imageSquare {
-    width: 280px;
-  }
-
-  .projectTitle {
-    font-size: 60px;
-  }
-
-  .projectDescription {
-    font-size: var(--text-h6); /* 28px */
+    gap: 28px;
+    padding: 40px 0;
   }
 }
 
-/* ─── Mobile ─────────────────────────────── */
+/* ── Mobile ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .main {
+    padding-top: 80px; /* matches Process mobile */
     gap: 32px;
+    padding-bottom: 64px;
   }
 
-  /* Hero */
-  .heroContent {
-    padding: 32px 24px 0 24px;
+  .pageHeaderInner {
+    padding: 40px 24px 0; /* matches Process heroSection mobile */
     align-items: center;
-    gap: 48px;
-  }
-
-  .heroText {
-    align-items: center;
-  }
-
-  .heroTitle {
-    font-size: var(--text-h4); /* 40px */
     text-align: center;
   }
 
-  .heroDescription {
-    font-size: var(--text-base); /* 20px */
-    text-align: center;
+  .pageTitle {
+    font-size: 64px;
   }
 
-  /* Projects */
-  .projectRow,
-  .projectRowReverse {
-    flex-direction: column;
+  .pageSubtitle {
+    max-width: 100%;
+    font-size: var(--text-label);
+  }
+
+  .listInner {
     padding: 0 24px;
-    gap: 48px;
-    align-items: center;
   }
 
-  .projectImageWrapper {
+  .projectRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 32px 0;
+  }
+
+  .projectNum {
+    display: none;
+  }
+
+  .thumbnail {
     width: 100%;
-    max-width: 345px;
+    height: 210px;
+    order: -1;
   }
 
-  .imageCropped {
-    width: 345px;
-    height: 248px;
+  .title {
+    font-size: var(--text-h4);
   }
 
-  .imageSquare {
-    width: 248px;
-  }
-
-  .projectContent {
-    align-items: center;
-    width: 100%;
-  }
-
-  .projectTitle {
-    font-size: var(--text-h5); /* 32px */
-    text-align: center;
-  }
-
-  .projectDescription {
-    font-size: var(--text-label); /* 16px */
-    text-align: center;
+  .desc {
+    max-width: 100%;
   }
 }
