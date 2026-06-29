@@ -1,4 +1,4 @@
-import { forwardRef, SelectHTMLAttributes } from "react";
+import { forwardRef, SelectHTMLAttributes, useId } from "react";
 import styles from "./Select.module.css";
 
 interface SelectOption {
@@ -16,12 +16,14 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
 }
 
 const Select = forwardRef<HTMLSelectElement, SelectProps>(
-  ({ label, optional, error, options, placeholder = "Select an option", className, required, ...props }, ref) => {
+  ({ label, optional, error, options, placeholder = "Select an option", className, required, id, ...props }, ref) => {
+    const generatedId = useId();
+    const selectId = id ?? generatedId;
     return (
       <div className={styles.wrapper}>
         {label && (
           <div className={styles.labelWrapper}>
-            <label className={styles.label}>
+            <label htmlFor={selectId} className={styles.label}>
               {label}
               {required && <span className={styles.required}>*</span>}
               {optional && <span className={styles.optional}>(Optional)</span>}
@@ -31,6 +33,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
         <div className={styles.selectWrapper}>
           <select
             ref={ref}
+            id={selectId}
             className={`${styles.select} ${error ? styles.error : ""} ${className || ""}`}
             required={required}
             {...props}

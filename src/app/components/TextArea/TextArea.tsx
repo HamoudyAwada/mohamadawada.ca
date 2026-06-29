@@ -1,4 +1,4 @@
-import { forwardRef, TextareaHTMLAttributes, useState, ChangeEvent, useEffect } from "react";
+import { forwardRef, TextareaHTMLAttributes, useState, useId, ChangeEvent, useEffect } from "react";
 import styles from "./TextArea.module.css";
 
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -11,8 +11,10 @@ interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ label, optional, error, showCharacterCount = true, maxCharacters = 1000, className, onChange, value, required, ...props }, ref) => {
+  ({ label, optional, error, showCharacterCount = true, maxCharacters = 1000, className, onChange, value, required, id, ...props }, ref) => {
     const [charCount, setCharCount] = useState(0);
+    const generatedId = useId();
+    const textareaId = id ?? generatedId;
 
     // Update character count when value changes from parent
     useEffect(() => {
@@ -37,7 +39,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         {label && (
           <div className={styles.labelHeader}>
             <div className={styles.labelWrapper}>
-              <label className={styles.label}>
+              <label htmlFor={textareaId} className={styles.label}>
                 {label}
                 {required && <span className={styles.required}>*</span>}
                 {optional && <span className={styles.optional}>(Optional)</span>}
@@ -52,6 +54,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         )}
         <textarea
           ref={ref}
+          id={textareaId}
           className={`${styles.textarea} ${error ? styles.error : ""} ${className || ""}`}
           onChange={handleChange}
           value={value}
