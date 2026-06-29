@@ -78,16 +78,15 @@
   color: var(--muted);
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .navCta:hover {
   background-color: rgba(214, 244, 232, 0.12);
-  transform: translateY(-1px);
 }
 
 .navCta:active {
-  transform: translateY(0);
+  background-color: rgba(214, 244, 232, 0.06);
 }
 
 /* Hamburger menu */

@@ -312,6 +312,41 @@
   gap: 8px;
 }
 
+/* ── CTA ─────────────────────────────────────────── */
+
+.ctaSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.ctaText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ctaHeading {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--primary-foreground);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ctaBody {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.65;
+  opacity: 0.75;
+  max-width: 520px;
+}
+
 /* ── Tablet ───────────────────────────────────── */
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -368,5 +403,19 @@
   .eduFooter {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .bullet {
+    font-size: 16px;
+  }
+
+  .ctaSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .ctaHeading {
+    font-size: var(--text-h4);
   }
 }

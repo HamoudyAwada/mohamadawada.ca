@@ -168,6 +168,19 @@ export default function Resume() {
             </div>
           </section>
 
+          <hr className={styles.rule} />
+
+          {/* ── CTA ─────────────────────────────────── */}
+          <div className={styles.ctaSection}>
+            <div className={styles.ctaText}>
+              <h2 className={styles.ctaHeading}>Like what you see?</h2>
+              <p className={styles.ctaBody}>Whether you have a role in mind or just want to talk shop, my inbox is open.</p>
+            </div>
+            <Button variant="ghost" size="large" href="/contact">
+              Let's Work Together
+            </Button>
+          </div>
+
         </div>
       </main>
 
