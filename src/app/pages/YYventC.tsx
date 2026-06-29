@@ -1,8 +1,9 @@
-import { Link } from "react-router";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
 import FadeInImage from "../components/FadeInImage";
+import StatCounter from "../components/StatCounter";
+import ProjectTile from "../components/ProjectTile";
 import styles from "./YYventC.module.css";
 import content from "../../content/yyventc.json";
 
@@ -32,6 +33,7 @@ function CheckIcon() {
 }
 
 export default function YYventC() {
+
   return (
     <div className={styles.page}>
       <Navigation />
@@ -109,7 +111,7 @@ export default function YYventC() {
               {content.research.stats.map((s, i) => (
                 <div key={s.label} className={styles.statItem}>
                   {i > 0 && <div className={styles.statDivider} />}
-                  <span className={styles.statValue}>{s.value}</span>
+                  <StatCounter value={s.value} className={styles.statValue} />
                   <span className={styles.statLabel}>{s.label}</span>
                 </div>
               ))}
@@ -244,19 +246,16 @@ export default function YYventC() {
           <h2 className={styles.relatedTitle}>Check Out These Projects</h2>
           <div className={styles.relatedGrid}>
             {content.relatedProjects.map((proj) => (
-              <Link key={proj.slug} to={`/my-work/${proj.slug}`} className={styles.relatedCard}>
-                <p className={styles.relatedCardTitle}>{proj.title}</p>
-                <div className={styles.relatedCardBody}>
-                  <div className={proj.imageType === "square" ? styles.relatedCardImageSquare : styles.relatedCardImage}>
-                    <FadeInImage
-                      src={relatedImageMap[proj.imageKey]}
-                      alt={proj.title}
-                      className={proj.imageType === "square" ? styles.relatedCardImgSquare : styles.relatedCardImg}
-                    />
-                  </div>
-                  <p className={styles.relatedCardDesc}>{proj.description}</p>
-                </div>
-              </Link>
+              <div key={proj.slug} className={styles.relatedCard}>
+                <ProjectTile
+                  image={relatedImageMap[proj.imageKey]}
+                  imageAlt={proj.title}
+                  imageType={proj.imageType as "cropped" | "square"}
+                  imageBg={proj.imageBg ?? null}
+                  title={proj.title}
+                  href={`/my-work/${proj.slug}`}
+                />
+              </div>
             ))}
           </div>
         </section>

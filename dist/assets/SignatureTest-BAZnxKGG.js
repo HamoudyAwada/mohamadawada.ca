@@ -1,1 +1,0 @@
-import{j as e}from"./index-Ohcso5c6.js";import{M as t}from"./MoeSignature-C2JKyUOF.js";function n(){return e.jsx("div",{style:{minHeight:"100vh",background:"#0e0e0e",display:"flex",alignItems:"center",padding:"0 48px"},children:e.jsx(t,{})})}export{n as default};

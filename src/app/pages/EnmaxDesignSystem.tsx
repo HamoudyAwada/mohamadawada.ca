@@ -1,9 +1,9 @@
-import { Link } from "react-router";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
 import Tag from "../components/Tag";
 import FadeInImage from "../components/FadeInImage";
+import ProjectTile from "../components/ProjectTile";
 import styles from "./EnmaxDesignSystem.module.css";
 import content from "../../content/enmax-design-system.json";
 
@@ -40,6 +40,7 @@ function ArrowRightIcon() {
 
 
 export default function EnmaxDesignSystem() {
+
   return (
     <div className={styles.page}>
       <Navigation />
@@ -209,19 +210,16 @@ export default function EnmaxDesignSystem() {
           <h2 className={styles.relatedTitle}>Check Out These Projects</h2>
           <div className={styles.relatedGrid}>
             {content.relatedProjects.map((proj) => (
-              <Link key={proj.slug} to={`/my-work/${proj.slug}`} className={styles.relatedCard}>
-                <p className={styles.relatedCardTitle}>{proj.title}</p>
-                <div className={styles.relatedCardBody}>
-                  <div className={styles.relatedCardImageSquare}>
-                    <FadeInImage
-                      src={imageMap[proj.imageKey]}
-                      alt={proj.title}
-                      className={styles.relatedCardImgSquare}
-                    />
-                  </div>
-                  <p className={styles.relatedCardDesc}>{proj.description}</p>
-                </div>
-              </Link>
+              <div key={proj.slug} className={styles.relatedCard}>
+                <ProjectTile
+                  image={imageMap[proj.imageKey]}
+                  imageAlt={proj.title}
+                  imageType={proj.imageType as "cropped" | "square"}
+                  imageBg={proj.imageBg ?? null}
+                  title={proj.title}
+                  href={`/my-work/${proj.slug}`}
+                />
+              </div>
             ))}
           </div>
         </section>

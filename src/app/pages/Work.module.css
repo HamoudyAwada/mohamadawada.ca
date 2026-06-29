@@ -95,6 +95,11 @@
   width: 128px;
   text-align: right;
   user-select: none;
+  transition: opacity 0.3s ease;
+}
+
+.projectRow:hover .projectNum {
+  opacity: 1;
 }
 
 /* ── Project info ─────────────────────────────────── */

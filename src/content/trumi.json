@@ -116,14 +116,16 @@
       "title": "The ENMAX Design System",
       "description": "Understand how I helped shape ENMAX\u2019s design system and set the foundation for powerful AI assisted workflows.",
       "imageKey": "enmax",
-      "imageType": "cropped"
+      "imageType": "cropped",
+      "imageBg": null
     },
     {
       "slug": "yyventc",
       "title": "YYventC",
       "description": "A community-first, mobile event discovery platform designed exclusively for Calgary.",
       "imageKey": "yyventc",
-      "imageType": "square"
+      "imageType": "square",
+      "imageBg": "#8E0B2C"
     }
   ]
 }

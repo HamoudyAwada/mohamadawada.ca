@@ -14,6 +14,7 @@ const Trumi = lazy(() => import("./pages/Trumi"));
 const EnmaxDesignSystem = lazy(() => import("./pages/EnmaxDesignSystem"));
 const SignatureTest = lazy(() => import("./pages/SignatureTest"));
 const SkeletonTest = lazy(() => import("./pages/SkeletonTest"));
+const TransitionTest = lazy(() => import("./pages/TransitionTest"));
 const Resume = lazy(() => import("./pages/Resume"));
 
 export const router = createBrowserRouter([
@@ -105,6 +106,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={null}>
             <SkeletonTest />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/transition-test",
+        element: (
+          <Suspense fallback={null}>
+            <TransitionTest />
           </Suspense>
         ),
       },

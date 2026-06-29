@@ -43,11 +43,11 @@
     "title": "Research",
     "intro": "We surveyed 32 Calgarians aged 18 to 35 to understand how they discover events and what they needed from a centralized platform. The numbers told a clear story:",
     "stats": [
-      { "value": "32",    "label": "Survey respondents" },
-      { "value": "90.6%", "label": "Find events through social media" },
-      { "value": "62.5%", "label": "Have missed an event due to poor visibility" },
-      { "value": "81.3%", "label": "Wanted to support local businesses & creators" },
-      { "value": "81.3%", "label": "Would use YYventC for community functions" }
+      { "value": "32",  "label": "Survey respondents" },
+      { "value": "91%", "label": "Find events through social media" },
+      { "value": "63%", "label": "Have missed an event due to poor visibility" },
+      { "value": "81%", "label": "Wanted to support local businesses & creators" },
+      { "value": "81%", "label": "Would use YYventC for community functions" }
     ],
     "qualitative": {
       "prefix": "Qualitative responses reinforced this. Users weren't just frustrated with existing apps, they felt the city's event scene was happening around them, not with them. One respondent wrote: “",

@@ -1,0 +1,34 @@
+@keyframes breathe-a {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(1.1); }
+}
+
+@keyframes breathe-b {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.35; transform: scale(1.14); }
+}
+
+@keyframes breathe-c {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(1.07); }
+}
+
+/* SVG elements need fill-box so transform-origin is relative to the shape itself */
+.blobA,
+.blobB,
+.blobC {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.blobA {
+  animation: breathe-a 4s ease-in-out infinite;
+}
+
+.blobB {
+  animation: breathe-b 5s ease-in-out infinite;
+}
+
+.blobC {
+  animation: breathe-c 3s ease-in-out infinite;
+}
