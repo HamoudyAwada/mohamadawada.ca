@@ -32,6 +32,7 @@
   text-align: center;
   margin: 0;
   line-height: normal;
+  max-width: 800px;
 }
 
 /* Mobile */
