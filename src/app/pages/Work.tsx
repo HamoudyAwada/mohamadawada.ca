@@ -58,7 +58,7 @@ export default function Work() {
                   <FadeInImage
                     src={project.coverImage}
                     alt={project.coverImageAlt}
-                    className={project.imageType === "square" ? styles.thumbImgSquare : styles.thumbImgCover}
+                    className={project.imageType === "square" ? styles.thumbImgSquare : project.imageType === "cropped" ? styles.thumbImgCropped : styles.thumbImgCover}
                   />
                 </div>
               </Link>
