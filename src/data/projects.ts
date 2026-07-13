@@ -1,4 +1,4 @@
-import imgEnmax from "../assets/76f0998bf47cdb906db55598c4c600e18a2ac8fb.webp";
+import imgEnmax from "../assets/enmax-logo-trimmed.webp";
 import imgTrumi from "../assets/trumi-hero.webp";
 import imgYYventC from "../assets/yyventc-discover.webp";
 import projectsContent from "../content/projects.json";
