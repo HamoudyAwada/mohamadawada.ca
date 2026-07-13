@@ -1,4 +1,4 @@
-const PATTERN_ENABLED = true;
+const PATTERN_ENABLED = false;
 
 interface BackgroundPatternProps {
   contained?: boolean;
