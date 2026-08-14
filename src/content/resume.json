@@ -11,9 +11,9 @@
     {
       "company": "ENMAX Corporation",
       "role": "UX Design Co-op",
-      "period": "January 2026 – Present",
+      "period": "January 2026 – August 2026",
       "location": "Calgary, AB",
-      "current": true,
+      "current": false,
       "bullets": [
         "Established a standardized design system that improved cross-team alignment, reduced UX debt, and enabled faster iteration across multiple ENMAX digital products using Figma MCP, GitHub Copilot, and Claude to increase efficiency of frontend development by 10x.",
         "Achieved full WCAG AA contrast compliance across ENMAX design system through comprehensive component audit and rebuild, introducing dark mode as an accessibility feature.",
